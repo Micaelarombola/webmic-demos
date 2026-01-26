@@ -17,10 +17,10 @@ const EVENT_DATE_ISO = "2026-08-24T21:30:00-03:00";
 
 // ✅ Galería (poné tus imágenes en /assets con estos nombres exactos)
 const GALLERY = [
-  { src: "assets/Foto1.jpg", portrait: true },   // HERO
-  { src: "assets/Foto2.jpg", portrait: false },
-  { src: "assets/Foto3.jpg", portrait: false },
-  { src: "assets/Foto4.jpg", portrait: false },
+  { src: "assets/foto1.jpg", portrait: true },   // HERO
+  { src: "assets/foto2.jpg", portrait: false },
+  { src: "assets/foto3.jpg", portrait: false },
+  { src: "assets/foto4.jpg", portrait: false },
 ];
 
 const gallery = document.getElementById("gallery");
