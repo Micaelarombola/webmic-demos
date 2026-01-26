@@ -16,11 +16,14 @@ const WHATSAPP_NUMBER = "5491127887082"; // ej: 5491123456789
 
 // Galería (poné imágenes en /assets y cambiá nombres)
 const GALLERY = [
-  { src: "assets/foto1.jpg",  },
-  { src: "assets/foto2.jpg", },
-  { src: "assets/foto3.jpg",  },
-  { src: "assets/foto4.jpg",  },
+  { src: "assets/Foto1.jpg" },
+  { src: "assets/Foto2.jpg" },
+  { src: "assets/Foto3.jpg" },
+  { src: "assets/Foto4.jpg" },
+  { src: "assets/Foto5.jpg" },
+  { src: "assets/Foto6.jpg" },
 ];
+
 
 // Música (si no querés música, poné ENABLE_MUSIC = false)
 const ENABLE_MUSIC = true;
