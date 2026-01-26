@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mis XV • Glitter Silver</title>
+  <meta name="description" content="Invitación web de 15 años estilo Glitter Silver. Confirmación por WhatsApp, mapa y cuenta regresiva." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Montserrat:wght@300;500;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Fondo glitter -->
+  <div class="glitter" aria-hidden="true"></div>
+
+  <!-- Música (opcional) -->
+  <audio id="bgMusic" loop>
+    <!-- Poné tu archivo en /assets/music.mp3 -->
+    <source src="assets/music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <button class="music-btn" id="musicBtn" type="button" aria-label="Música">
+    <span id="musicIcon">▶</span>
+  </button>
+
+  <header class="top">
+    <div class="wrap top__inner">
+      <div class="badge">15 Años</div>
+      <a class="mini-cta" href="#rsvp">Confirmar</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="hero__card">
+        <p class="overline">Te invito a celebrar</p>
+        <h1 class="title">Mis XV</h1>
+        <p class="name">Camila</p>
+
+        <div class="meta">
+          <div class="meta__item">
+            <span class="meta__label">Fecha</span>
+            <span class="meta__value">Sábado 24 de Agosto 2026</span>
+          </div>
+          <div class="meta__item">
+            <span class="meta__label">Hora</span>
+            <span class="meta__value">21:30 hs</span>
+          </div>
+          <div class="meta__item">
+            <span class="meta__label">Lugar</span>
+            <span class="meta__value">Salón “Janos”</span>
+          </div>
+        </div>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#rsvp">Confirmar asistencia</a>
+          <a class="btn" href="#info">Ver info</a>
+        </div>
+
+        <p class="note">Deslizá para ver la invitación ✨</p>
+      </div>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section class="section" id="info">
+      <h2 class="h2">Faltan</h2>
+      <div class="countdown" id="countdown" aria-live="polite">
+        <div class="cd"><span id="d">00</span><small>Días</small></div>
+        <div class="cd"><span id="h">00</span><small>Horas</small></div>
+        <div class="cd"><span id="m">00</span><small>Min</small></div>
+        <div class="cd"><span id="s">00</span><small>Seg</small></div>
+      </div>
+      <p class="muted center">para una noche inolvidable</p>
+    </section>
+
+    <!-- CARDS INFO -->
+    <section class="section grid2">
+      <article class="card">
+        <h3 class="h3">Ubicación</h3>
+        <p class="muted">Tocá para abrir el mapa.</p>
+        <a class="btn btn--primary btn--wide" id="mapsBtn" target="_blank" rel="noreferrer">Abrir Google Maps</a>
+        <div class="mini">
+          <div class="mini__row"><span>Dirección</span><b>Panamericana Km 52</b></div>
+          <div class="mini__row"><span>Pilar</span><b>Buenos Aires</b></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3 class="h3">Itinerario</h3>
+        <ul class="list">
+          <li><span>21:30</span> Recepción</li>
+          <li><span>22:30</span> Cena</li>
+          <li><span>00:00</span> Vals</li>
+          <li><span>00:30</span> Fiesta 🎉</li>
+        </ul>
+        <p class="muted">Horarios aproximados.</p>
+      </article>
+    </section>
+
+    <section class="section grid2">
+      <article class="card">
+        <h3 class="h3">Dress code</h3>
+        <p class="muted">Elegante · Tonos sugeridos</p>
+        <div class="swatches">
+          <span class="sw silver" title="Plateado"></span>
+          <span class="sw pearl" title="Perla"></span>
+          <span class="sw smoke" title="Gris"></span>
+          <span class="sw black" title="Negro"></span>
+        </div>
+        <p class="muted">Tip: evitá blanco total.</p>
+      </article>
+
+      <article class="card">
+        <h3 class="h3">Regalos</h3>
+        <p class="muted">Tu presencia es lo más importante 💗</p>
+        <div class="alias">
+          <div><span>Alias</span><b id="aliasText">cami.15.mp</b></div>
+          <button class="btn btn--wide" id="copyAlias" type="button">Copiar alias</button>
+        </div>
+      </article>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="section">
+      <h2 class="h2">Galería</h2>
+      <p class="muted center">Un adelanto de lo que será una noche inolvidable ✨</p>
+
+      <div class="gallery" id="gallery"></div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="section" id="rsvp">
+      <h2 class="h2">Confirmación</h2>
+      <p class="muted center">Completá y se abre WhatsApp con el mensaje listo.</p>
+
+      <form class="form" id="rsvpForm">
+        <label>
+          Nombre y apellido
+          <input id="guestName" type="text" placeholder="Ej: María González" required />
+        </label>
+
+        <label>
+          ¿Cuántos asisten?
+          <select id="guestQty">
+            <option value="1">1 persona</option>
+            <option value="2">2 personas</option>
+            <option value="3">3 personas</option>
+            <option value="4">4 personas</option>
+          </select>
+        </label>
+
+        <label>
+          Mensaje (opcional)
+          <textarea id="guestMsg" rows="3" placeholder="Ej: ¡Qué emoción!"></textarea>
+        </label>
+
+        <button class="btn btn--primary btn--wide" type="submit">Confirmar por WhatsApp</button>
+        <p class="tiny muted">Si preferís, podés confirmar por DM también.</p>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <p class="muted center">Hecho con 💫 estilo Glitter Silver · WebMic</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,404 @@
+:root{
+  --bg:#0c1014;
+  --card: rgba(255,255,255,.06);
+  --line: rgba(255,255,255,.14);
+  --text:#f7f7fb;
+  --muted: rgba(255,255,255,.70);
+
+  --silver1:#f6f6fb;
+  --silver2:#d7dbe6;
+  --silver3:#9aa3b2;
+  --shadow: 0 18px 60px rgba(0,0,0,.45);
+
+  --radius: 22px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 20% 10%, rgba(255,255,255,.12), transparent 55%),
+              radial-gradient(900px 600px at 90% 20%, rgba(210,215,230,.10), transparent 60%),
+              var(--bg);
+  overflow-x:hidden;
+}
+
+.wrap{width:min(980px, 92vw); margin:0 auto}
+
+/* ===== Glitter background (sin imágenes) ===== */
+.glitter{
+  position: fixed;
+  inset: 0;
+  pointer-events:none;
+  z-index:-1;
+  background:
+    /* brillo suave */
+    radial-gradient(1200px 800px at 30% 15%, rgba(255,255,255,.16), transparent 60%),
+    radial-gradient(900px 600px at 85% 25%, rgba(215,219,230,.14), transparent 60%),
+    /* puntitos (glitter) */
+    radial-gradient(circle at 10% 20%, rgba(255,255,255,.55) 1px, transparent 2px),
+    radial-gradient(circle at 30% 40%, rgba(255,255,255,.35) 1px, transparent 2px),
+    radial-gradient(circle at 50% 60%, rgba(255,255,255,.45) 1px, transparent 2px),
+    radial-gradient(circle at 70% 30%, rgba(255,255,255,.28) 1px, transparent 2px),
+    radial-gradient(circle at 90% 70%, rgba(255,255,255,.40) 1px, transparent 2px),
+    radial-gradient(circle at 20% 80%, rgba(255,255,255,.30) 1px, transparent 2px);
+  background-size:
+    auto, auto,
+    120px 120px,
+    140px 140px,
+    160px 160px,
+    180px 180px,
+    200px 200px,
+    220px 220px;
+  filter: blur(.2px);
+  opacity: .95;
+}
+
+/* ===== Top header ===== */
+.top{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(12px);
+  background: rgba(12,16,20,.55);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.top__inner{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
+.badge{
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-size:.72rem;
+  color: rgba(255,255,255,.78);
+}
+.mini-cta{
+  text-decoration:none;
+  color:#111;
+  font-weight:900;
+  padding:10px 14px;
+  border-radius:999px;
+  background: linear-gradient(135deg, var(--silver1), var(--silver2));
+}
+
+/* ===== Music button ===== */
+.music-btn{
+  position: fixed;
+  right: 16px;
+  top: 72px;
+  z-index: 20;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.16);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  font-weight: 900;
+  cursor:pointer;
+  box-shadow: var(--shadow);
+}
+
+/* ===== Hero ===== */
+.hero{padding: 34px 0 12px}
+.hero__card{
+  border:1px solid rgba(255,255,255,.14);
+  background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+  border-radius: var(--radius);
+  padding: 26px;
+  box-shadow: var(--shadow);
+  position:relative;
+  overflow:hidden;
+}
+.hero__card{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate; /* crea capa para z-index */
+}
+
+.hero__card::after{
+  content:"";
+  position:absolute;
+  inset:-30%;
+  background: radial-gradient(500px 220px at 30% 30%, rgba(255,255,255,.18), transparent 60%);
+  transform: rotate(-8deg);
+  z-index: 0;           /* 👈 queda atrás */
+  pointer-events: none; /* 👈 no bloquea clicks */
+}
+
+/* Todo el contenido arriba del brillo */
+.hero__card > *{
+  position:relative;
+  z-index: 1;
+}
+
+.overline{
+  position:relative;
+  margin:0;
+  color: var(--muted);
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-size:.72rem;
+}
+.title{
+  position:relative;
+  margin: 10px 0 0;
+  font-family: "Allura", cursive;
+  font-size: clamp(3.2rem, 8vw, 5rem);
+  font-weight: 400;
+  line-height: 1;
+  text-shadow: 0 14px 40px rgba(0,0,0,.35);
+}
+.name{
+  position:relative;
+  margin: 4px 0 0;
+  font-weight: 900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color: rgba(255,255,255,.90);
+}
+.meta{
+  position:relative;
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 18px;
+}
+.meta__item{
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  border-radius: 16px;
+  padding: 12px;
+}
+.meta__label{display:block; font-size:.78rem; color: var(--muted); font-weight:800}
+.meta__value{display:block; margin-top:6px; font-weight:800}
+.hero__actions{
+  position:relative;
+  display:flex;
+  gap: 10px;
+  flex-wrap:wrap;
+  margin-top: 16px;
+}
+.note{position:relative; margin: 14px 0 0; color: rgba(255,255,255,.68); font-weight:600}
+
+/* ===== Buttons ===== */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  text-decoration:none;
+  color: var(--text);
+  font-weight: 900;
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.16);
+  background: rgba(255,255,255,.05);
+  cursor:pointer;
+}
+.btn--primary{
+  color:#111;
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--silver1), var(--silver2));
+}
+.btn--wide{width:100%}
+
+/* ===== Sections ===== */
+.section{padding: 22px 0}
+.h2{
+  margin:0;
+  text-align:center;
+  font-weight: 1000;
+  letter-spacing:.02em;
+}
+.h3{margin:0 0 6px; font-weight:1000}
+.center{text-align:center}
+.muted{color: var(--muted)}
+
+/* Countdown */
+.countdown{
+  margin: 14px auto 8px;
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  max-width: 560px;
+}
+.cd{
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  border-radius: 18px;
+  padding: 14px 12px;
+  text-align:center;
+}
+.cd span{display:block; font-size:1.6rem; font-weight:1000}
+.cd small{display:block; margin-top:6px; color: var(--muted); font-weight:800}
+
+/* Grid cards */
+.grid2{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.card{
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.04);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: 0 10px 28px rgba(0,0,0,.26);
+}
+.list{margin:10px 0 0; padding:0; list-style:none; display:grid; gap:10px}
+.list li{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:10px 12px;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.03);
+  border-radius: 16px;
+  font-weight:800;
+}
+.list li span{color: var(--muted); font-weight:900}
+
+/* Mini */
+.mini{margin-top:12px; display:grid; gap:10px}
+.mini__row{
+  display:flex; align-items:center; justify-content:space-between;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.03);
+  border-radius: 16px;
+  padding:10px 12px;
+}
+.mini__row span{color: var(--muted); font-weight:800}
+
+/* Swatches */
+.swatches{display:flex; gap:10px; margin-top:10px}
+.sw{width:28px;height:28px;border-radius:50%; border:1px solid rgba(255,255,255,.18)}
+.silver{background: linear-gradient(135deg, #ffffff, #d6dbe6)}
+.pearl{background: linear-gradient(135deg, #ffffff, #f1f1f6)}
+.smoke{background: linear-gradient(135deg, #c5cbd8, #868fa3)}
+.black{background: linear-gradient(135deg, #111, #2a2a2a)}
+
+/* Alias */
+.alias{
+  margin-top:12px;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.03);
+  border-radius: 18px;
+  padding: 12px;
+  display:grid;
+  gap:10px;
+}
+.alias span{color: var(--muted); font-weight:800}
+.alias b{font-weight:1000; letter-spacing:.06em}
+
+/* Gallery */
+
+
+
+/* Gallery */
+.gallery{
+  margin-top:14px;
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.gal{
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.03);
+  border-radius: var(--radius);
+  overflow:hidden;
+}
+
+/* Contenedor de imagen con fondo blur */
+.gal__frame{
+  position: relative;
+  height: 260px;                 /* ajustá esto si querés más alto */
+  width: 100%;
+  overflow:hidden;
+}
+
+/* Fondo blur usando la misma imagen */
+.gal__frame::before{
+  content:"";
+  position:absolute; inset:-20px;
+  background-image: var(--img);
+  background-size: cover;
+  background-position: center;
+  filter: blur(18px) saturate(1.1);
+  transform: scale(1.12);
+  opacity: .55;
+}
+
+/* Una capa suave para que quede fino */
+.gal__frame::after{
+  content:"";
+  position:absolute; inset:0;
+  background: radial-gradient(500px 240px at 20% 20%, rgba(255,255,255,.16), transparent 60%);
+  pointer-events:none;
+}
+
+/* La imagen real (sin recortar) */
+.gal__frame img{
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;           /* <-- clave: NO recorta */
+  object-position: center;
+  display:block;
+}
+
+.gal .cap{
+  padding:10px 12px;
+  color: var(--muted);
+  font-weight:800;
+}
+
+/* Form */
+.form{
+  max-width: 560px;
+  margin: 0 auto;
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.04);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+label{display:block; font-weight:900; margin:10px 0 6px}
+input, select, textarea{
+  width:100%;
+  padding:12px 12px;
+  border-radius: 16px;
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.03);
+  color: var(--text);
+  outline:none;
+}
+textarea{resize:vertical}
+.tiny{font-size:.86rem; margin:10px 0 0}
+
+.footer{padding: 16px 0 32px}
+
+/* Responsive */
+@media (max-width: 720px){
+  .meta{grid-template-columns: 1fr; }
+  .grid2{grid-template-columns: 1fr}
+  .gallery{grid-template-columns: 1fr}
+  .music-btn{top: 64px}
+}
+/* ===== Select: que se vean bien las opciones (dark) ===== */
+select{
+  background: rgba(255,255,255,.03);
+  color: var(--text);
+}
+
+/* Opciones dentro del desplegable */
+select option{
+  background-color: #0f1016;   /* fondo oscuro */
+  color: #f7f7fb;              /* texto claro */
+}
+
+/* (Opcional) cuando una opción está seleccionada */
+select option:checked{
+  background-color: #1a1f28;
+}
