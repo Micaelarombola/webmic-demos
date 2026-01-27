@@ -1,12 +1,15 @@
 /* =========================
    CONFIG • 15 Black & Gold (Art Deco)
 ========================= */
+
 const BASE_PATH = "/webmic-demos/15-black-gold";
 
+/* MAPA */
 const ADDRESS_Q = encodeURIComponent("Av. Siempre Viva 742, Buenos Aires");
 const MAPS_URL = `https://www.google.com/maps?q=${ADDRESS_Q}&z=16&output=embed`;
 const DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${ADDRESS_Q}`;
 
+/* EVENTO */
 const WHATSAPP_NUMBER = "5491123456789";
 const EVENT_DATE_ISO = "2026-08-24T21:30:00-03:00";
 
@@ -20,8 +23,10 @@ const DRESSCODE = "Elegante.";
 const ALIAS = "sofi.15.mp";
 const FRASE = "Una noche dorada, un recuerdo eterno ✨";
 
-const BASE_PATH = "/webmic-demos/15-black-gold";
+const MENSAJE_ESPECIAL =
+  "Tu presencia es parte de mi noche dorada. Gracias por acompañarme en este momento tan especial 🖤✨";
 
+/* GALERÍA */
 const GALLERY = [
   { src: `${BASE_PATH}/assets/foto1.jpg`, portrait: true },
   { src: `${BASE_PATH}/assets/foto2.jpg`, portrait: false },
@@ -31,177 +36,171 @@ const GALLERY = [
   { src: `${BASE_PATH}/assets/foto6.jpg`, portrait: false },
 ];
 
-
-const MENSAJE_ESPECIAL = 
-"Tu presencia es parte de mi noche dorada. Gracias por acompañarme en este momento tan especial 🖤✨";
-
-
-
+/* HELPERS */
 const $ = (s) => document.querySelector(s);
 const pad2 = (n) => String(n).padStart(2, "0");
 
+/* WHATSAPP */
 function waLink() {
-    const msg = `Hola! Quiero confirmar mi asistencia a los XV 🖤✨
+  const msg = `Hola! Quiero confirmar mi asistencia a los XV 🖤✨
 
 Nombre:
 Cantidad de invitados:
 Restricción alimentaria (si aplica):`;
-    return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 }
 
+/* DATA */
 function fill() {
-    $("#nombre").textContent = INVITADA;
-    $("#fechaTxt").textContent = FECHA_TEXTO;
-    $("#horaTxt").textContent = HORA_TEXTO;
-    $("#lugarTxt").textContent = LUGAR_TEXTO;
-    const msgEl = document.querySelector("#mensajeEspecial");
-if (msgEl) msgEl.textContent = MENSAJE_ESPECIAL;
+  $("#nombre").textContent = INVITADA;
+  $("#fechaTxt").textContent = FECHA_TEXTO;
+  $("#horaTxt").textContent = HORA_TEXTO;
+  $("#lugarTxt").textContent = LUGAR_TEXTO;
 
-const firma = document.querySelector("#firmaNombre");
-if (firma) firma.textContent = INVITADA;
+  const msgEl = $("#mensajeEspecial");
+  if (msgEl) msgEl.textContent = MENSAJE_ESPECIAL;
 
+  const firma = $("#firmaNombre");
+  if (firma) firma.textContent = INVITADA;
 
-    const dressEl = $("#dresscodeTxt");
-    if (dressEl) dressEl.textContent = DRESSCODE;
+  const dressEl = $("#dresscodeTxt");
+  if (dressEl) dressEl.textContent = DRESSCODE;
 
-    const aliasEl = $("#aliasTxt");
-    if (aliasEl) aliasEl.textContent = ALIAS;
+  const aliasEl = $("#aliasTxt");
+  if (aliasEl) aliasEl.textContent = ALIAS;
 
-    const fraseEl = $("#fraseTxt");
-    if (fraseEl) fraseEl.textContent = FRASE;
+  const fraseEl = $("#fraseTxt");
+  if (fraseEl) fraseEl.textContent = FRASE;
 
-    $("#mapFrame").src = MAPS_URL;
+  $("#mapFrame").src = MAPS_URL;
 
-    const wa = waLink();
-    $("#btnConfirm").href = wa;
-    $("#btnConfirm2").href = wa;
-    $("#fabConfirm").href = wa;
+  const wa = waLink();
+  $("#btnConfirm").href = wa;
+  $("#btnConfirm2").href = wa;
+  $("#fabConfirm").href = wa;
 
+  $("#mFecha").textContent = FECHA_TEXTO;
+  $("#mHora").textContent = HORA_TEXTO;
+  $("#mLugar").textContent = LUGAR_TEXTO;
+  $("#mDir").textContent = DIRECCION_TEXTO;
 
-    $("#mFecha").textContent = FECHA_TEXTO;
-    $("#mHora").textContent = HORA_TEXTO;
-    $("#mLugar").textContent = LUGAR_TEXTO;
-    $("#mDir").textContent = DIRECCION_TEXTO;
-    // título y dirección del map card
-    const mapTitle = document.querySelector("#mapTitle");
-    const mapSub = document.querySelector("#mapSub");
-    if (mapTitle) mapTitle.textContent = LUGAR_TEXTO;
-    if (mapSub) mapSub.textContent = DIRECCION_TEXTO;
-// MAP
-$("#mapFrame").src = MAPS_URL;
+  const mapTitle = $("#mapTitle");
+  const mapSub = $("#mapSub");
+  if (mapTitle) mapTitle.textContent = LUGAR_TEXTO;
+  if (mapSub) mapSub.textContent = DIRECCION_TEXTO;
 
-// ÚNICO botón para abrir/ruta
-const btnRoute = document.querySelector("#btnRoute");
-if (btnRoute) btnRoute.href = DIRECTIONS_URL;
+  const btnRoute = $("#btnRoute");
+  if (btnRoute) btnRoute.href = DIRECTIONS_URL;
 
-// Si también dejaste un botón en el modal (opcional)
-const btnRoute2 = document.querySelector("#btnRoute2");
-if (btnRoute2) btnRoute2.href = DIRECTIONS_URL;
-
-
-
+  const btnRoute2 = $("#btnRoute2");
+  if (btnRoute2) btnRoute2.href = DIRECTIONS_URL;
 }
 
+/* GALERÍA */
 function renderGallery() {
-    const gallery = $("#gallery");
-    gallery.innerHTML = GALLERY.map(img => `
-    <div class="gitem ${img.portrait ? "is-portrait" : ""}">
-      <img src="${img.src}" alt="">
-    </div>
-  `).join("");
+  const gallery = $("#gallery");
+  if (!gallery) return;
+
+  gallery.innerHTML = GALLERY.map(
+    (img) => `
+      <div class="gitem ${img.portrait ? "is-portrait" : ""}">
+        <img src="${img.src}" alt="">
+      </div>
+    `
+  ).join("");
 }
 
+/* COUNTDOWN */
 function countdown() {
-    const target = new Date(EVENT_DATE_ISO).getTime();
+  const target = new Date(EVENT_DATE_ISO).getTime();
 
-    const tick = () => {
-        const now = Date.now();
-        let diff = Math.max(0, target - now);
+  const tick = () => {
+    let diff = Math.max(0, target - Date.now());
 
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        diff -= days * (1000 * 60 * 60 * 24);
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    diff -= days * (1000 * 60 * 60 * 24);
 
-        const hours = Math.floor(diff / (1000 * 60 * 60));
-        diff -= hours * (1000 * 60 * 60);
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    diff -= hours * (1000 * 60 * 60);
 
-        const mins = Math.floor(diff / (1000 * 60));
-        diff -= mins * (1000 * 60);
+    const mins = Math.floor(diff / (1000 * 60));
+    diff -= mins * (1000 * 60);
 
-        const secs = Math.floor(diff / 1000);
+    const secs = Math.floor(diff / 1000);
 
-        $("#d").textContent = days;
-        $("#h").textContent = pad2(hours);
-        $("#m").textContent = pad2(mins);
-        $("#s").textContent = pad2(secs);
-    };
+    $("#d").textContent = days;
+    $("#h").textContent = pad2(hours);
+    $("#m").textContent = pad2(mins);
+    $("#s").textContent = pad2(secs);
+  };
 
-    tick();
-    setInterval(tick, 1000);
+  tick();
+  setInterval(tick, 1000);
 }
 
+/* MODAL */
 function modalSetup() {
-    const modal = $("#modal");
-    const open = () => modal.classList.add("is-open");
-    const close = () => modal.classList.remove("is-open");
+  const modal = $("#modal");
+  if (!modal) return;
 
-    $("#btnInfo").addEventListener("click", open);
-    $("#modalClose").addEventListener("click", close);
-    $("#modalBack").addEventListener("click", close);
+  const open = () => modal.classList.add("is-open");
+  const close = () => modal.classList.remove("is-open");
 
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") close();
-    });
+  $("#btnInfo")?.addEventListener("click", open);
+  $("#modalClose")?.addEventListener("click", close);
+  $("#modalBack")?.addEventListener("click", close);
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") close();
+  });
 }
 
+/* MÚSICA */
 function musicSetup() {
-    const audio = $("#bgMusic");
-    const btn = $("#musicBtn");
-    const icon = $("#musicIcon");
-    let playing = false;
+  const audio = $("#bgMusic");
+  const btn = $("#musicBtn");
+  const icon = $("#musicIcon");
+  if (!audio || !btn || !icon) return;
 
-    const play = async () => {
-        try {
-            await audio.play();
-            playing = true;
-            icon.textContent = "❚❚";
-        } catch {
-            playing = false;
-            icon.textContent = "▶";
-        }
-    };
+  let playing = false;
 
-    const pause = () => {
-        audio.pause();
-        playing = false;
-        icon.textContent = "▶";
-    };
+  const play = async () => {
+    try {
+      await audio.play();
+      playing = true;
+      icon.textContent = "❚❚";
+    } catch {
+      icon.textContent = "▶";
+    }
+  };
 
-    btn.addEventListener("click", () => {
-        if (playing) pause();
-        else play();
-    });
+  const pause = () => {
+    audio.pause();
+    playing = false;
+    icon.textContent = "▶";
+  };
 
-    window.addEventListener("pointerdown", () => {
-        if (!playing) play();
-    }, { once: true });
+  btn.addEventListener("click", () => (playing ? pause() : play()));
+  window.addEventListener("pointerdown", play, { once: true });
 }
 
+/* COPIAR ALIAS */
 function copyAliasSetup() {
-    const btn = $("#copyAlias");
-    if (!btn) return;
+  const btn = $("#copyAlias");
+  if (!btn) return;
 
-    btn.addEventListener("click", async () => {
-        try {
-            await navigator.clipboard.writeText(ALIAS);
-            btn.textContent = "¡COPIADO! ✅";
-            setTimeout(() => btn.textContent = "COPIAR ALIAS", 1400);
-        } catch {
-            prompt("Copiá el alias:", ALIAS);
-        }
-    });
+  btn.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(ALIAS);
+      btn.textContent = "¡COPIADO! ✅";
+      setTimeout(() => (btn.textContent = "COPIAR ALIAS"), 1400);
+    } catch {
+      prompt("Copiá el alias:", ALIAS);
+    }
+  });
 }
 
-/* Init */
+/* INIT */
 fill();
 renderGallery();
 countdown();
