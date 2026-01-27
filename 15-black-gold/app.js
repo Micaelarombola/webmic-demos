@@ -18,14 +18,17 @@ const DRESSCODE = "Elegante.";
 const ALIAS = "sofi.15.mp";
 const FRASE = "Una noche dorada, un recuerdo eterno ✨";
 
+const BASE_PATH = "/webmic-demos/15-black-gold";
+
 const GALLERY = [
-  { src: "assets/foto1.jpg", portrait: true },
-  { src: "assets/foto2.jpg", portrait: false },
-  { src: "assets/foto3.jpg", portrait: false },
-  { src: "assets/foto4.jpg", portrait: false },
-  { src: "assets/foto5.jpg", portrait: false },
-  { src: "assets/foto6.jpg", portrait: false },
+  { src: `${BASE_PATH}/assets/foto1.jpg`, portrait: true },
+  { src: `${BASE_PATH}/assets/foto2.jpg`, portrait: false },
+  { src: `${BASE_PATH}/assets/foto3.jpg`, portrait: false },
+  { src: `${BASE_PATH}/assets/foto4.jpg`, portrait: false },
+  { src: `${BASE_PATH}/assets/foto5.jpg`, portrait: false },
+  { src: `${BASE_PATH}/assets/foto6.jpg`, portrait: false },
 ];
+
 const MENSAJE_ESPECIAL = 
 "Tu presencia es parte de mi noche dorada. Gracias por acompañarme en este momento tan especial 🖤✨";
 
