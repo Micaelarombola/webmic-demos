@@ -1,6 +1,8 @@
 /* =========================
    CONFIG • 15 Black & Gold (Art Deco)
 ========================= */
+const BASE_PATH = "/webmic-demos/15-black-gold";
+
 const ADDRESS_Q = encodeURIComponent("Av. Siempre Viva 742, Buenos Aires");
 const MAPS_URL = `https://www.google.com/maps?q=${ADDRESS_Q}&z=16&output=embed`;
 const DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${ADDRESS_Q}`;
@@ -28,6 +30,7 @@ const GALLERY = [
   { src: `${BASE_PATH}/assets/foto5.jpg`, portrait: false },
   { src: `${BASE_PATH}/assets/foto6.jpg`, portrait: false },
 ];
+
 
 const MENSAJE_ESPECIAL = 
 "Tu presencia es parte de mi noche dorada. Gracias por acompañarme en este momento tan especial 🖤✨";
