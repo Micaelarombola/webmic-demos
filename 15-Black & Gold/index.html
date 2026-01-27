@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mis XV • Black & Gold</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cinzel:wght@500;600;700&family=Montserrat:wght@300;500;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <div class="brand">
+        <span class="brandMark">⬣</span>
+        <span>15 Años</span>
+      </div>
+
+      <div class="topbar__right">
+        <button class="iconbtn" id="musicBtn" aria-label="Música">
+          <span id="musicIcon">▶</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Background -->
+  <div class="bg" aria-hidden="true"></div>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="decoFrame">
+        <div class="decoCorners"></div>
+
+        <div class="heroGrid">
+          <div class="heroLeft">
+            <div class="decoLine"></div>
+            <div class="small">TE INVITO A CELEBRAR</div>
+
+            <h1 class="title">
+              <span class="script">Mis</span> <span class="gold">XV</span>
+            </h1>
+
+            <div class="name" id="nombre">SOFÍA</div>
+            <p class="phrase" id="fraseTxt">Una noche dorada, un recuerdo eterno ✨</p>
+
+            <div class="ctaRow">
+              <a class="btn btnGold" id="btnConfirm" href="#">CONFIRMAR ASISTENCIA</a>
+              <button class="btn btnGhost" id="btnInfo" type="button">VER INFO</button>
+            </div>
+
+            <div class="hint">Deslizá para ver la invitación ⬇</div>
+          </div>
+
+          <aside class="heroRight">
+            <div class="infoCard">
+              <div class="infoRow">
+                <span class="k">FECHA</span>
+                <span class="v" id="fechaTxt">Sábado 24 de Agosto 2026</span>
+              </div>
+              <div class="infoRow">
+                <span class="k">HORA</span>
+                <span class="v" id="horaTxt">21:30 hs</span>
+              </div>
+              <div class="infoRow">
+                <span class="k">LUGAR</span>
+                <span class="v" id="lugarTxt">Salón “Janeos”</span>
+              </div>
+
+              <div class="split"></div>
+
+              <div class="infoRow">
+                <span class="k">DRESS CODE</span>
+                <span class="v" id="dresscodeTxt">Elegante</span>
+              </div>
+
+              <div class="infoRow">
+                <span class="k">REGALO</span>
+                <span class="v">ALIAS: <span class="alias" id="aliasTxt">sofi.15.mp</span></span>
+              </div>
+
+              <button class="copyBtn" id="copyAlias" type="button">COPIAR ALIAS</button>
+            </div>
+
+            <div class="countCard">
+              <div class="countTitle">FALTAN</div>
+              <div class="cdGrid">
+                <div class="cdBox"><div class="cdNum" id="d">--</div><div class="cdLbl">DÍAS</div></div>
+                <div class="cdBox"><div class="cdNum" id="h">--</div><div class="cdLbl">HS</div></div>
+                <div class="cdBox"><div class="cdNum" id="m">--</div><div class="cdLbl">MIN</div></div>
+                <div class="cdBox"><div class="cdNum" id="s">--</div><div class="cdLbl">SEG</div></div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+<!-- EXTRA -->
+<section class="section">
+  <div class="sectionHead">
+    <h2>Detalles de la noche</h2>
+    <p>Para que disfrutes sin preocuparte por nada ✨</p>
+  </div>
+
+  <div class="extras">
+    <div class="xcard">
+      <div class="xk">Itinerario</div>
+      <div class="xv" id="it1">21:30 • Recepción</div>
+      <div class="xv" id="it2">22:30 • Cena</div>
+      <div class="xv" id="it3">00:00 • Vals & fiesta</div>
+    </div>
+
+    <div class="xcard">
+      <div class="xk">Mesa</div>
+      <div class="xv" id="mesaTxt">Tu mesa se confirma al ingresar ✨</div>
+      <div class="chipRow">
+        <span class="chip" id="chip1">Sin niños</span>
+        <span class="chip" id="chip2">Barra libre</span>
+      </div>
+    </div>
+
+    <div class="xcard">
+      <div class="xk">Notas</div>
+      <div class="xv" id="nota1">Te esperamos con tu mejor look 🖤</div>
+      <div class="xv" id="nota2">Confirmar antes del 10/08</div>
+    </div>
+  </div>
+</section>
+
+    <!-- GALLERY -->
+    <section class="section">
+      <div class="sectionHead">
+        <h2>Galería</h2>
+        <p>Black vibes & gold shine ✨</p>
+      </div>
+
+      <div class="gallery" id="gallery"></div>
+    </section>
+
+   <!-- MAP -->
+<section class="section">
+  <div class="sectionHead">
+    <h2>Ubicación</h2>
+    <p>Te dejamos el mapa para llegar fácil.</p>
+  </div>
+
+  <div class="mapCard">
+    <div class="mapTop">
+      <div>
+        <div class="mapTitle" id="mapTitle">Salón Janos</div>
+        <div class="mapSub" id="mapSub">Av. Siempre Viva 742, Buenos Aires</div>
+      </div>
+
+      <div class="mapBtns">
+        <a class="btn btnGhost" id="btnMaps2" href="#" target="_blank" rel="noreferrer">Abrir en Maps</a>
+        <a class="btn btnGold" id="btnRoute" href="#" target="_blank" rel="noreferrer">Cómo llegar</a>
+      </div>
+    </div>
+
+    <div class="mapWrap mapWrap--pretty">
+      <iframe
+        id="mapFrame"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+        src=""
+      ></iframe>
+      <div class="mapOverlay" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Floating confirm -->
+  <a class="fab" id="fabConfirm" href="#">Confirmar</a>
+
+  <!-- Modal -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modalBack" id="modalBack"></div>
+    <div class="modalPanel" role="dialog" aria-modal="true">
+      <button class="x" id="modalClose" aria-label="Cerrar">✕</button>
+      <h3>Información</h3>
+
+      <div class="modalGrid">
+        <div class="mline"><span class="k">Fecha</span><span class="v" id="mFecha">—</span></div>
+        <div class="mline"><span class="k">Hora</span><span class="v" id="mHora">—</span></div>
+        <div class="mline"><span class="k">Lugar</span><span class="v" id="mLugar">—</span></div>
+        <div class="mline"><span class="k">Dirección</span><span class="v" id="mDir">—</span></div>
+      </div>
+
+      <div class="modalActions">
+        <a class="btn btnGold" id="btnConfirm2" href="#">Confirmar por WhatsApp</a>
+        <a class="btn btnGhost" id="btnMaps" href="#" target="_blank" rel="noreferrer">Abrir en Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="assets/TINI - Great Escape (Official Video).mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="app.js"></script>
+</body>
+</html>
