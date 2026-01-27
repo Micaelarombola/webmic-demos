@@ -1,9 +1,9 @@
 /* =========================
    CONFIG • 15 Black & Gold (Art Deco)
 ========================= */
-
-const MAPS_URL = "https://www.google.com/maps?q=Av.+Siempre+Viva+742,+Buenos+Aires&output=embed";
-const MAPS_LINK = "https://www.google.com/maps?q=Av.+Siempre+Viva+742,+Buenos+Aires";
+const ADDRESS_Q = encodeURIComponent("Av. Siempre Viva 742, Buenos Aires");
+const MAPS_URL = `https://www.google.com/maps?q=${ADDRESS_Q}&z=16&output=embed`;
+const DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${ADDRESS_Q}`;
 
 const WHATSAPP_NUMBER = "5491123456789";
 const EVENT_DATE_ISO = "2026-08-24T21:30:00-03:00";
@@ -26,6 +26,8 @@ const GALLERY = [
   { src: "assets/foto5.jpg", portrait: false },
   { src: "assets/foto6.jpg", portrait: false },
 ];
+const MENSAJE_ESPECIAL = 
+"Tu presencia es parte de mi noche dorada. Gracias por acompañarme en este momento tan especial 🖤✨";
 
 
 
@@ -46,6 +48,12 @@ function fill() {
     $("#fechaTxt").textContent = FECHA_TEXTO;
     $("#horaTxt").textContent = HORA_TEXTO;
     $("#lugarTxt").textContent = LUGAR_TEXTO;
+    const msgEl = document.querySelector("#mensajeEspecial");
+if (msgEl) msgEl.textContent = MENSAJE_ESPECIAL;
+
+const firma = document.querySelector("#firmaNombre");
+if (firma) firma.textContent = INVITADA;
+
 
     const dressEl = $("#dresscodeTxt");
     if (dressEl) dressEl.textContent = DRESSCODE;
@@ -63,7 +71,6 @@ function fill() {
     $("#btnConfirm2").href = wa;
     $("#fabConfirm").href = wa;
 
-    $("#btnMaps").href = MAPS_LINK;
 
     $("#mFecha").textContent = FECHA_TEXTO;
     $("#mHora").textContent = HORA_TEXTO;
@@ -74,16 +81,18 @@ function fill() {
     const mapSub = document.querySelector("#mapSub");
     if (mapTitle) mapTitle.textContent = LUGAR_TEXTO;
     if (mapSub) mapSub.textContent = DIRECCION_TEXTO;
+// MAP
+$("#mapFrame").src = MAPS_URL;
 
-    // botones del mapa
-    const btnMaps2 = document.querySelector("#btnMaps2");
-    const btnRoute = document.querySelector("#btnRoute");
-    if (btnMaps2) btnMaps2.href = MAPS_LINK;
+// ÚNICO botón para abrir/ruta
+const btnRoute = document.querySelector("#btnRoute");
+if (btnRoute) btnRoute.href = DIRECTIONS_URL;
 
-    // "Cómo llegar" usa Google Maps Directions
-    if (btnRoute) {
-        btnRoute.href = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(DIRECCION_TEXTO)}`;
-    }
+// Si también dejaste un botón en el modal (opcional)
+const btnRoute2 = document.querySelector("#btnRoute2");
+if (btnRoute2) btnRoute2.href = DIRECTIONS_URL;
+
+
 
 }
 

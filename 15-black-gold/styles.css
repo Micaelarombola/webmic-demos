@@ -421,3 +421,48 @@ body{
 @media (max-width: 920px){
   .xcard{grid-column: span 12;}
 }
+
+/* MENSAJE ESPECIAL */
+.specialCard{
+  position:relative;
+  border-radius: 22px;
+  border:1px solid rgba(214,177,94,.30);
+  background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.35));
+  box-shadow: var(--shadow);
+  padding: 26px 22px;
+  text-align:center;
+  overflow:hidden;
+}
+
+.specialDeco{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(600px 180px at 50% 0%, rgba(214,177,94,.18), transparent 60%);
+  pointer-events:none;
+}
+
+.specialTag{
+  font-size:.72rem;
+  letter-spacing:.22em;
+  font-weight:1000;
+  text-transform:uppercase;
+  color: rgba(255,255,255,.65);
+  margin-bottom: 10px;
+}
+
+.specialText{
+  font-size: 1.05rem;
+  line-height:1.8;
+  color: rgba(255,255,255,.85);
+  max-width: 58ch;
+  margin: 0 auto 18px;
+}
+
+.specialSign{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+  font-size:1.2rem;
+}
