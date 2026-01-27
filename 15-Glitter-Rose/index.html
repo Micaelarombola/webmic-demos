@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mis XV • Glitter Rose</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Montserrat:wght@300;500;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <div class="pill">15 Años</div>
+
+      <div class="topbar__right">
+        <a class="pill pill--cta" id="btnConfirmTop" href="#">Confirmar</a>
+
+        <button class="music" id="musicBtn" aria-label="Música">
+          <span id="musicIcon">▶</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Background -->
+  <div class="bg"></div>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="heroCard">
+        <div class="heroHead">
+          <div class="smallcaps">TE INVITO A CELEBRAR</div>
+          <h1 class="title"><span class="script">Mis</span> <span class="script">XV</span></h1>
+          <div class="name" id="nombre">Florencia</div>
+        </div>
+
+        <div class="infoGrid">
+          <div class="ibox">
+            <div class="lbl">Fecha</div>
+            <div class="val" id="fechaTxt">Sábado 24 de Agosto 2026</div>
+          </div>
+          <div class="ibox">
+            <div class="lbl">Hora</div>
+            <div class="val" id="horaTxt">21:30 hs</div>
+          </div>
+          <div class="ibox">
+            <div class="lbl">Lugar</div>
+            <div class="val" id="lugarTxt">Salón “Janeos”</div>
+          </div>
+        </div>
+
+        <div class="heroActions">
+          <a class="btn btn--primary" id="btnConfirm" href="#">Confirmar asistencia</a>
+          <button class="btn btn--ghost" id="btnInfo" type="button">Ver info</button>
+        </div>
+
+        <div class="hint">Deslizá para ver la invitación ✨</div>
+      </div>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section class="countdown">
+      <h2>Faltan</h2>
+      <div class="cdGrid">
+        <div class="cdBox"><div class="cdNum" id="d">--</div><div class="cdLbl">Días</div></div>
+        <div class="cdBox"><div class="cdNum" id="h">--</div><div class="cdLbl">Horas</div></div>
+        <div class="cdBox"><div class="cdNum" id="m">--</div><div class="cdLbl">Min</div></div>
+        <div class="cdBox"><div class="cdNum" id="s">--</div><div class="cdLbl">Seg</div></div>
+      </div>
+    </section>
+<!-- DETAILS -->
+<section class="section">
+  <div class="sectionHead">
+    <h2>Detalles</h2>
+    <p>Todo lo importante para que no te falte nada 💗</p>
+  </div>
+
+  <div class="details">
+    <div class="dcard">
+      <h3>Dress code</h3>
+      <p id="dresscodeTxt">Elegante / Elegante sport.</p>
+    </div>
+
+    <div class="dcard">
+      <h3>Regalo</h3>
+      <p id="regaloTxt">Alias: <span class="alias" id="aliasTxt">Flor15.mp</span></p>
+      <button class="copyBtn" id="copyAlias" type="button">Copiar alias</button>
+    </div>
+
+    <div class="dcard">
+      <h3>Confirmación</h3>
+      <p id="confirmTxt">Confirmá tu asistencia por WhatsApp.</p>
+    </div>
+  </div>
+</section>
+
+    <!-- GALLERY -->
+    <section class="section">
+      <div class="sectionHead">
+        <h2>Galería</h2>
+        <p>Un poquito de la previa ✨</p>
+      </div>
+
+      <div class="gallery" id="gallery"></div>
+    </section>
+
+    <!-- MAP -->
+    <section class="section">
+      <div class="sectionHead">
+        <h2>¿Dónde es?</h2>
+        <p>Te dejamos el mapa para llegar fácil.</p>
+      </div>
+
+      <div class="mapWrap">
+        <iframe
+          id="mapFrame"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+          src=""
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footerInner">
+        <div class="muted">WebMic • Invitaciones Web</div>
+        <a class="muted" href="#inicio">Volver arriba</a>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modalBack" id="modalBack"></div>
+
+    <div class="modalPanel" role="dialog" aria-modal="true">
+      <button class="x" id="modalClose" aria-label="Cerrar">✕</button>
+
+      <h3>Información</h3>
+
+      <div class="modalGrid">
+        <div class="mline"><span class="k">Fecha</span><span class="v" id="mFecha">—</span></div>
+        <div class="mline"><span class="k">Hora</span><span class="v" id="mHora">—</span></div>
+        <div class="mline"><span class="k">Lugar</span><span class="v" id="mLugar">—</span></div>
+        <div class="mline"><span class="k">Dirección</span><span class="v" id="mDir">—</span></div>
+      </div>
+
+      <div class="modalActions">
+        <a class="btn btn--primary" id="btnConfirm2" href="#">Confirmar por WhatsApp</a>
+        <a class="btn btn--ghost" id="btnMaps" href="#" target="_blank" rel="noreferrer">Abrir en Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="assets/TINI - Great Escape (Official Video).mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="app.js"></script>
+</body>
+</html>
