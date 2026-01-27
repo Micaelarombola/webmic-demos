@@ -19,14 +19,15 @@ const ALIAS = "sofi.15.mp";
 const FRASE = "Una noche dorada, un recuerdo eterno ✨";
 
 const GALLERY = [
-    { src: "assets/foto1.jpg", portrait: true },
-    { src: "assets/foto2.jpg", portrait: false },
-    { src: "assets/foto3.jpg", portrait: false },
-    { src: "assets/foto4.jpg", portrait: false },
-    { src: "assets/foto5.jpg", portrait: false },
-    { src: "assets/foto6.jpg", portrait: false },
-
+  { src: "assets/foto1.jpg", portrait: true },
+  { src: "assets/foto2.jpg", portrait: false },
+  { src: "assets/foto3.jpg", portrait: false },
+  { src: "assets/foto4.jpg", portrait: false },
+  { src: "assets/foto5.jpg", portrait: false },
+  { src: "assets/foto6.jpg", portrait: false },
 ];
+
+
 
 const $ = (s) => document.querySelector(s);
 const pad2 = (n) => String(n).padStart(2, "0");
@@ -69,20 +70,20 @@ function fill() {
     $("#mLugar").textContent = LUGAR_TEXTO;
     $("#mDir").textContent = DIRECCION_TEXTO;
     // título y dirección del map card
-const mapTitle = document.querySelector("#mapTitle");
-const mapSub = document.querySelector("#mapSub");
-if(mapTitle) mapTitle.textContent = LUGAR_TEXTO;
-if(mapSub) mapSub.textContent = DIRECCION_TEXTO;
+    const mapTitle = document.querySelector("#mapTitle");
+    const mapSub = document.querySelector("#mapSub");
+    if (mapTitle) mapTitle.textContent = LUGAR_TEXTO;
+    if (mapSub) mapSub.textContent = DIRECCION_TEXTO;
 
-// botones del mapa
-const btnMaps2 = document.querySelector("#btnMaps2");
-const btnRoute = document.querySelector("#btnRoute");
-if(btnMaps2) btnMaps2.href = MAPS_LINK;
+    // botones del mapa
+    const btnMaps2 = document.querySelector("#btnMaps2");
+    const btnRoute = document.querySelector("#btnRoute");
+    if (btnMaps2) btnMaps2.href = MAPS_LINK;
 
-// "Cómo llegar" usa Google Maps Directions
-if(btnRoute){
-  btnRoute.href = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(DIRECCION_TEXTO)}`;
-}
+    // "Cómo llegar" usa Google Maps Directions
+    if (btnRoute) {
+        btnRoute.href = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(DIRECCION_TEXTO)}`;
+    }
 
 }
 
