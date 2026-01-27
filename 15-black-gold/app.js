@@ -28,12 +28,12 @@ const MENSAJE_ESPECIAL =
 
 /* GALERÍA */
 const GALLERY = [
-  { src: `${BASE_PATH}/assets/foto1.jpg`, portrait: true },
-  { src: `${BASE_PATH}/assets/foto2.jpg`, portrait: false },
-  { src: `${BASE_PATH}/assets/foto3.jpg`, portrait: false },
-  { src: `${BASE_PATH}/assets/foto4.jpg`, portrait: false },
-  { src: `${BASE_PATH}/assets/foto5.jpg`, portrait: false },
-  { src: `${BASE_PATH}/assets/foto6.jpg`, portrait: false },
+  { src: `${BASE_PATH}/assets/Foto1.jpg`, portrait: true },
+  { src: `${BASE_PATH}/assets/Foto2.jpg`, portrait: false },
+  { src: `${BASE_PATH}/assets/Foto3.jpg`, portrait: false },
+  { src: `${BASE_PATH}/assets/Foto4.jpg`, portrait: false },
+  { src: `${BASE_PATH}/assets/Foto5.jpg`, portrait: false },
+  { src: `${BASE_PATH}/assets/Foto6.jpg`, portrait: false },
 ];
 
 /* HELPERS */
