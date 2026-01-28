@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mis XV • Boho Nude</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;600;800&family=Parisienne&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="./app.js" defer></script>
+</head>
+
+<body>
+  <!-- ===== PORTADA (SOLA) ===== -->
+  <header class="cover" id="top">
+    <img class="cover__img" src="./assets/foto7.jpg" alt="Portada">
+
+    <div class="cover__overlay" aria-hidden="true"></div>
+    <div class="cover__sparkle" aria-hidden="true"></div>
+
+    <div class="cover__content">
+      <div class="cover__title">MIS <span class="cover__xv">XV</span></div>
+      <div class="cover__name" id="nombre">Carla</div>
+    </div>
+
+    <a class="cover__hint" href="#inv" aria-label="Ir a la invitación">
+      <span>Deslizá</span>
+      <span class="cover__arrow">↓</span>
+    </a>
+  </header>
+
+  <!-- ===== SECCIONES ===== -->
+  <main class="wrap" id="inv">
+
+    <!-- CONFIRMAR -->
+    <section class="section section--card">
+      <div class="sectionHead">
+        <h2>Confirmación</h2>
+        <p>Ayudanos confirmando para organizar todo mejor 🤍</p>
+      </div>
+
+      <div class="centerBox">
+        <a class="btn btn--primary btn--xl" id="btnConfirm" href="#" target="_blank" rel="noreferrer">
+          Confirmar asistencia por WhatsApp
+        </a>
+        <p class="smallMuted">Confirmar antes del <span id="fechaLimite">10/08</span></p>
+      </div>
+    </section>
+
+    <!-- DETALLES -->
+    <section class="section">
+      <div class="sectionHead">
+        <h2>Detalles</h2>
+        <p>Todo lo importante.</p>
+      </div>
+
+      <div class="grid3">
+        <article class="tile">
+          <div class="tileIcon">📅</div>
+          <h3>Fecha</h3>
+          <p class="tileBig" id="fechaTxt">Sábado 24 de Agosto 2026</p>
+        </article>
+
+        <article class="tile">
+          <div class="tileIcon">⏰</div>
+          <h3>Hora</h3>
+          <p class="tileBig" id="horaTxt">21:30 hs</p>
+        </article>
+
+        <article class="tile">
+          <div class="tileIcon">📍</div>
+          <h3>Lugar</h3>
+          <p class="tileBig" id="lugarTxt">Salón “Janos”</p>
+          <p class="tileMuted" id="dirTxt">Av. Siempre Viva 742, Buenos Aires</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- DRESS CODE -->
+    <section class="section section--soft">
+      <div class="sectionHead">
+        <h2>Dress code</h2>
+        <p>Elegante ✨</p>
+      </div>
+
+      <div class="dressRow">
+        <div class="dressCard">
+          <div class="dressIcons" aria-hidden="true">
+            <span class="dressIcon">
+              <!-- corbata -->
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2l3 4-3 4-3-4 3-4z"></path>
+                <path d="M9 10l3 3 3-3"></path>
+                <path d="M12 13l-2 9 2-2 2 2-2-9z"></path>
+              </svg>
+            </span>
+            <span class="dressIcon">
+              <!-- vestido -->
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 3c2 0 3 2 3 4l2 2-2 3 2 9H7l2-9-2-3 2-2c0-2 1-4 3-4z"></path>
+              </svg>
+            </span>
+          </div>
+
+          <div class="dressText">
+            <span class="pill" id="dresscodeTxt">Elegante</span>
+            <p class="smallMuted">Tonos nude / arena / claros recomendados 🤍</p>
+          </div>
+        </div>
+
+        <div class="noteCard">
+          <h3>Tip Boho</h3>
+          <p class="smallMuted">Detalles boho (flores secas / tonos tierra) quedan increíbles.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- REGALOS -->
+    <section class="section section--card">
+      <div class="sectionHead">
+        <h2>Regalos</h2>
+        <p>Alias para transferencias.</p>
+      </div>
+
+      <div class="centerBox">
+        <button class="btn btn--ghost btn--xl" id="btnRegalos" type="button">
+          Ver alias / regalos
+        </button>
+      </div>
+    </section>
+
+    <!-- UBICACIÓN -->
+    <section class="section">
+      <div class="sectionHead">
+        <h2>Ubicación</h2>
+        <p>Se abre en Google Maps.</p>
+      </div>
+
+      <div class="centerBox">
+        <a class="btn btn--primary btn--xl" id="btnUbicacion" href="#" target="_blank" rel="noreferrer">
+          Abrir ubicación en Google Maps
+        </a>
+        <p class="smallMuted" id="dirTxt2">Av. Siempre Viva 742, Buenos Aires</p>
+      </div>
+    </section>
+
+    <!-- INSTAGRAM -->
+    <section class="section section--soft">
+      <div class="sectionHead">
+        <h2>Instagram</h2>
+        <p>Subí tus fotos y etiquetame ✨</p>
+      </div>
+
+      <div class="igCard">
+        <div>
+          <div class="igLine">
+            <span class="igK">IG</span>
+            <a class="igV" id="igLink" href="#" target="_blank" rel="noreferrer">@carla.xv</a>
+          </div>
+          <div class="igLine">
+            <span class="igK">HASHTAG</span>
+            <span class="igV" id="hashtagTxt">#XVdeSofía</span>
+          </div>
+        </div>
+
+        <a class="btn btn--ghost" id="btnIg" href="#" target="_blank" rel="noreferrer">Abrir Instagram</a>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="section">
+      <div class="sectionHead">
+        <h2>Galería</h2>
+        <p>Sin recortes ✨</p>
+      </div>
+
+      <div class="gallery" id="gallery"></div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footerInner">
+      <small>© <span id="year"></span> · Invitación web</small>
+      <small class="muted">Hecho con 🤍 para <span id="footerName">SOFÍA</span></small>
+      <a class="mutedLink" href="#top">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <a class="fab" id="fabConfirm" href="#" target="_blank" rel="noreferrer">Confirmar</a>
+
+  <!-- MODAL Regalos -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modalBack" id="modalBack" data-close="1"></div>
+
+    <div class="modalPanel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="x" id="modalClose" data-close="1" aria-label="Cerrar">✕</button>
+
+      <h3 id="modalTitle">Regalos</h3>
+      <p class="mutedP">Alias para transferencias:</p>
+
+      <div class="aliasBox">
+        <div class="aliasLine">
+          <span class="aliasK">ALIAS</span>
+          <span class="aliasV" id="aliasTxt">carli.mp</span>
+        </div>
+        <button class="btn btn--primary" id="copyAlias" type="button">Copiar alias</button>
+      </div>
+
+      <div class="modalActions">
+        <button class="btn btn--ghost" id="btnCerrar" data-close="1" type="button">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
