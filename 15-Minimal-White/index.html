@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>15 • Minimal White</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="./app.js" defer></script>
+</head>
+
+<body>
+  <!-- Top -->
+  <header class="top">
+    <div class="wrap top__inner">
+      <a class="brand" href="#inicio">
+        <span class="brand__dot"></span>
+        <span class="brand__txt">Invitación</span>
+      </a>
+
+      <div class="top__actions">
+        <a class="chipLink" id="btnIG" href="#" target="_blank" rel="noreferrer">Instagram</a>
+        <button class="chipLink" id="btnMusic" type="button" aria-label="Música">
+          <span id="musicIcon">▶</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <!-- HERO / PORTADA -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="heroCard">
+          <div class="heroLeft">
+            <p class="kicker">TE INVITO A CELEBRAR</p>
+
+            <h1 class="heroTitle">
+              <span class="script">Mis</span>
+              <span class="roman">XV</span>
+            </h1>
+
+            <div class="name" id="nombre">SOFÍA</div>
+            <p class="phrase" id="fraseTxt">Una noche especial para compartir ✨</p>
+
+            <div class="infoGrid">
+              <div class="infoItem">
+                <div class="infoK">Fecha</div>
+                <div class="infoV" id="fechaTxt">—</div>
+              </div>
+              <div class="infoItem">
+                <div class="infoK">Hora</div>
+                <div class="infoV" id="horaTxt">—</div>
+              </div>
+              <div class="infoItem full">
+                <div class="infoK">Lugar</div>
+                <div class="infoV" id="lugarTxt">—</div>
+                <div class="infoS" id="dirTxt">—</div>
+              </div>
+            </div>
+
+            <!-- ✅ Confirmar: UN SOLO BOTÓN -->
+            <div class="heroCta">
+              <a class="btn btnDark" id="btnConfirm" href="#" target="_blank" rel="noreferrer">
+                Confirmar asistencia
+              </a>
+            </div>
+
+            <div class="micro">
+              Subí fotos y etiquetá a <strong id="igHandleTxt">@sofia.15</strong> · <span id="hashtagTxt">#SofiaXV</span>
+            </div>
+          </div>
+
+          <!-- ✅ Foto al lado de Mis XV -->
+          <aside class="heroRight">
+            <div class="photoFrame">
+              <div class="photo" id="coverPhoto" aria-label="Foto de portada"></div>
+              <div class="photoGlow" aria-hidden="true"></div>
+            </div>
+
+            <div class="miniActions">
+              <button class="btn btnGhost" id="openGifts" type="button">Regalos</button>
+              <button class="btn btnGhost" id="openPlace" type="button">Ubicación</button>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- DRESS CODE -->
+    <section class="section">
+      <div class="wrap">
+        <div class="card">
+          <div class="cardHead">
+            <h2>Dress code</h2>
+            <p class="muted">Para estar a tono con la noche ✨</p>
+          </div>
+
+          <div class="dcRow">
+            <div class="dcIcons" aria-hidden="true">
+              <span class="dcIcon">👔</span>
+              <span class="dcIcon">👗</span>
+            </div>
+            <div class="dcTxt">
+              <div class="dcK">Sugerido</div>
+              <div class="dcV" id="dresscodeTxt">Elegante</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="section">
+      <div class="wrap">
+        <div class="headRow">
+          <h2>Galería</h2>
+          <p class="muted">Algunas fotos para entrar en clima ✨</p>
+        </div>
+
+        <div class="masonry" id="gallery"></div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="wrap footer__inner">
+        <small>© <span id="year"></span> · Invitación web</small>
+        <div class="footer__right">
+          <a class="footer__link" id="btnIG2" href="#" target="_blank" rel="noreferrer">Instagram</a>
+          <a class="footer__btn" id="btnConfirm2" href="#" target="_blank" rel="noreferrer">Confirmar</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- MODAL REGALOS -->
+  <div class="modal" id="giftModal" hidden>
+    <div class="modal__back" data-close="1"></div>
+    <div class="modal__card" role="dialog" aria-modal="true" aria-labelledby="giftTitle">
+      <button class="x" data-close="1" aria-label="Cerrar">✕</button>
+
+      <h3 id="giftTitle">Regalos</h3>
+      <p class="muted">Si querés hacerme un regalo, podés usar mi alias:</p>
+
+      <div class="aliasBox">
+        <div>
+          <div class="aliasK">ALIAS</div>
+          <div class="aliasV" id="aliasTxt">—</div>
+        </div>
+
+        <div class="aliasBtns">
+          <button class="btn btnDark wide" id="btnCopyAlias" type="button">Copiar alias</button>
+          <a class="btn btnGhost wide" id="btnOpenMP" href="#" target="_blank" rel="noreferrer">Abrir Mercado Pago</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL UBICACIÓN -->
+  <div class="modal" id="placeModal" hidden>
+    <div class="modal__back" data-close="1"></div>
+    <div class="modal__card" role="dialog" aria-modal="true" aria-labelledby="placeTitle2">
+      <button class="x" data-close="1" aria-label="Cerrar">✕</button>
+
+      <h3 id="placeTitle2">Ubicación</h3>
+      <p class="muted" id="placeLine">—</p>
+
+      <a class="btn btnDark wide" id="btnMaps" href="#" target="_blank" rel="noreferrer">
+        Abrir en Google Maps
+      </a>
+    </div>
+  </div>
+
+  <!-- Audio -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="./assets/TINI - Great Escape (Official Video).mp3" type="audio/mpeg" />
+  </audio>
+</body>
+</html>
