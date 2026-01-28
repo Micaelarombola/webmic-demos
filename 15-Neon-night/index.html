@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mis XV • Neon Night</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="./app.js" defer></script>
+</head>
+
+<body>
+
+  <!-- TOPBAR (música izquierda / neon night derecha) -->
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <button class="musicBtn" id="musicBtn" aria-label="Música">
+        <span id="musicIcon">▶</span>
+      </button>
+
+      <div class="brand">
+        <span class="brandDot"></span>
+        <span>Neon Night</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- BACKGROUND -->
+  <div class="bg" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- HERO (PORTADA) -->
+  <section class="hero" id="inicio" aria-label="Portada">
+    <div class="heroCard">
+      <div class="pill">NEON NIGHT</div>
+
+      <div class="heroTitle">
+        <div class="heroSmall">MIS</div>
+        <div class="heroXV">XV</div>
+      </div>
+
+      <div class="heroName" id="nombre">JAZMIN</div>
+      <p class="heroPhrase" id="fraseTxt">Noche neón, recuerdos eternos ✨</p>
+
+      <a class="scrollBtn" href="#contenido" id="btnScroll">
+        DESLIZÁ <span aria-hidden="true">↓</span>
+      </a>
+    </div>
+
+    <!-- Floating confirm -->
+    <a class="fab" id="fabConfirm" href="#confirmar">Confirmar</a>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main id="contenido" class="wrap main">
+
+    <!-- DETALLES -->
+    <section class="section">
+      <div class="sectionHead">
+        <h2>Detalles</h2>
+        <p>Todo lo importante para esa noche 💜</p>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <div class="row">
+            <span class="k">FECHA</span>
+            <span class="v" id="fechaTxt">Sábado 24 de Agosto 2026</span>
+          </div>
+          <div class="row">
+            <span class="k">HORA</span>
+            <span class="v" id="horaTxt">21:30 hs</span>
+          </div>
+          <div class="row">
+            <span class="k">LUGAR</span>
+            <span class="v" id="lugarTxt">Salón “Janos”</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <button class="btn neon" id="btnUbicacion" type="button">UBICACIÓN</button>
+          <p class="tiny">Se abre Google Maps en una pestaña nueva.</p>
+        </div>
+
+        <div class="card">
+          <div class="countTitle">Cuenta regresiva</div>
+          <div class="cd">
+            <div class="cdBox"><div class="cdNum" id="d">--</div><div class="cdLbl">DÍAS</div></div>
+            <div class="cdBox"><div class="cdNum" id="h">--</div><div class="cdLbl">HS</div></div>
+            <div class="cdBox"><div class="cdNum" id="m">--</div><div class="cdLbl">MIN</div></div>
+            <div class="cdBox"><div class="cdNum" id="s">--</div><div class="cdLbl">SEG</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DRESS CODE -->
+    <section class="section">
+      <div class="sectionHead">
+        <h2>Dress code</h2>
+        <p>Elegante con toque neón ✨</p>
+      </div>
+
+      <div class="card">
+        <div class="dressRow">
+          <div class="dressIcon" aria-hidden="true">👔</div>
+          <div>
+            <div class="dressTitle">Elegante</div>
+            <div class="dressSub">Detalles fucsia / violeta, brillos y accesorios neón</div>
+          </div>
+          <div class="dressIcon" aria-hidden="true">👗</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REGALOS / ALIAS -->
+    <section class="section">
+      <div class="sectionHead">
+        <h2>Regalos</h2>
+        <p>Si querés regalarme algo 💜</p>
+      </div>
+
+      <div class="card">
+        <button class="btn ghost" id="btnAlias" type="button">VER / COPIAR ALIAS</button>
+
+        <div class="aliasBox" id="aliasBox" hidden>
+          <div class="aliasLine">
+            <span class="k">ALIAS</span>
+            <span class="v alias" id="aliasTxt">Jaz.15.mp</span>
+          </div>
+          <div class="tiny">Tocá el botón para copiar.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONFIRMAR ASISTENCIA (mini formulario neon) -->
+    <section class="section" id="confirmar">
+      <div class="sectionHead">
+        <h2>Confirmación</h2>
+        <p>Ayudanos confirmando para organizar todo mejor 💜</p>
+      </div>
+
+      <div class="card formCard">
+        <form id="rsvpForm" autocomplete="on">
+          <div class="formGrid">
+            <label class="field">
+              <span>Nombre y apellido</span>
+              <input id="fNombre" type="text" placeholder="Ej: Lucía Pérez" required>
+            </label>
+
+            <label class="field">
+              <span>Cantidad de invitados</span>
+              <input id="fCant" type="number" min="1" value="1" required>
+            </label>
+
+            <label class="field full">
+              <span>Tipo de comida</span>
+              <select id="fComida" required>
+                <option value="" selected>Elegí una opción</option>
+                <option>Sin restricciones</option>
+                <option>Vegetariana</option>
+                <option>Vegana</option>
+                <option>Sin TACC</option>
+                <option>Otra</option>
+              </select>
+            </label>
+          </div>
+
+          <button class="btn neon full" type="submit">CONFIRMAR POR WHATSAPP</button>
+          <div class="tiny">Se envía por WhatsApp (no se guarda en ningún lado).</div>
+        </form>
+      </div>
+    </section>
+
+    <!-- TEMA MUSICAL -->
+    <section class="section" id="tema">
+      <div class="sectionHead">
+        <h2>Tema para la fiesta</h2>
+        <p>¿Qué canción no puede faltar? 🎶</p>
+      </div>
+
+      <div class="card">
+        <div class="field">
+          <span>Tu tema</span>
+          <input id="songInput" type="text" placeholder="Ej: TINI - Cupido">
+        </div>
+
+        <button class="btn neon full" id="btnSong" type="button">ENVIAR TEMA POR WHATSAPP</button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footerLine"></div>
+      <p class="footerTxt">Mis XV • Neon Night ✨</p>
+    </footer>
+
+  </main>
+
+  <!-- Audio -->
+  <audio id="bgMusic" loop preload="auto">
+<source src="./assets/musica.mp3" type="audio/mpeg" />
+  </audio>
+
+</body>
+</html>
