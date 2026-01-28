@@ -2,7 +2,6 @@
    CONFIG • 15 Black & Gold (Art Deco)
 ========================= */
 
-/* ✅ BASE portable: funciona en cualquier carpeta */
 const BASE_PATH = ".";
 
 /* MAPA */
@@ -53,48 +52,38 @@ Restricción alimentaria (si aplica):`;
 
 /* DATA */
 function fill() {
-  $("#nombre").textContent = INVITADA;
-  $("#fechaTxt").textContent = FECHA_TEXTO;
-  $("#horaTxt").textContent = HORA_TEXTO;
-  $("#lugarTxt").textContent = LUGAR_TEXTO;
+  $("#nombre") && ($("#nombre").textContent = INVITADA);
+  $("#fechaTxt") && ($("#fechaTxt").textContent = FECHA_TEXTO);
+  $("#horaTxt") && ($("#horaTxt").textContent = HORA_TEXTO);
+  $("#lugarTxt") && ($("#lugarTxt").textContent = LUGAR_TEXTO);
 
-  const msgEl = $("#mensajeEspecial");
-  if (msgEl) msgEl.textContent = MENSAJE_ESPECIAL;
+  $("#mensajeEspecial") && ($("#mensajeEspecial").textContent = MENSAJE_ESPECIAL);
+  $("#firmaNombre") && ($("#firmaNombre").textContent = INVITADA);
+  $("#dresscodeTxt") && ($("#dresscodeTxt").textContent = DRESSCODE);
+  $("#aliasTxt") && ($("#aliasTxt").textContent = ALIAS);
+  $("#fraseTxt") && ($("#fraseTxt").textContent = FRASE);
 
-  const firma = $("#firmaNombre");
-  if (firma) firma.textContent = INVITADA;
+  // ✅ MAPA
+  $("#mapFrame") && ($("#mapFrame").src = MAPS_URL);
 
-  const dressEl = $("#dresscodeTxt");
-  if (dressEl) dressEl.textContent = DRESSCODE;
-
-  const aliasEl = $("#aliasTxt");
-  if (aliasEl) aliasEl.textContent = ALIAS;
-
-  const fraseEl = $("#fraseTxt");
-  if (fraseEl) fraseEl.textContent = FRASE;
-
-  $("#mapFrame").src = MAPS_URL;
-
+  // ✅ WhatsApp links
   const wa = waLink();
-  $("#btnConfirm").href = wa;
-  $("#btnConfirm2").href = wa;
-  $("#fabConfirm").href = wa;
+  $("#btnConfirm") && ($("#btnConfirm").href = wa);
+  $("#btnConfirm2") && ($("#btnConfirm2").href = wa);
+  $("#fabConfirm") && ($("#fabConfirm").href = wa);
 
-  $("#mFecha").textContent = FECHA_TEXTO;
-  $("#mHora").textContent = HORA_TEXTO;
-  $("#mLugar").textContent = LUGAR_TEXTO;
-  $("#mDir").textContent = DIRECCION_TEXTO;
+  // ✅ Modal info (sin romper si faltan)
+  $("#mFecha") && ($("#mFecha").textContent = FECHA_TEXTO);
+  $("#mHora") && ($("#mHora").textContent = HORA_TEXTO);
+  $("#mLugar") && ($("#mLugar").textContent = LUGAR_TEXTO);
+  $("#mDir") && ($("#mDir").textContent = DIRECCION_TEXTO);
 
-  const mapTitle = $("#mapTitle");
-  const mapSub = $("#mapSub");
-  if (mapTitle) mapTitle.textContent = LUGAR_TEXTO;
-  if (mapSub) mapSub.textContent = DIRECCION_TEXTO;
+  // ✅ Map titles + routes
+  $("#mapTitle") && ($("#mapTitle").textContent = LUGAR_TEXTO);
+  $("#mapSub") && ($("#mapSub").textContent = DIRECCION_TEXTO);
 
-  const btnRoute = $("#btnRoute");
-  if (btnRoute) btnRoute.href = DIRECTIONS_URL;
-
-  const btnRoute2 = $("#btnRoute2");
-  if (btnRoute2) btnRoute2.href = DIRECTIONS_URL;
+  $("#btnRoute") && ($("#btnRoute").href = DIRECTIONS_URL);
+  $("#btnRoute2") && ($("#btnRoute2").href = DIRECTIONS_URL);
 }
 
 /* GALERÍA */
@@ -115,6 +104,9 @@ function renderGallery() {
 function countdown() {
   const target = new Date(EVENT_DATE_ISO).getTime();
 
+  const dEl = $("#d"), hEl = $("#h"), mEl = $("#m"), sEl = $("#s");
+  if (!dEl || !hEl || !mEl || !sEl) return;
+
   const tick = () => {
     let diff = Math.max(0, target - Date.now());
 
@@ -129,10 +121,10 @@ function countdown() {
 
     const secs = Math.floor(diff / 1000);
 
-    $("#d").textContent = days;
-    $("#h").textContent = pad2(hours);
-    $("#m").textContent = pad2(mins);
-    $("#s").textContent = pad2(secs);
+    dEl.textContent = String(days);
+    hEl.textContent = pad2(hours);
+    mEl.textContent = pad2(mins);
+    sEl.textContent = pad2(secs);
   };
 
   tick();
@@ -208,4 +200,3 @@ countdown();
 modalSetup();
 musicSetup();
 copyAliasSetup();
-
