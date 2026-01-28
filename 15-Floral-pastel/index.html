@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mis XV • Floral Pastel</title>
+  <meta name="description" content="Invitación web 15 años • Floral Pastel" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="./app.js" defer></script>
+</head>
+
+<body>
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <div class="brand">
+        <span class="dot"></span>
+        <span class="brand__txt">Mis XV</span>
+      </div>
+
+      <a class="miniBtn" id="btnConfirmTop" href="#" aria-label="Confirmar por WhatsApp">
+        Confirmar
+      </a>
+    </div>
+  </header>
+
+  <!-- Fondo con brillo + flores -->
+  <div class="bg" aria-hidden="true"></div>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="heroCard">
+        <div class="floral floral--tl" aria-hidden="true"></div>
+        <div class="floral floral--br" aria-hidden="true"></div>
+
+        <div class="heroGrid">
+          <div class="heroCopy">
+            <p class="kicker">Te invito a celebrar</p>
+
+            <h1 class="title">
+              <span class="title__big">Mis</span>
+              <span class="title__big accent">XV</span>
+            </h1>
+
+            <p class="name" id="nombre">ALMA</p>
+            <p class="phrase" id="fraseTxt">Una noche especial para recordar para siempre ✨</p>
+
+            <div class="heroChips">
+              <span class="chip" id="fechaTxtChip">Sábado 24 de Agosto 2026</span>
+              <span class="chip" id="horaTxtChip">21:30 hs</span>
+              <span class="chip" id="lugarTxtChip">Salón “Janos”</span>
+            </div>
+
+            <div class="heroActions">
+              <!-- ✅ un solo botón -->
+              <a class="btn btn--primary" id="btnConfirm" href="#">Confirmar asistencia</a>
+            </div>
+
+            <p class="hint">Deslizá para ver toda la invitación ↓</p>
+          </div>
+
+          <aside class="heroPhoto">
+            <!-- Poné tu foto en assets/portada.jpg -->
+            <div class="photoFrame">
+              <img id="coverImg" src="./assets/foto3.jpg" alt="Foto portada" />
+            </div>
+
+            <div class="miniCard">
+              <div class="miniRow">
+                <span class="miniK">Dress code</span>
+                <span class="miniV" id="dresscodeMini">Elegante</span>
+              </div>
+
+              <div class="miniRow">
+                <span class="miniK">Regalo</span>
+                <span class="miniV">Alias: <span class="alias" id="aliasTxt">alma.15.mp</span></span>
+              </div>
+
+              <div class="miniBtns">
+                <button class="btn btn--soft" id="btnGift" type="button">Ver regalo</button>
+                <button class="btn btn--soft" id="btnLocation" type="button">Ubicación</button>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFO (tarjetas distintas a tus otros modelos) -->
+    <section class="section" id="info">
+      <div class="sectionHead">
+        <h2>Información</h2>
+        <p>Todo lo importante en un solo lugar.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="cardIcon">📅</div>
+          <h3>Fecha</h3>
+          <p class="muted" id="fechaTxt">Sábado 24 de Agosto 2026</p>
+        </article>
+
+        <article class="card">
+          <div class="cardIcon">⏰</div>
+          <h3>Horario</h3>
+          <p class="muted" id="horaTxt">21:30 hs</p>
+        </article>
+
+        <article class="card">
+          <div class="cardIcon">📍</div>
+          <h3>Lugar</h3>
+          <p class="muted" id="lugarTxt">Salón “Janos”</p>
+          <p class="muted small" id="direccionTxt">Av. Siempre Viva 742, Buenos Aires</p>
+
+          <!-- ✅ solo botón ubicación -->
+          <a class="btn btn--line" id="btnRoute" href="#" target="_blank" rel="noreferrer">Abrir ubicación</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- DRESS CODE (con íconos corbata + vestido) -->
+    <section class="section sectionSoft" id="dresscode">
+      <div class="sectionHead">
+        <h2>Dress code</h2>
+        <p>Vení como te sientas increíble 💐</p>
+      </div>
+
+      <div class="dc">
+        <div class="dcIcon" aria-hidden="true">
+          <span class="tie">👔</span>
+          <span class="dress">👗</span>
+        </div>
+        <div class="dcText">
+          <h3 id="dresscodeTxt">Elegante</h3>
+          <p class="muted">Te esperamos con un look elegante (podés sumar toques pastel si querés).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONFIRMAR (sección separada) -->
+    <section class="section" id="confirmar">
+      <div class="confirmCard">
+        <div class="confirmLeft">
+          <h2>Confirmación</h2>
+          <p class="muted">
+            Confirmá tu asistencia por WhatsApp para que podamos organizar todo perfecto ✨
+          </p>
+        </div>
+        <div class="confirmRight">
+          <a class="btn btn--primary btn--big" id="btnConfirm2" href="#">Confirmar asistencia</a>
+          <p class="small muted">Se abre WhatsApp con el mensaje armado.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- REGALOS (botón que abre/copia alias) -->
+    <section class="section sectionSoft" id="regalos">
+      <div class="sectionHead">
+        <h2>Regalo</h2>
+        <p>Si querés hacerme un regalito 💗</p>
+      </div>
+
+      <div class="giftCard">
+        <div class="giftMain">
+          <div class="giftBadge">Alias</div>
+          <div class="giftAlias" id="aliasBig">alma.15.mp</div>
+          <p class="muted">Tocá el botón para ver/copiar el alias.</p>
+        </div>
+
+        <div class="giftActions">
+          <button class="btn btn--primary" id="copyAlias" type="button">Copiar alias</button>
+          <button class="btn btn--line" id="openAlias" type="button">Abrir regalo</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- IG / HASHTAG (para subir fotos) -->
+    <section class="section" id="ig">
+      <div class="igCard">
+        <div class="igLeft">
+          <h2>Subí tus fotos</h2>
+          <p class="muted">Etiquetame o usá el hashtag para que pueda verlas después ✨</p>
+
+          <div class="igRow">
+            <span class="igLabel">Instagram:</span>
+            <a id="igUser" class="igLink" href="#" target="_blank" rel="noreferrer">@alma.15</a>
+          </div>
+          <div class="igRow">
+            <span class="igLabel">Hashtag:</span>
+            <span class="igTag" id="igTag">#almaXV</span>
+          </div>
+        </div>
+
+        <div class="igRight">
+          <div class="igBubble">📸</div>
+          <p class="muted small">Tip: subí historias y me etiquetás 💐</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="section" id="galeria">
+      <div class="sectionHead">
+        <h2>Galería</h2>
+        <p>Algunos momentos 💗</p>
+      </div>
+
+      <div class="gallery" id="gallery"></div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="wrap footerInner">
+      <small>© <span id="year"></span> • Invitación web</small>
+      <small class="muted">Hecho con 💐 para <span id="nombreFooter">SOFÍA</span></small>
+    </div>
+  </footer>
+
+  <!-- Modal regalo -->
+  <div class="modal" id="giftModal" aria-hidden="true">
+    <div class="modalBack" data-close="1"></div>
+    <div class="modalPanel" role="dialog" aria-modal="true" aria-labelledby="giftTitle">
+      <button class="x" data-close="1" aria-label="Cerrar">✕</button>
+      <h3 id="giftTitle">Regalo</h3>
+      <p class="muted">Alias para transferencias:</p>
+      <div class="modalAlias" id="modalAlias">alma.15.mp</div>
+      <div class="modalActions">
+        <button class="btn btn--primary" id="copyAlias2" type="button">Copiar alias</button>
+        <a class="btn btn--line" id="openWallet" href="#" target="_blank" rel="noreferrer">Abrir (banco / billetera)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating confirm -->
+  <a class="fab" id="fabConfirm" href="#" aria-label="Confirmar asistencia">Confirmar</a>
+</body>
+</html>
