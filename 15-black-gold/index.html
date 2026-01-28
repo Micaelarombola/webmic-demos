@@ -9,9 +9,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cinzel:wght@500;600;700&family=Montserrat:wght@300;500;700;800;900&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="/webmic-demos/15-black-gold/styles.css" />
-...
-<script src="/webmic-demos/15-black-gold/app.js"></script>
+  <!-- ✅ RUTA RELATIVA (no se rompe en GitHub Pages) -->
+  <link rel="stylesheet" href="./styles.css" />
+
+  <!-- ✅ defer: carga el JS después del DOM -->
+  <script src="./app.js" defer></script>
 </head>
 
 <body>
@@ -103,57 +105,57 @@
         </div>
       </div>
     </section>
-<!-- EXTRA -->
-<section class="section">
-  <div class="sectionHead">
-    <h2>Detalles de la noche</h2>
-    <p>Para que disfrutes sin preocuparte por nada ✨</p>
-  </div>
 
-  <div class="extras">
-    <div class="xcard">
-      <div class="xk">Itinerario</div>
-      <div class="xv" id="it1">21:30 • Recepción</div>
-      <div class="xv" id="it2">22:30 • Cena</div>
-      <div class="xv" id="it3">00:00 • Vals & fiesta</div>
-    </div>
-
-    <div class="xcard">
-      <div class="xk">Mesa</div>
-      <div class="xv" id="mesaTxt">Tu mesa se confirma al ingresar ✨</div>
-      <div class="chipRow">
-        <span class="chip" id="chip2">Barra libre</span>
+    <!-- EXTRA -->
+    <section class="section">
+      <div class="sectionHead">
+        <h2>Detalles de la noche</h2>
+        <p>Para que disfrutes sin preocuparte por nada ✨</p>
       </div>
-    </div>
 
-    <div class="xcard">
-      <div class="xk">Notas</div>
-      <div class="xv" id="nota1">Te esperamos con tu mejor look 🖤</div>
-      <div class="xv" id="nota2">Confirmar antes del 10/08</div>
-    </div>
-  </div>
-</section>
+      <div class="extras">
+        <div class="xcard">
+          <div class="xk">Itinerario</div>
+          <div class="xv" id="it1">21:30 • Recepción</div>
+          <div class="xv" id="it2">22:30 • Cena</div>
+          <div class="xv" id="it3">00:00 • Vals & fiesta</div>
+        </div>
 
-<!-- MENSAJE ESPECIAL -->
-<section class="section">
-  <div class="specialCard">
-    <div class="specialDeco"></div>
+        <div class="xcard">
+          <div class="xk">Mesa</div>
+          <div class="xv" id="mesaTxt">Tu mesa se confirma al ingresar ✨</div>
+          <div class="chipRow">
+            <span class="chip" id="chip2">Barra libre</span>
+          </div>
+        </div>
 
-    <div class="specialContent">
-      <div class="specialTag">Un mensaje para vos</div>
-      <p class="specialText" id="mensajeEspecial">
-        Tu presencia es parte de mi noche dorada.
-        Gracias por acompañarme en este momento tan especial 🖤✨
-      </p>
-
-      <div class="specialSign">
-        <span class="script">Con cariño,</span>
-        <span class="gold" id="firmaNombre">Sofía</span>
+        <div class="xcard">
+          <div class="xk">Notas</div>
+          <div class="xv" id="nota1">Te esperamos con tu mejor look 🖤</div>
+          <div class="xv" id="nota2">Confirmar antes del 10/08</div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
+    <!-- MENSAJE ESPECIAL -->
+    <section class="section">
+      <div class="specialCard">
+        <div class="specialDeco"></div>
+
+        <div class="specialContent">
+          <div class="specialTag">Un mensaje para vos</div>
+          <p class="specialText" id="mensajeEspecial">
+            Tu presencia es parte de mi noche dorada.
+            Gracias por acompañarme en este momento tan especial 🖤✨
+          </p>
+
+          <div class="specialSign">
+            <span class="script">Con cariño,</span>
+            <span class="gold" id="firmaNombre">Sofía</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- GALLERY -->
     <section class="section">
@@ -165,42 +167,40 @@
       <div class="gallery" id="gallery"></div>
     </section>
 
-   <!-- MAP -->
-<!-- MAP -->
-<section class="section">
-  <div class="sectionHead">
-    <h2>Ubicación</h2>
-    <p>Te dejamos el mapa para llegar fácil.</p>
-  </div>
-
-  <div class="mapCard">
-    <div class="mapTop">
-      <div>
-        <div class="mapTitle" id="mapTitle">Salón Janos</div>
-        <div class="mapSub" id="mapSub">Av. Siempre Viva 742, Buenos Aires</div>
+    <!-- MAP -->
+    <section class="section">
+      <div class="sectionHead">
+        <h2>Ubicación</h2>
+        <p>Te dejamos el mapa para llegar fácil.</p>
       </div>
 
-      <div class="mapBtns">
-        <a class="btn btnGold" id="btnRoute" href="#" target="_blank" rel="noreferrer">
-          Cómo llegar
-        </a>
+      <div class="mapCard">
+        <div class="mapTop">
+          <div>
+            <div class="mapTitle" id="mapTitle">Salón Janeos</div>
+            <div class="mapSub" id="mapSub">Av. Siempre Viva 742, Buenos Aires</div>
+          </div>
+
+          <div class="mapBtns">
+            <a class="btn btnGold" id="btnRoute" href="#" target="_blank" rel="noreferrer">
+              Cómo llegar
+            </a>
+          </div>
+        </div>
+
+        <div class="mapWrap mapWrap--pretty">
+          <iframe
+            id="mapFrame"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+            src=""
+          ></iframe>
+          <div class="mapOverlay" aria-hidden="true"></div>
+        </div>
       </div>
-    </div>
-
-    <div class="mapWrap mapWrap--pretty">
-      <iframe
-        id="mapFrame"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        allowfullscreen
-        src=""
-      ></iframe>
-      <div class="mapOverlay" aria-hidden="true"></div>
-    </div>
-  </div>
-</section>
-
-
+    </section>
+  </main>
 
   <!-- Floating confirm -->
   <a class="fab" id="fabConfirm" href="#">Confirmar</a>
@@ -219,16 +219,16 @@
         <div class="mline"><span class="k">Dirección</span><span class="v" id="mDir">—</span></div>
       </div>
 
-    <div class="modalActions">
-  <a class="btn btnGold" id="btnConfirm2" href="#">Confirmar por WhatsApp</a>
-  <a class="btn btnGhost" id="btnRoute2" href="#" target="_blank" rel="noreferrer">Cómo llegar</a>
-</div>
+      <div class="modalActions">
+        <a class="btn btnGold" id="btnConfirm2" href="#">Confirmar por WhatsApp</a>
+        <a class="btn btnGhost" id="btnRoute2" href="#" target="_blank" rel="noreferrer">Cómo llegar</a>
+      </div>
+    </div>
+  </div>
 
   <!-- Audio -->
   <audio id="bgMusic" loop preload="auto">
-<source src="/webmic-demos/15-black-gold/assets/TINI%20-%20Great%20Escape%20(Official%20Video).mp3" type="audio/mpeg" />
+    <source src="./assets/TINI%20-%20Great%20Escape%20(Official%20Video).mp3" type="audio/mpeg" />
   </audio>
-
-  <script src="app.js"></script>
 </body>
 </html>

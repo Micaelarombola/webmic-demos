@@ -2,7 +2,8 @@
    CONFIG • 15 Black & Gold (Art Deco)
 ========================= */
 
-const BASE_PATH = "/webmic-demos/15-black-gold";
+/* ✅ BASE portable: funciona en cualquier carpeta */
+const BASE_PATH = ".";
 
 /* MAPA */
 const ADDRESS_Q = encodeURIComponent("Av. Siempre Viva 742, Buenos Aires");
@@ -207,3 +208,4 @@ countdown();
 modalSetup();
 musicSetup();
 copyAliasSetup();
+
