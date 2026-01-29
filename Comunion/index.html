@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Primera Comunión • Sofía</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Fondo dorado + partículas + brillos -->
+  <div class="bg"></div>
+  <div class="gold-dust"></div>
+  <div class="sparkles"></div>
+  <div class="symbols-layer"></div>
+
+  <!-- HERO -->
+  <header class="hero" id="hero">
+    <div class="hero__veil"></div>
+
+    <div class="hero__content">
+      <span class="eyebrow">PRIMERA COMUNIÓN</span>
+
+      <div class="seal">
+  <div class="seal__photo">
+    <img src="assets/foto1.jpg" alt="Sofía">
+  </div>
+  <span class="seal__ring"></span>
+</div>
+
+
+      <h1 class="title">Sofía</h1>
+      <p class="subtitle">Una celebración de fe, luz y amor</p>
+
+      <button class="btn btn--gold" id="openInvite">Abrir invitación</button>
+
+      <div class="hero__hint">Deslizá para ver la invitación ✨</div>
+    </div>
+  </header>
+
+  <!-- INVITACIÓN -->
+  <main class="invitation" id="invitation">
+
+    <section class="card intro">
+      <h2>Con mucha alegría</h2>
+      <p>
+        Te invitamos a compartir un momento muy especial: Sofía recibirá por primera vez
+        el Sacramento de la Comunión. Tu presencia hará este día aún más significativo.
+      </p>
+    </section>
+
+    <section class="card quote">
+      <p class="quote__text">“Yo soy el pan de vida.”</p>
+      <span class="quote__ref">Juan 6:35</span>
+    </section>
+
+    <section class="card quote">
+      <p class="quote__text">“Permanezcan en mi amor.”</p>
+      <span class="quote__ref">Juan 15:9</span>
+    </section>
+
+    <section class="card countdown">
+      <h3>Cuenta regresiva</h3>
+      <div class="timer">
+        <div><span id="d">00</span><small>Días</small></div>
+        <div><span id="h">00</span><small>Horas</small></div>
+        <div><span id="m">00</span><small>Min</small></div>
+        <div><span id="s">00</span><small>Seg</small></div>
+      </div>
+      <p class="mini">Guardá la fecha, falta poquito ✨</p>
+    </section>
+
+    <section class="card details">
+      <h3>Detalles de la ceremonia</h3>
+      <ul class="list">
+        <li><span>📅</span> Sábado 10 de Mayo de 2026</li>
+        <li><span>⏰</span> 10:30 hs</li>
+        <li><span>⛪</span> Iglesia Nuestra Señora del Rosario</li>
+        <li><span>📍</span> Av. Santa Fe 2450, CABA</li>
+      </ul>
+    </section>
+
+    <section class="card meaning">
+      <h3>El significado</h3>
+      <p>
+        La Primera Comunión es un encuentro con Jesús: un paso de fe, una promesa de amor
+        y un recuerdo que queda para siempre en el corazón.
+      </p>
+    </section>
+
+    <section class="card dresscode">
+      <h3>Sugerencia</h3>
+      <p>
+        Vestimenta elegante y clara (tonos crema / beige / dorado).  
+        Te esperamos para celebrar con serenidad y alegría ✨
+      </p>
+    </section>
+
+    <section class="card gift">
+      <h3>Regalo / Alias</h3>
+      <p class="mini">
+        Si querés hacer un gesto de cariño, podés hacerlo con este alias:
+      </p>
+
+      <div class="aliasBox">
+        <span class="alias" id="aliasText">SOFIA.COMUNION</span>
+        <button class="btn btn--ghost" id="copyAlias">Copiar</button>
+      </div>
+
+      <p class="tiny">
+        (Opcional) Titular: <strong>Mariana Gómez</strong> · Banco: <strong>Mercado Pago</strong>
+      </p>
+    </section>
+<section class="card rsvp" id="rsvp">
+  <h3>Confirmación</h3>
+  <p class="mini">Completá los datos y enviá la confirmación ✨</p>
+
+  <form id="rsvpForm" class="form">
+    <div class="row">
+      <label>
+        Nombre y apellido
+        <input type="text" name="name" placeholder="Ej: Florencia Pérez" required>
+      </label>
+
+      <label>
+        Teléfono (opcional)
+        <input type="tel" name="phone" placeholder="Ej: 11 2345-6789">
+      </label>
+    </div>
+
+    <div class="row">
+      <label>
+        ¿Asistís?
+        <select name="attending" required>
+          <option value="" selected disabled>Seleccionar</option>
+          <option value="Sí, confirmo asistencia">Sí, confirmo</option>
+          <option value="No puedo asistir">No puedo</option>
+          <option value="Tal vez">Tal vez</option>
+        </select>
+      </label>
+
+      <label>
+        Cantidad de adultos
+        <input type="number" name="adults" min="0" max="10" value="1" required>
+      </label>
+
+      <label>
+        Cantidad de niños
+        <input type="number" name="kids" min="0" max="10" value="0" required>
+      </label>
+    </div>
+
+    <label>
+      Mensaje / Alergias / Observaciones (opcional)
+      <textarea name="notes" rows="3" placeholder="Ej: soy celíaca / llego 15 min tarde"></textarea>
+    </label>
+
+    <div class="row row-actions">
+      <button type="submit" class="btn btn--gold">Enviar confirmación</button>
+      <button type="button" id="prefillNo" class="btn btn--ghost">No puedo asistir</button>
+    </div>
+
+    <p class="tiny">Al enviar, se abrirá WhatsApp con el mensaje listo para mandar.</p>
+  </form>
+</section>
+
+    
+
+    <footer class="footer">
+      <div class="footer__line"></div>
+      <p>Gracias por acompañarnos en este día tan especial 🤍</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
