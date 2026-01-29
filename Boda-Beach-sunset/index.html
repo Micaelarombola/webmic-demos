@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boda • Invitación</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cinzel:wght@500;600;700&family=Allura&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- FX: pétalos/brillos suaves -->
+  <canvas id="petals" aria-hidden="true"></canvas>
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <a class="brand" href="#top" aria-label="Volver al inicio">
+        <span class="brand__mark">✿</span>
+        <span class="brand__txt">Boda</span>
+      </a>
+
+      <nav class="nav">
+        <a href="#historia">Nuestra historia</a>
+        <a href="#cuenta">Cuenta regresiva</a>
+        <a href="#evento">Evento</a>
+        <a href="#detalles">Detalles</a>
+        <a href="#galeria">Fotos</a>
+      </nav>
+
+      <button class="menuBtn" id="menuBtn" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobileNav" id="mobileNav">
+      <a href="#historia">Nuestra historia</a>
+      <a href="#cuenta">Cuenta regresiva</a>
+      <a href="#evento">Evento</a>
+      <a href="#detalles">Detalles</a>
+      <a href="#galeria">Fotos</a>
+    </div>
+
+    <!-- Scroll progress -->
+    <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+  </header>
+
+  <!-- HERO -->
+  <main id="top" class="hero">
+    <div class="wrap hero__grid">
+      <section class="hero__copy">
+        <p class="kicker reveal">Invitación</p>
+
+        <h1 class="title reveal">
+          <span class="script">Nos casamos</span>
+          <span class="names" id="coupleTitle">Sofía & Tomás</span>
+        </h1>
+
+        <p class="lead reveal" id="heroLine">
+          Frente al mar, con el corazón lleno de amor… queremos que seas parte.
+        </p>
+
+        <div class="metaCard reveal">
+          <div class="metaRow">
+            <span class="metaLabel">Fecha</span>
+            <span class="metaValue" id="dateHuman">—</span>
+          </div>
+          <div class="metaRow">
+            <span class="metaLabel">Lugar</span>
+            <span class="metaValue" id="placeShort">Playa • Atardecer</span>
+          </div>
+        </div>
+
+        <div class="hero__cta reveal">
+          <a class="btn primary" id="rsvpBtn" href="#">
+            <span>Confirmar asistencia</span>
+            <i class="dot"></i>
+          </a>
+          <a class="btn ghost" href="#evento">
+            <span>Ver info</span>
+          </a>
+        </div>
+
+        <p class="hint reveal">Deslizá para ver toda la invitación ↓</p>
+      </section>
+
+      <section class="hero__photo reveal" id="heroParallax">
+        <div class="photoCard">
+          <div class="shine" aria-hidden="true"></div>
+
+          <!-- Reemplazá con tu foto -->
+          <img class="photo" src="assets/foto4.jpg" alt="Foto de la pareja">
+
+          <div class="frame" aria-hidden="true"></div>
+          <div class="badge">
+            <span id="badgeDate">—</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Waves -->
+    <div class="waves" aria-hidden="true">
+      <svg viewBox="0 0 1440 180" preserveAspectRatio="none">
+        <path class="w1" d="M0,80 C240,160 480,0 720,80 C960,160 1200,0 1440,80 L1440,180 L0,180 Z"></path>
+        <path class="w2" d="M0,110 C240,190 480,30 720,110 C960,190 1200,30 1440,110 L1440,180 L0,180 Z"></path>
+        <path class="w3" d="M0,135 C260,205 520,55 760,135 C1000,215 1220,65 1440,135 L1440,180 L0,180 Z"></path>
+      </svg>
+    </div>
+  </main>
+
+  <!-- NUEVA: HISTORIA -->
+  <section id="historia" class="section">
+    <div class="wrap">
+      <div class="sectionHead reveal">
+        <h2>Nuestra historia</h2>
+        <p>Pequeños momentos que nos trajeron hasta acá.</p>
+      </div>
+
+      <div class="timeline card reveal">
+        <div class="titem">
+          <div class="tdate">2019</div>
+          <div class="tcontent">
+            <h3>Nos conocimos</h3>
+            <p>Una casualidad hermosa, de esas que no se olvidan.</p>
+          </div>
+        </div>
+
+        <div class="titem">
+          <div class="tdate">2022</div>
+          <div class="tcontent">
+            <h3>El primer viaje al mar</h3>
+            <p>Nos prometimos que el océano iba a ser siempre nuestro lugar.</p>
+          </div>
+        </div>
+
+        <div class="titem">
+          <div class="tdate">2025</div>
+          <div class="tcontent">
+            <h3>La propuesta</h3>
+            <p>Con brisa salada y un “sí” que nos cambió todo.</p>
+          </div>
+        </div>
+
+        <div class="titem">
+          <div class="tdate">2026</div>
+          <div class="tcontent">
+            <h3>¡Nos casamos!</h3>
+            <p>Y queremos celebrarlo con vos, al atardecer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section id="cuenta" class="section alt">
+    <div class="wrap">
+      <div class="sectionHead reveal">
+        <h2>Cuenta regresiva</h2>
+        <p>Falta cada vez menos ✨</p>
+      </div>
+
+      <div class="card countdownCard reveal">
+        <div class="countdown" data-deadline="">
+          <div class="cd"><span class="num" id="dd">00</span><span class="lab">Días</span></div>
+          <div class="sep">:</div>
+          <div class="cd"><span class="num" id="hh">00</span><span class="lab">Horas</span></div>
+          <div class="sep">:</div>
+          <div class="cd"><span class="num" id="mm">00</span><span class="lab">Min</span></div>
+          <div class="sep">:</div>
+          <div class="cd"><span class="num" id="ss">00</span><span class="lab">Seg</span></div>
+        </div>
+
+        <div class="miniActions">
+          <a class="btn ghost" id="addCalendarBtn" href="#"><span>Agregar al calendario</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTO -->
+  <section id="evento" class="section">
+    <div class="wrap">
+      <div class="sectionHead reveal">
+        <h2>El evento</h2>
+        <p>Todo lo importante para acompañarnos.</p>
+      </div>
+
+      <div class="grid2">
+        <div class="card infoCard reveal">
+          <h3>¿Dónde?</h3>
+
+          <div class="addr">
+            <p id="addrText">Av. Ejemplo 1234, Ciudad</p>
+            <div class="addrBtns">
+              <a class="btn primary" id="mapsBtn" target="_blank" rel="noreferrer">
+                <span>Cómo llegar</span><i class="dot"></i>
+              </a>
+              <button class="btn ghost" id="copyAddrBtn" type="button">
+                <span>Copiar dirección</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="chips">
+            <span class="chip">Ceremonia 18:30</span>
+            <span class="chip">Brindis 19:30</span>
+            <span class="chip">Fiesta 20:30</span>
+          </div>
+
+          <div class="softBox">
+            <p class="softTitle">Atardecer & Playa</p>
+            <p class="softText">Llevá algo cómodo: arena, brisa y magia.</p>
+          </div>
+        </div>
+
+        <div class="card planCard reveal">
+          <h3>Itinerario</h3>
+          <div class="plan">
+            <div class="planRow"><span class="pTime">18:30</span><span class="pDot"></span><span class="pText">Ceremonia</span></div>
+            <div class="planRow"><span class="pTime">19:30</span><span class="pDot"></span><span class="pText">Brindis + fotos</span></div>
+            <div class="planRow"><span class="pTime">20:30</span><span class="pDot"></span><span class="pText">Cena + fiesta</span></div>
+            <div class="planRow"><span class="pTime">00:00</span><span class="pDot"></span><span class="pText">Momento sorpresa</span></div>
+          </div>
+
+          <div class="ctaBox">
+            <p class="ctaText">¿Ya sabés si venís?</p>
+            <a class="btn primary" href="#top"><span>Confirmar arriba</span><i class="dot"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUEVA: DETALLES / PLAYLIST / HASHTAG -->
+  <section id="detalles" class="section alt">
+    <div class="wrap">
+      <div class="sectionHead reveal">
+        <h2>Detalles</h2>
+        <p>Para que todo sea perfecto.</p>
+      </div>
+
+      <div class="grid3">
+        <div class="card reveal">
+          <h3>Dress code</h3>
+          <p class="muted">Elegante playa (colores claros / lino / vestidos fluidos).</p>
+          <div class="palette">
+            <span class="sw s1" title="Arena"></span>
+            <span class="sw s2" title="Mar"></span>
+            <span class="sw s3" title="Coral suave"></span>
+            <span class="sw s4" title="Dorado"></span>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <h3>Playlist</h3>
+          <p class="muted">Sumá una canción que te haga pensar en nosotros.</p>
+          <a class="btn ghost" id="playlistBtn" href="#" target="_blank" rel="noreferrer">
+            <span>Abrir playlist</span>
+          </a>
+        </div>
+
+        <div class="card reveal">
+          <h3>Hashtag</h3>
+          <p class="muted">Usalo en fotos y videos:</p>
+          <div class="hashRow">
+            <code id="hashtagText">#SofiYTomiAlMar</code>
+            <button class="btn ghost" id="copyHashBtn" type="button"><span>Copiar</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section id="galeria" class="section">
+    <div class="wrap">
+      <div class="sectionHead reveal">
+        <h2>Fotos</h2>
+        <p>Un poquito de nosotros 💛</p>
+      </div>
+
+      <div class="gallery reveal">
+        <figure class="gitem"><img src="assets/foto1.jpg" alt="Foto 1"></figure>
+        <figure class="gitem"><img src="assets/foto2.jpg" alt="Foto 2"></figure>
+        <figure class="gitem"><img src="assets/foto3.jpg" alt="Foto 3"></figure>
+        <figure class="gitem"><img src="assets/foto4.jpg" alt="Foto 4"></figure>
+        <figure class="gitem"><img src="assets/foto5.jpg" alt="Foto 5"></figure>
+        <figure class="gitem"><img src="assets/foto6.jpg" alt="Foto 6"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <div class="footerCard card reveal">
+        <p class="footerTitle">Gracias por acompañarnos</p>
+        <p class="footerSub">Nos vemos frente al mar ✨</p>
+        <a class="btn primary" href="#top"><span>Volver arriba</span><i class="dot"></i></a>
+      </div>
+
+      <p class="copy">Hecho con amor • WebMic</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
