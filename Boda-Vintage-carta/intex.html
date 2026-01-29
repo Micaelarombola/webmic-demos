@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boda • Vintage Carta</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Libre+Baskerville:wght@400;700&family=Allura&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- FX canvas -->
+  <canvas id="dustFx" aria-hidden="true"></canvas>
+
+  <!-- Top progress -->
+  <div class="progress"><span id="progressBar"></span></div>
+
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <div class="brand">
+        <span class="brandMark">✉</span>
+        <span class="brandName">Boda • Vintage Carta</span>
+      </div>
+
+      <button class="menuBtn" id="menuBtn" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav">
+        <a href="#carta">Carta</a>
+        <a href="#evento">Evento</a>
+        <a href="#countdown">Cuenta regresiva</a>
+        <a href="#rsvp">Confirmar</a>
+      </nav>
+    </div>
+
+    <div class="mobileNav" id="mobileNav">
+      <a href="#carta">Carta</a>
+      <a href="#evento">Evento</a>
+      <a href="#countdown">Cuenta regresiva</a>
+      <a href="#rsvp">Confirmar</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO: Envelope -->
+    <section class="hero reveal" id="carta">
+      <div class="heroGrid">
+        <div class="heroCopy">
+          <p class="dateline" id="letterDate">Buenos Aires, 12 de Abril de 2026</p>
+
+          <h1 class="title">
+            <span class="script" id="coupleTitle">Emilia & Federico</span>
+            <span class="serif">Nos casamos</span>
+          </h1>
+
+          <p class="subtitle">
+            Una invitación en forma de carta, con aroma a recuerdos y promesas.
+          </p>
+
+          <div class="heroBtns">
+            <button class="btn primary" id="openLetterBtn" type="button">Abrir la carta</button>
+            <a class="btn ghost" href="#evento">Ver información</a>
+          </div>
+
+          <p class="tiny">Deslizá para descubrir cada detalle ✦</p>
+        </div>
+
+        <div class="envelopeWrap" aria-label="Sobre con carta">
+          <div class="envelope" id="envelope">
+            <div class="envBack"></div>
+
+            <!-- Carta (arranca escondida) -->
+            <div class="letter" id="letter">
+              <div class="letterInner">
+                <p class="letterHello">Querida familia y amigos,</p>
+
+                <p class="letterText">
+                  Con enorme alegría, queremos invitarlos a celebrar el día en que elegimos caminar juntos
+                  para siempre. Su presencia es el regalo más importante.
+                </p>
+
+                <p class="letterSign">
+                  Con amor,<br>
+                  <span class="sig" id="coupleSign">Emilia & Federico</span>
+                </p>
+
+                <div class="letterMiniActions">
+                  <button class="chip" id="copyHashtagBtn" type="button"># <span id="hashtagText">#EmiYFede</span></button>
+                  <a class="chip" id="playlistBtn" href="#" target="_blank" rel="noopener">🎶 Playlist</a>
+                </div>
+
+                <p class="letterHint">*La carta se abre/cierra tocando el sello.</p>
+              </div>
+            </div>
+
+            <!-- Bolsillo del sobre (tapa la carta) -->
+            <div class="envPocket"></div>
+
+            <!-- Solapa -->
+            <div class="envFlap"></div>
+
+            <!-- Sello (queda SIEMPRE sobre el sobre, no sobre la carta) -->
+            <button class="wax" type="button" aria-label="Tocar para abrir o cerrar">
+              <span>EF</span>
+            </button>
+          </div>
+
+          <div class="sealNote" id="sealNote">Tocá el sello para abrir ✨</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENT -->
+    <section class="card reveal" id="evento">
+      <div class="cardHead">
+        <h2 class="cardTitle">La celebración</h2>
+        <p class="cardSub" id="dateHuman">Sábado • 25 de Abril • 19:30</p>
+      </div>
+
+      <div class="kv">
+        <div class="kvRow">
+          <span class="k">Lugar</span>
+          <span class="v" id="placeName">Estancia Santa Aurelia</span>
+        </div>
+        <div class="kvRow">
+          <span class="k">Dirección</span>
+          <span class="v" id="addrText">Km 58, Ruta 8 • Pilar, Buenos Aires</span>
+        </div>
+        <div class="kvRow">
+          <span class="k">Detalle</span>
+          <span class="v">Ceremonia • Cena • Baile</span>
+        </div>
+      </div>
+
+      <div class="btnRow">
+        <a class="btn primary" id="mapsBtn" href="#" target="_blank" rel="noopener">Cómo llegar</a>
+        <button class="btn ghost" id="copyAddrBtn" type="button">Copiar dirección</button>
+        <button class="btn ghost" id="icsBtn" type="button">Agendar</button>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="twoCols">
+        <div class="mini">
+          <h3>Dress code</h3>
+          <p>Vintage elegante ✦ tonos tierra / neutros.</p>
+        </div>
+        <div class="mini">
+          <h3>Nota</h3>
+          <p>Te agradecemos confirmar asistencia para organizar cada detalle.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section class="card countdownCard reveal" id="countdown">
+      <h2 class="cardTitle">Cuenta regresiva</h2>
+      <p class="cardSub">para nuestro gran día</p>
+
+      <div class="countdown" data-deadline="">
+        <div class="cdItem"><div class="cdNum" id="dd">00</div><div class="cdLab">días</div></div>
+        <div class="cdItem"><div class="cdNum" id="hh">00</div><div class="cdLab">hs</div></div>
+        <div class="cdItem"><div class="cdNum" id="mm">00</div><div class="cdLab">min</div></div>
+        <div class="cdItem"><div class="cdNum" id="ss">00</div><div class="cdLab">seg</div></div>
+      </div>
+
+      <p class="tiny">Tip: podés agendar para no olvidarte 🤎</p>
+    </section>
+
+    <!-- RSVP -->
+    <section class="card rsvpCard reveal" id="rsvp">
+      <h2 class="cardTitle">Confirmación</h2>
+      <p class="cardSub">Te lleva directo a WhatsApp</p>
+
+      <div class="rsvpGrid">
+        <button class="btn primary" id="rsvpBtn" type="button">✅ Confirmar asistencia</button>
+        <button class="btn ghost" id="rsvpNoBtn" type="button">❌ No puedo asistir</button>
+      </div>
+
+      <p class="tiny">Si tenés alergias o restricciones, podés escribirlo en el mensaje.</p>
+    </section>
+
+    <footer class="footer reveal">
+      <p class="footerBig">Con amor, <span id="footerCouple">Emilia & Federico</span></p>
+      <p class="footerSmall">Hecho con cariño • WebMic</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
