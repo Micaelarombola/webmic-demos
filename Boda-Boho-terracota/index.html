@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boda • Boho Terracota</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;500;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- FX layers -->
+  <canvas id="dust" aria-hidden="true"></canvas>
+  <div class="bg" aria-hidden="true">
+    <div class="bg__sun"></div>
+    <div class="bg__grain"></div>
+    <div class="bg__petals" id="petals"></div>
+  </div>
+
+  <!-- Music -->
+  <audio id="bgMusic" preload="auto" loop>
+    <source src="assets/music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Floating controls -->
+  <div class="fab">
+    <button id="musicBtn" class="chip" type="button" aria-label="Música">
+      <span class="chip__dot"></span>
+      <span class="chip__txt" id="musicTxt">Música</span>
+      <span class="chip__ico" id="musicIco">▶</span>
+    </button>
+    <a class="chip chip--ghost" href="#rsvp">
+      <span class="chip__txt">RSVP</span>
+      <span class="chip__ico">↘</span>
+    </a>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <video class="hero__video" autoplay muted playsinline loop poster="assets/hero-poster.jpg">
+      <source src="assets/hero.mp4" type="video/mp4" />
+    </video>
+
+    <div class="hero__overlay"></div>
+
+    <div class="hero__content">
+      <div class="tagline reveal">BODA • BOHO TERRACOTA</div>
+
+      <h1 class="title reveal">
+        <span class="title__script">Nos casamos</span>
+        <span class="title__names" id="names">Luna & Mateo</span>
+      </h1>
+
+      <p class="date reveal" id="eventDateText">Sábado 10 de Mayo • 18:30 hs</p>
+
+      <div class="cta reveal">
+        <a class="btn btn--primary" href="#rsvp">Confirmar asistencia</a>
+        <a class="btn btn--soft" href="#info">Ver info</a>
+      </div>
+
+      <div class="hint reveal">
+        <span>Deslizá</span>
+        <span class="chev">⌄</span>
+      </div>
+    </div>
+
+    <div class="wave" aria-hidden="true"></div>
+  </header>
+
+  <main>
+
+    <!-- FRASE -->
+    <section class="section" id="frase">
+      <div class="wrap">
+        <div class="paper reveal">
+          <h2 class="h2">Una celebración simple, cálida y real</h2>
+          <div class="divider"></div>
+
+          <p class="lead" id="leadText">
+            Queremos compartir este día con ustedes, entre risas, abrazos y atardecer.
+          </p>
+
+          <div class="facts">
+            <div class="fact">
+              <span class="fact__k">Dress code</span>
+              <span class="fact__v" id="dressCode">Boho / Terracota</span>
+            </div>
+            <div class="fact">
+              <span class="fact__k">Lugar</span>
+              <span class="fact__v" id="venueName">Quinta Los Aromos</span>
+            </div>
+            <div class="fact">
+              <span class="fact__k">Ciudad</span>
+              <span class="fact__v" id="cityName">Buenos Aires</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section class="section section--tight" id="countdown">
+      <div class="wrap">
+        <div class="paper paper--thin reveal">
+          <h2 class="h2">Cuenta regresiva</h2>
+          <div class="divider"></div>
+
+          <div class="count">
+            <div class="box"><span id="dd">00</span><small>DÍAS</small></div>
+            <div class="box"><span id="hh">00</span><small>HS</small></div>
+            <div class="box"><span id="mm">00</span><small>MIN</small></div>
+            <div class="box"><span id="ss">00</span><small>SEG</small></div>
+          </div>
+
+          <p class="sub" id="countdownNote">Guardá la fecha ✨</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="section" id="timeline">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2 class="h2">Itinerario</h2>
+          <div class="divider"></div>
+        </div>
+
+        <div class="timeline">
+          <div class="titem reveal">
+            <div class="dot"></div>
+            <div class="tcard">
+              <h3>Ceremonia</h3>
+              <p id="ceremonyText">18:30 hs • Jardín principal</p>
+              <span class="pill">Llegá 15 min antes</span>
+            </div>
+          </div>
+
+          <div class="titem reveal">
+            <div class="dot"></div>
+            <div class="tcard">
+              <h3>Cóctel</h3>
+              <p id="cocktailText">19:30 hs • Fogón + brindis</p>
+              <span class="pill">Música + fotos</span>
+            </div>
+          </div>
+
+          <div class="titem reveal">
+            <div class="dot"></div>
+            <div class="tcard">
+              <h3>Fiesta</h3>
+              <p id="partyText">21:00 hs • Salón</p>
+              <span class="pill">A bailar ✨</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFO -->
+    <section class="section" id="info">
+      <div class="wrap">
+        <div class="grid">
+          <article class="card reveal">
+            <h3>Dirección</h3>
+            <p id="addressText">Ruta 8 km 52, Pilar</p>
+            <a class="link" id="mapsLink" href="#" target="_blank" rel="noopener">Cómo llegar →</a>
+          </article>
+
+          <article class="card reveal">
+            <h3>Regalo</h3>
+            <p id="giftText">Tu presencia es nuestro mejor regalo. Si deseás, habrá mesa de sobres.</p>
+            <div class="miniTag">Gracias por acompañarnos</div>
+          </article>
+
+          <article class="card reveal">
+            <h3>Tips</h3>
+            <p id="tipsText">Traé abrigo liviano para la noche. Calzado cómodo recomendado.</p>
+            <div class="miniTag">Boho vibes</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENSAJES -->
+    <section class="section" id="mensajes">
+      <div class="wrap">
+        <div class="paper reveal">
+          <h2 class="h2">Mensaje para los recién casados</h2>
+          <div class="divider"></div>
+
+          <p class="sub">Dejales un mensaje lindo 💛 (queda guardado en tu celu/navegador)</p>
+
+          <form class="msg" id="msgForm">
+            <div class="msg__row">
+              <label>
+                <span>Tu nombre</span>
+                <input id="msgName" type="text" placeholder="Ej: Sofi" maxlength="30" required />
+              </label>
+              <label>
+                <span>Emoji favorito</span>
+                <input id="msgEmoji" type="text" placeholder="✨" maxlength="2" />
+              </label>
+            </div>
+
+            <label>
+              <span>Tu mensaje</span>
+              <textarea id="msgText" rows="4" placeholder="Escribí algo lindo..." maxlength="280" required></textarea>
+            </label>
+
+            <div class="msg__actions">
+              <button class="btn btn--primary" type="submit">Guardar mensaje</button>
+              <button class="btn btn--soft" type="button" id="clearMsgs">Borrar todos</button>
+            </div>
+          </form>
+
+          <div class="messages" id="messages"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="section" id="rsvp">
+      <div class="wrap">
+        <div class="paper reveal">
+          <h2 class="h2">Confirmación</h2>
+          <div class="divider"></div>
+          <p class="sub">Confirmá por WhatsApp</p>
+
+          <div class="actions">
+            <a class="btn btn--primary" id="waBtn" href="#" target="_blank" rel="noopener">Confirmar asistencia</a>
+            <button class="btn btn--soft" id="copyBtn" type="button">Copiar mensaje</button>
+          </div>
+
+          <p class="tiny">Si la música no arranca, tocá el botón “Música” (los celulares lo piden).</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    <p>Con amor • <span id="footerNames">Luna & Mateo</span></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
