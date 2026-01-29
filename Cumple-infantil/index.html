@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cumple 4 • Isabella 🐾</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600;700&family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Confetti canvas -->
+  <canvas id="confetti"></canvas>
+
+  <!-- Floating decorations -->
+  <div class="floats" aria-hidden="true">
+    <span class="float balloon b1">🎈</span>
+    <span class="float balloon b2">🎈</span>
+    <span class="float balloon b3">🎈</span>
+
+    <span class="float paw p1">🐾</span>
+    <span class="float paw p2">🐾</span>
+    <span class="float paw p3">🐾</span>
+
+    <span class="float star s1">✨</span>
+    <span class="float star s2">✨</span>
+    <span class="float star s3">✨</span>
+  </div>
+
+  <!-- Top quick actions -->
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <div class="chip">🐶 Animalitos</div>
+      <nav class="topbar__nav">
+        <a href="#info" class="tlink">Info</a>
+        <a href="#countdown" class="tlink">Cuenta regresiva</a>
+        <a href="#gallery" class="tlink">Fotos</a>
+        <a href="#rsvp" class="tlink tlink--primary">Confirmar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero reveal">
+      <div class="hero__card">
+        <div class="hero__badge">
+          <span class="spark">✨</span>
+          <span>¡Estás invitado!</span>
+          <span class="spark">✨</span>
+        </div>
+
+        <h1 class="hero__title">
+          Cumple <span class="hero__age">4</span> <span class="hero__name">Isabella</span>
+        </h1>
+
+        <p class="hero__subtitle">
+          Una tarde llena de juegos, risas y animalitos 🐾🎉
+        </p>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#rsvp">💬 Confirmar asistencia</a>
+          <a class="btn" href="#info">📍 Ver info del cumple</a>
+        </div>
+
+        <div class="hero__stickers" aria-hidden="true">
+          <div class="sticker tilt1">🐶</div>
+          <div class="sticker tilt2">🐱</div>
+          <div class="sticker tilt3">🦊</div>
+          <div class="sticker tilt4">🐯</div>
+          <div class="sticker tilt5">🐼</div>
+        </div>
+      </div>
+
+      <div class="hero__side reveal">
+        <div class="photoFrame">
+          <!-- Si querés foto real, reemplazá el contenido por <img src="assets/benja.jpg" ...> -->
+          <div class="photoMock photoMock--img">
+  <img src="assets/foto7.jpg" alt="Isabella" loading="lazy">
+</div>
+
+          <div class="ribbon">🐾 Team Isa</div>
+        </div>
+
+        <div class="miniCards">
+          <div class="miniCard">
+            <div class="miniCard__icon">🎂</div>
+            <div>
+              <div class="miniCard__title">Cumple 4</div>
+              <div class="miniCard__text">¡Vamos a soplar velitas!</div>
+            </div>
+          </div>
+          <div class="miniCard">
+            <div class="miniCard__icon">🎉</div>
+            <div>
+              <div class="miniCard__title">Juegos</div>
+              <div class="miniCard__text">Sorpresas y diversión</div>
+            </div>
+          </div>
+          <div class="miniCard">
+            <div class="miniCard__icon">🍭</div>
+            <div>
+              <div class="miniCard__title">Merienda</div>
+              <div class="miniCard__text">Torta + juguito</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTE -->
+    <section class="quote reveal">
+      <div class="quote__bubble">
+        <p>
+          “Vení a celebrar conmigo, ¡va a estar <b>re divertido</b>! 🐶🐱”
+        </p>
+        <span class="quote__tag">Benja</span>
+      </div>
+    </section>
+
+    <!-- INFO -->
+    <section id="info" class="grid2 reveal">
+      <div class="card">
+        <h2 class="h2">📅 Datos del cumple</h2>
+
+        <div class="info">
+          <div class="info__row">
+            <span class="info__k">Día</span>
+            <span class="info__v">Sábado 14 de marzo</span>
+          </div>
+          <div class="info__row">
+            <span class="info__k">Horario</span>
+            <span class="info__v">15:30 a 18:30 hs</span>
+          </div>
+          <div class="info__row">
+            <span class="info__k">Lugar</span>
+            <span class="info__v">Salón “Patitas” 🐾</span>
+          </div>
+          <div class="info__row">
+            <span class="info__k">Dirección</span>
+            <span class="info__v">Av. Siempre Viva 123, Villa Devoto</span>
+          </div>
+        </div>
+
+        <div class="card__actions">
+          <a class="btn btn--primary" id="mapsBtn" target="_blank" rel="noreferrer">🗺️ Cómo llegar</a>
+          <button class="btn" id="confettiBtn" type="button">🎊 Tirar confetti</button>
+        </div>
+
+        <div class="tips">
+          <div class="tip">🧦 Traer medias para jugar</div>
+          <div class="tip">🎁 Si querés traer regalito: libros o juguetes</div>
+          <div class="tip">📸 ¡Habrá fotitos!</div>
+        </div>
+      </div>
+
+      <div class="card card--fun">
+        <h2 class="h2">🐾 Mini misión</h2>
+        <p class="p">
+          En el cumple vamos a buscar <b>huellitas escondidas</b>.  
+          ¿Cuántas encontrás? 👀
+        </p>
+
+        <div class="hunt" aria-hidden="true">
+          <span class="hunt__paw">🐾</span>
+          <span class="hunt__paw">🐾</span>
+          <span class="hunt__paw">🐾</span>
+          <span class="hunt__paw">🐾</span>
+          <span class="hunt__paw">🐾</span>
+          <span class="hunt__paw">🐾</span>
+        </div>
+
+        <div class="progress">
+          <div class="progress__label">Nivel de diversión</div>
+          <div class="progress__bar"><span></span></div>
+        </div>
+
+        <div class="badges">
+          <div class="badge">🐶 Perritos</div>
+          <div class="badge">🐱 Gatitos</div>
+          <div class="badge">🦊 Zorritos</div>
+          <div class="badge">🐯 Tigres</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section id="countdown" class="card countdown reveal">
+      <h2 class="h2">⏰ Cuenta regresiva</h2>
+      <p class="p">Falta poquito para el cumple 🎈</p>
+
+      <div class="timer" role="timer" aria-live="polite">
+        <div class="tbox">
+          <div class="tnum" id="dd">00</div>
+          <div class="tlabel">Días</div>
+        </div>
+        <div class="tbox">
+          <div class="tnum" id="hh">00</div>
+          <div class="tlabel">Horas</div>
+        </div>
+        <div class="tbox">
+          <div class="tnum" id="mm">00</div>
+          <div class="tlabel">Min</div>
+        </div>
+        <div class="tbox">
+          <div class="tnum" id="ss">00</div>
+          <div class="tlabel">Seg</div>
+        </div>
+      </div>
+
+      <div class="countdown__footer">
+        <span class="pill">🧁 Merienda</span>
+        <span class="pill">🎂 Torta</span>
+        <span class="pill">🎁 Sorpresa</span>
+        <span class="pill">🎈 Juegos</span>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="card reveal">
+      <h2 class="h2">📸 Algunas fotitos</h2>
+
+      <div class="gallery">
+  <figure class="gitem gitem--img">
+    <img src="assets/foto1.jpg" alt="Foto 1" loading="lazy">
+    <figcaption class="gcap"> 🐾</figcaption>
+  </figure>
+
+  <figure class="gitem gitem--img">
+    <img src="assets/foto2.jpg" alt="Foto 2" loading="lazy">
+    <figcaption class="gcap"> 🎈</figcaption>
+  </figure>
+
+  <figure class="gitem gitem--img">
+    <img src="assets/foto3.jpg" alt="Foto 3" loading="lazy">
+    <figcaption class="gcap"> 😄</figcaption>
+  </figure>
+
+  <figure class="gitem gitem--img">
+    <img src="assets/foto4.jpg" alt="Foto 4" loading="lazy">
+    <figcaption class="gcap"> 🦊</figcaption>
+  </figure>
+
+  <figure class="gitem gitem--img">
+    <img src="assets/foto5.jpg" alt="Foto 5" loading="lazy">
+    <figcaption class="gcap"> 🎉</figcaption>
+  </figure>
+
+  <figure class="gitem gitem--img">
+    <img src="assets/foto6.jpg" alt="Foto 6" loading="lazy">
+    <figcaption class="gcap"> 🎂</figcaption>
+  </figure>
+</div>
+
+    </section>
+
+    <!-- RSVP -->
+    <section id="rsvp" class="card rsvp reveal">
+      <h2 class="h2">✅ Confirmación</h2>
+      <p class="p">Completá y apretá el botón. Se abre WhatsApp con el mensaje listo 💬</p>
+
+      <form class="form" id="rsvpForm">
+        <label class="field">
+          <span>Tu nombre</span>
+          <input id="guestName" type="text" placeholder="Ej: Cami" autocomplete="name" />
+        </label>
+
+        <label class="field">
+          <span>¿Venís?</span>
+          <select id="attendance">
+            <option value="Sí">Sí, voy 🎉</option>
+            <option value="No">No puedo 😢</option>
+            <option value="Tal vez">Tal vez 🤔</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>¿Cuántos vienen?</span>
+          <select id="count">
+            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Comentario (opcional)</span>
+          <input id="note" type="text" placeholder="Ej: Llegamos 16:00 / alergia / etc." />
+        </label>
+
+        <div class="form__actions">
+          <button class="btn btn--primary" type="submit">💬 Confirmar por WhatsApp</button>
+          <button class="btn" id="copyBtn" type="button">📋 Copiar mensaje</button>
+        </div>
+
+        <p class="small">
+          Si querés, cambiá el número de WhatsApp en <code>app.js</code> 👇
+        </p>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__card">
+        <div>Hecho con 💛 para un cumple lleno de huellitas 🐾</div>
+        <div class="footer__mini">WebMic • Demo</div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
