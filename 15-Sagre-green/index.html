@@ -1,0 +1,386 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mis XV • Sage Green</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=DM+Serif+Display&family=Allura&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="./app.js" defer></script>
+</head>
+
+<body>
+  <!-- background fx -->
+  <div class="bgFX" aria-hidden="true">
+    <div class="grain"></div>
+    <div class="vignette"></div>
+    <div class="orbs">
+      <span class="orb o1"></span>
+      <span class="orb o2"></span>
+      <span class="orb o3"></span>
+    </div>
+    <canvas id="dots"></canvas>
+  </div>
+
+  <!-- topbar -->
+  <header class="topbar">
+    <div class="wrap topbarInner">
+      <div class="brand">
+        <span class="brandDot" aria-hidden="true"></span>
+        <span class="brandTxt">SAGE GREEN</span>
+      </div>
+
+      <nav class="nav">
+        <a href="#info">Info</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#galeria">Fotos</a>
+        <a class="navCta" href="#rsvp">Confirmar</a>
+      </nav>
+
+      <button class="musicBtn" id="musicBtn" type="button" aria-label="Música">
+        <span class="musicIcon" id="musicIcon">▶</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio" aria-label="Portada">
+    <div class="wrap heroGrid">
+      <div class="heroLeft">
+        <div class="photoFrame" id="parallaxCard">
+  <div class="photoBg" aria-hidden="true"></div>
+<div class="photo" aria-label="Foto principal">
+  <img class="heroImg" src="./assets/hero-bg.jpg" alt="Foto principal">
+</div>
+
+
+          <!-- animated rings -->
+          <div class="rings" aria-hidden="true">
+            <span class="ring r1"></span>
+            <span class="ring r2"></span>
+            <span class="ring r3"></span>
+          </div>
+
+          <!-- leaves -->
+          <div class="leaves" aria-hidden="true">
+            <span class="leaf l1"></span>
+            <span class="leaf l2"></span>
+            <span class="leaf l3"></span>
+          </div>
+
+          <div class="photoBadge">
+            <span class="badgeKicker">INVITACIÓN</span>
+            <span class="badgeName" id="nombreBadge">ALMA</span>
+          </div>
+        </div>
+
+        <div class="heroMini">
+          <div class="miniCard">
+            <div class="miniTitle">Cuenta regresiva</div>
+            <div class="miniCD">
+              <div><span id="d">--</span><small>Días</small></div>
+              <div><span id="h">--</span><small>Hs</small></div>
+              <div><span id="m">--</span><small>Min</small></div>
+              <div><span id="s">--</span><small>Seg</small></div>
+            </div>
+          </div>
+          <a class="miniBtn" href="#info">Ver información</a>
+        </div>
+      </div>
+
+      <div class="heroRight">
+        <div class="kicker">
+          <span class="kDot"></span>
+          <span id="kickerTxt">MIS QUINCE</span>
+        </div>
+
+        <h1 class="heroTitle">
+          <span class="script">Mis</span>
+          <span class="xv">XV</span>
+          <span class="name" id="nombre">ALMA</span>
+        </h1>
+
+        <p class="heroPhrase" id="fraseTxt">
+          Una tarde noche entre verde suave, luz y amor.
+        </p>
+
+        <div class="heroActions">
+          <a class="btn primary" href="#rsvp" id="btnConfirm">Confirmar asistencia</a>
+          <a class="btn ghost" href="#galeria">Ver fotos</a>
+        </div>
+
+        <div class="heroChips" id="chips">
+          <span class="chip">Sage vibes</span>
+          <span class="chip">Elegante</span>
+          <span class="chip">Brillos suaves</span>
+          <span class="chip">Música & amor</span>
+        </div>
+
+        <div class="scrollHint">
+          <span>Deslizá</span>
+          <i aria-hidden="true">↓</i>
+        </div>
+      </div>
+    </div>
+
+    <a class="fab" href="#rsvp">Confirmar</a>
+  </section>
+
+  <main class="wrap main" id="contenido">
+    <!-- INFO -->
+    <section class="section reveal" id="info">
+      <div class="head">
+        <h2>La fiesta</h2>
+        <p>Todo lo importante para llegar y disfrutar.</p>
+      </div>
+
+      <div class="infoGrid">
+        <article class="card infoCard">
+          <div class="infoRow">
+            <span class="k">FECHA</span>
+            <span class="v" id="fechaTxt">Sábado 14 de Septiembre 2026</span>
+          </div>
+          <div class="infoRow">
+            <span class="k">HORA</span>
+            <span class="v" id="horaTxt">21:30 hs</span>
+          </div>
+          <div class="infoRow">
+            <span class="k">LUGAR</span>
+            <span class="v" id="lugarTxt">Salón “Jardines”</span>
+          </div>
+          <div class="infoRow">
+            <span class="k">DIRECCIÓN</span>
+            <span class="v" id="dirTxt">Av. Siempre Viva 742, Buenos Aires</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="infoBtns">
+            <button class="btn primary full" id="btnComoLlegar" type="button">Abrir Google Maps</button>
+            <button class="btn ghost full" id="btnAddCal" type="button">Agregar al calendario</button>
+          </div>
+
+          <p class="tiny">Se abre en una pestaña nueva. No se guarda nada en la página.</p>
+        </article>
+
+        <article class="card mapCard">
+          <div class="mapTop">
+            <div class="mapTitle">Mapa</div>
+            <div class="mapTag">Vista previa</div>
+          </div>
+          <div class="mapWrap">
+            <iframe id="mapFrame" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+              src="">
+            </iframe>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="section reveal" id="timeline">
+      <div class="head">
+        <h2>Timeline</h2>
+        <p>Así vivimos la noche ✨</p>
+      </div>
+
+      <div class="timeline">
+        <div class="tItem">
+          <div class="tDot"></div>
+          <div class="tCard">
+            <div class="tTime" id="t1">21:30</div>
+            <div class="tTitle">Recepción</div>
+            <div class="tText">Llegada, fotos y bienvenida.</div>
+          </div>
+        </div>
+
+        <div class="tItem">
+          <div class="tDot"></div>
+          <div class="tCard">
+            <div class="tTime" id="t2">22:30</div>
+            <div class="tTitle">Cena</div>
+            <div class="tText">Compartimos la mesa juntos.</div>
+          </div>
+        </div>
+
+        <div class="tItem">
+          <div class="tDot"></div>
+          <div class="tCard">
+            <div class="tTime" id="t3">00:00</div>
+            <div class="tTitle">Baile</div>
+            <div class="tText">¡A romper la pista!</div>
+          </div>
+        </div>
+
+        <div class="tItem">
+          <div class="tDot"></div>
+          <div class="tCard">
+            <div class="tTime" id="t4">02:00</div>
+            <div class="tTitle">Fin & abrazos</div>
+            <div class="tText">Nos vamos con el corazón lleno 💚</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOMENTS -->
+    <section class="section reveal" id="momentos">
+      <div class="head">
+        <h2>Momentos</h2>
+        <p>Detalles que hacen la diferencia.</p>
+      </div>
+
+      <div class="momentsGrid">
+        <article class="mCard">
+          <div class="mIcon">📸</div>
+          <h3>Foto corner</h3>
+          <p>Traé tu mejor sonrisa, hay sorpresas.</p>
+        </article>
+        <article class="mCard">
+          <div class="mIcon">✨</div>
+          <h3>Brillos suaves</h3>
+          <p>Un toque de glitter o dorado queda perfecto.</p>
+        </article>
+        <article class="mCard">
+          <div class="mIcon">🎶</div>
+          <h3>Playlist</h3>
+          <p>Decime qué tema no puede faltar.</p>
+          <button class="btn ghost full" id="btnGoSong" type="button">Sugerir canción</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- DRESS -->
+    <section class="section reveal" id="dress">
+      <div class="head">
+        <h2>Dress code</h2>
+        <p>Elegante, fresco y sage.</p>
+      </div>
+
+      <div class="card dressCard">
+        <div class="dressGrid">
+          <div class="dressLeft">
+            <div class="dressTitle" id="dressTxt">Elegante</div>
+            <div class="dressSub">Tonos sage / nude / champagne + accesorios dorados suaves.</div>
+
+            <div class="dressChips">
+              <span class="dChip">Sage</span>
+              <span class="dChip">Nude</span>
+              <span class="dChip">Champagne</span>
+              <span class="dChip">Dorado suave</span>
+            </div>
+          </div>
+
+          <div class="dressRight" aria-hidden="true">
+            <div class="swatches">
+              <span class="sw s1"></span>
+              <span class="sw s2"></span>
+              <span class="sw s3"></span>
+              <span class="sw s4"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section class="section reveal" id="galeria">
+      <div class="head">
+        <h2>Galería</h2>
+        <p>Unas fotos para entrar en clima.</p>
+      </div>
+
+      <div class="polaroids" id="gallery"></div>
+
+      <div class="tiny">Tip: cambiá las fotos en <b>assets/</b> y los nombres en <b>app.js</b>.</div>
+    </section>
+
+    <!-- REGALOS -->
+    <section class="section reveal" id="regalos">
+      <div class="head">
+        <h2>Regalos</h2>
+        <p>Si querés regalarme algo 💚</p>
+      </div>
+
+      <div class="card giftCard">
+        <p class="giftText" id="giftPhrase">
+          Tu presencia es el mejor regalo. Pero si querés sorprenderme, te dejo mi alias ✨
+        </p>
+
+        <div class="giftActions">
+          <button class="btn primary" id="btnAlias" type="button">Ver / Copiar alias</button>
+          <div class="aliasBox" id="aliasBox" hidden>
+            <span class="aliasK">ALIAS</span>
+            <span class="aliasV" id="aliasTxt">alma.15.mp</span>
+          </div>
+        </div>
+
+        <p class="tiny">Se copia al portapapeles al abrirlo.</p>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="section reveal" id="rsvp">
+      <div class="head">
+        <h2>Confirmación</h2>
+        <p>Ayudanos confirmando para organizar todo mejor.</p>
+      </div>
+
+      <div class="card rsvpCard">
+        <form id="rsvpForm" autocomplete="on">
+          <div class="rsvpGrid">
+            <label class="field">
+              <span>Nombre y apellido</span>
+              <input id="fNombre" type="text" placeholder="Ej: Lucía Pérez" required>
+            </label>
+
+            <label class="field">
+              <span>¿Asistís?</span>
+              <div class="seg">
+                <button class="segBtn is-on" type="button" data-attend="si">Sí</button>
+                <button class="segBtn" type="button" data-attend="no">No</button>
+              </div>
+              <input id="fAsiste" type="hidden" value="Sí">
+            </label>
+
+            <label class="field">
+              <span>Comida</span>
+              <select id="fComida" required>
+                <option value="" selected>Elegí una opción</option>
+                <option>Sin restricciones</option>
+                <option>Vegetariana</option>
+                <option>Vegana</option>
+                <option>Sin TACC</option>
+                <option>Otra</option>
+              </select>
+            </label>
+
+            <label class="field full">
+              <span>Mensaje</span>
+              <textarea id="fMensaje" rows="4" placeholder="Ej: Que la pases hermoso 💚"></textarea>
+            </label>
+          </div>
+
+          <button class="btn primary full" type="submit">CONFIRMAR POR WHATSAPP</button>
+          <p class="tiny">Se envía por WhatsApp (no se guarda en ningún lado).</p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer reveal">
+      <div class="footerLine"></div>
+      <p class="footerTxt" id="footerTxt">Gracias por compartir esta noche conmigo 💚</p>
+    </footer>
+  </main>
+
+  <audio id="bgMusic" loop preload="auto">
+    <source src="./assets/music.mp3" type="audio/mpeg" />
+  </audio>
+</body>
+</html>
