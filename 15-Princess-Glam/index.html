@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mis XV • Princess Glam</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800;900&family=Playfair+Display:wght@600;700&family=Allura&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="./app.js" defer></script>
+</head>
+
+<body>
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <button class="musicBtn" id="musicBtn" aria-label="Música">
+        <span id="musicIcon">▶</span>
+      </button>
+
+      <div class="brand">
+        <span class="brandCrown" aria-hidden="true">👑</span>
+        <span>Princess Glam</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio" aria-label="Portada">
+    <!-- Foto de portada -->
+    <div class="heroPhoto" aria-hidden="true"></div>
+
+    <!-- Brillos/animaciones -->
+    <div class="sparkles" aria-hidden="true"></div>
+
+    <!-- OVERLAY SUPERIOR -->
+    <
+
+      </div>
+
+      <div class="heroOverlay__right">
+        <div class="ovBtns">
+          <a class="ovBtn ovBtn--primary" href="#confirmar" id="btnConfirmTop">Confirmar</a>
+          <a class="ovBtn" href="#info" id="btnInfoTop">Ver info</a>
+        </div>
+
+        <a class="ovScroll" href="#contenido">Deslizá <span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+
+    <!-- Card central (mismo modelo, pero más princess) -->
+    <div class="heroCard reveal">
+      <div class="pill">INVITACIÓN</div>
+
+      <div class="heroTitle">
+        <div class="heroScript">Mis</div>
+        <div class="heroXV">XV</div>
+      </div>
+
+      <div class="heroName" id="nombre">IVANNA</div>
+      <p class="heroPhrase" id="fraseTxt">Una noche de cuento, brillo y amor ✨</p>
+
+      <div class="heroActions">
+        <a class="btn btnPrimary" href="#confirmar" id="btnConfirmHero">Confirmar</a>
+        <a class="btn btnGhost" href="#info" id="btnInfoHero">Ver info</a>
+      </div>
+
+      <div class="heroHint">Deslizá para ver la invitación ↓</div>
+    </div>
+
+    <!-- FAB -->
+    <a class="fab" id="fabConfirm" href="#confirmar">Confirmar</a>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main id="contenido" class="wrap main">
+    <!-- FRASE -->
+    <section class="section reveal" id="frase">
+      <div class="sectionHead">
+        <h2>Un mensaje para vos</h2>
+        <p>Gracias por ser parte de este día tan especial 💛</p>
+      </div>
+
+      <div class="quoteCard">
+        <div class="quoteMark" aria-hidden="true">“</div>
+        <p class="quoteText" id="mensajeInvitados">
+          Quiero que esta noche sea un recuerdo para siempre. Gracias por acompañarme y celebrar conmigo ✨
+        </p>
+        <div class="quoteSign">
+          <span class="quoteScript">Con cariño,</span>
+          <span class="quoteName" id="firmaNombre">Ivanna</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFO / CUENTA REGRESIVA -->
+    <section class="section reveal" id="info">
+      <div class="sectionHead">
+        <h2>La fiesta</h2>
+        <p>Todo lo importante para llegar y disfrutar ✨</p>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <div class="row">
+            <span class="k">FECHA</span>
+            <span class="v" id="fechaTxt">Sábado 24 de Agosto 2026</span>
+          </div>
+          <div class="row">
+            <span class="k">HORA</span>
+            <span class="v" id="horaTxt">21:30 hs</span>
+          </div>
+          <div class="row">
+            <span class="k">LUGAR</span>
+            <span class="v" id="lugarTxt">Salón “Janos”</span>
+          </div>
+          <div class="row">
+            <span class="k">DIRECCIÓN</span>
+            <span class="v" id="dirTxt">Av. Siempre Viva 742, Buenos Aires</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <button class="btn btnPrimary full" id="btnComoLlegar" type="button">CÓMO LLEGAR</button>
+          <div class="tiny">Se abre Google Maps en una pestaña nueva.</div>
+        </div>
+
+        <div class="card">
+          <div class="countTitle">Cuenta regresiva</div>
+          <div class="cd">
+            <div class="cdBox"><div class="cdNum" id="d">--</div><div class="cdLbl">DÍAS</div></div>
+            <div class="cdBox"><div class="cdNum" id="h">--</div><div class="cdLbl">HS</div></div>
+            <div class="cdBox"><div class="cdNum" id="m">--</div><div class="cdLbl">MIN</div></div>
+            <div class="cdBox"><div class="cdNum" id="s">--</div><div class="cdLbl">SEG</div></div>
+          </div>
+
+          <div class="miniNote">
+            Tip: si querés, vení con algún detalle dorado o brillo ✨
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DRESS CODE -->
+    <section class="section reveal" id="dress">
+      <div class="sectionHead">
+        <h2>Dress code</h2>
+        <p>Elegante & glam, como un cuento ✨</p>
+      </div>
+
+      <div class="card dressCard">
+        <div class="dressRow">
+          <div class="dressIcon" aria-hidden="true">👗</div>
+          <div class="dressMid">
+            <div class="dressTitle" id="dressTxt">Elegante</div>
+            <div class="dressSub">Tonos nude / champagne / dorado y brillos suaves 💛</div>
+          </div>
+          <div class="dressIcon" aria-hidden="true">👔</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="section reveal" id="galeria">
+      <div class="sectionHead">
+        <h2>Galería</h2>
+        <p>Algunos momentos ✨</p>
+      </div>
+
+      <div class="gallery" id="gallery"></div>
+      <div class="tiny">Tip: estas fotos NO se recortan (para que no se corte la cara).</div>
+    </section>
+
+    <!-- PLAYLIST -->
+    <section class="section reveal" id="playlist">
+      <div class="sectionHead">
+        <h2>Playlist</h2>
+        <p>¿Qué tema no puede faltar? 🎶</p>
+      </div>
+
+      <div class="card">
+        <label class="field">
+          <span>Tu canción</span>
+          <input id="songInput" type="text" placeholder="Ej: TINI - Cupido">
+        </label>
+
+        <button class="btn btnPrimary full" id="btnSong" type="button">ENVIAR TEMA POR WHATSAPP</button>
+        <div class="tiny">Se envía por WhatsApp (no se guarda en ningún lado).</div>
+      </div>
+    </section>
+
+    <!-- REGALOS / ALIAS -->
+    <section class="section reveal" id="regalos">
+      <div class="sectionHead">
+        <h2>Regalos</h2>
+        <p>Si querés regalarme algo 💛</p>
+      </div>
+
+      <div class="card">
+        <div class="giftPhrase" id="giftPhrase">
+          Tu presencia es el mejor regalo. Pero si querés sorprenderme, te dejo mi alias ✨
+        </div>
+
+        <button class="btn btnGhost full" id="btnAlias" type="button">VER / COPIAR ALIAS</button>
+
+        <div class="aliasBox" id="aliasBox" hidden>
+          <div class="aliasLine">
+            <span class="k">ALIAS</span>
+            <span class="v alias" id="aliasTxt">ivanna.15.mp</span>
+          </div>
+          <div class="tiny">Se copió automáticamente al abrirlo 💛</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="section reveal" id="confirmar">
+      <div class="sectionHead">
+        <h2>Confirmación</h2>
+        <p>Ayudanos confirmando para organizar todo mejor ✨</p>
+      </div>
+
+      <div class="card formCard">
+        <form id="rsvpForm" autocomplete="on">
+          <div class="formGrid">
+            <label class="field">
+              <span>Nombre y apellido</span>
+              <input id="fNombre" type="text" placeholder="Ej: Lucía Pérez" required>
+            </label>
+
+            <label class="field">
+              <span>Tipo de comida</span>
+              <select id="fComida" required>
+                <option value="" selected>Elegí una opción</option>
+                <option>Sin restricciones</option>
+                <option>Vegetariana</option>
+                <option>Vegana</option>
+                <option>Sin TACC</option>
+                <option>Otra</option>
+              </select>
+            </label>
+
+            <label class="field full">
+              <span>Mensaje para la cumpleañera</span>
+              <textarea id="fMensaje" rows="4" placeholder="Ej: Que la pases hermoso 💛"></textarea>
+            </label>
+          </div>
+
+          <button class="btn btnPrimary full" type="submit">CONFIRMAR POR WHATSAPP</button>
+          <div class="tiny">Se envía por WhatsApp (no se guarda en ningún lado).</div>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer reveal">
+      <div class="footerLine"></div>
+      <p class="footerTxt" id="footerTxt">Gracias por compartir esta noche conmigo ✨💛</p>
+    </footer>
+  </main>
+
+  <!-- Audio -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="./assets/musica.mp3" type="audio/mpeg" />
+  </audio>
+</body>
+</html>
