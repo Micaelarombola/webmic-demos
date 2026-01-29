@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mis XV • Blue Ice</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;700;800;900&family=DM+Serif+Display&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles.css?v=1" />
+  <script src="./app.js?v=1" defer></script>
+</head>
+
+<body>
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <a class="brand" href="#inicio" aria-label="Blue Ice">
+        <span class="brandDot" aria-hidden="true"></span>
+        <span class="brandTxt">15 • BLUE ICE</span>
+      </a>
+
+      <nav class="nav">
+        <a href="#info">Info</a>
+        <a href="#timeline">Historia</a>
+        <a href="#galeria">Galería</a>
+        <a href="#confirmar" class="navCTA">RSVP</a>
+      </nav>
+
+      <button class="musicBtn" id="musicBtn" aria-label="Música">
+        <span id="musicIcon">▶</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="inicio" aria-label="Portada">
+    <div class="heroPhoto" aria-hidden="true"></div>
+    <div class="aurora" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- Floating crystals -->
+    <div class="crystals" aria-hidden="true">
+      <span class="cr c1"></span>
+      <span class="cr c2"></span>
+      <span class="cr c3"></span>
+      <span class="cr c4"></span>
+      <span class="cr c5"></span>
+    </div>
+
+    <div class="wrap heroGrid">
+      <!-- Left: editorial text -->
+      <div class="heroCopy">
+        <div class="kicker">
+          <span class="chip">INVITACIÓN</span>
+          <span class="chip ghost">ICE GLAM</span>
+          <span class="chip ghost" id="fechaTop">Sábado 24 de Agosto 2026</span>
+        </div>
+
+        <h1 class="heroTitle">
+          <span class="mis">Mis</span>
+          <span class="xv">XV</span>
+        </h1>
+
+        <div class="heroName" id="nombre">Evelin</div>
+        <p class="heroLine" id="fraseTxt">Una noche para brillar en azul ❄️✨</p>
+
+        <div class="heroActions">
+          <a class="btn primary" href="#confirmar">Confirmar</a>
+          <button class="btn ghost" id="openMap" type="button">Ver mapa</button>
+          <a class="btn glass" href="#galeria">Ver fotos</a>
+        </div>
+
+        <div class="quick">
+          <div class="qItem">
+            <div class="qK">HORA</div>
+            <div class="qV" id="horaTop">21:30 hs</div>
+          </div>
+          <div class="qItem">
+            <div class="qK">LUGAR</div>
+            <div class="qV" id="lugarTop">Salón “Janos”</div>
+          </div>
+          <div class="qItem">
+            <div class="qK">DRESS</div>
+            <div class="qV" id="dressTop">Elegante • Azul/Plata</div>
+          </div>
+        </div>
+
+        <a class="scrollPill" href="#contenido">Deslizá ↓</a>
+      </div>
+
+      <!-- Right: ICE FRAME + circular countdown -->
+      <aside class="heroIce">
+        <div class="iceFrame">
+          <div class="iceHeader">
+            <div class="iceBadge">Cuenta regresiva</div>
+            <div class="iceSub">Nos vemos en…</div>
+          </div>
+
+          <div class="rings">
+            <div class="ring" data-ring="days">
+              <svg viewBox="0 0 120 120" aria-hidden="true">
+                <circle class="bg" cx="60" cy="60" r="48"></circle>
+                <circle class="fg" cx="60" cy="60" r="48"></circle>
+              </svg>
+              <div class="ringMid">
+                <div class="ringNum" id="d">--</div>
+                <div class="ringLbl">DÍAS</div>
+              </div>
+            </div>
+
+            <div class="ring small" data-ring="hours">
+              <svg viewBox="0 0 120 120" aria-hidden="true">
+                <circle class="bg" cx="60" cy="60" r="48"></circle>
+                <circle class="fg" cx="60" cy="60" r="48"></circle>
+              </svg>
+              <div class="ringMid">
+                <div class="ringNum" id="h">--</div>
+                <div class="ringLbl">HS</div>
+              </div>
+            </div>
+
+            <div class="ring small" data-ring="mins">
+              <svg viewBox="0 0 120 120" aria-hidden="true">
+                <circle class="bg" cx="60" cy="60" r="48"></circle>
+                <circle class="fg" cx="60" cy="60" r="48"></circle>
+              </svg>
+              <div class="ringMid">
+                <div class="ringNum" id="m">--</div>
+                <div class="ringLbl">MIN</div>
+              </div>
+            </div>
+
+            <div class="ring small" data-ring="secs">
+              <svg viewBox="0 0 120 120" aria-hidden="true">
+                <circle class="bg" cx="60" cy="60" r="48"></circle>
+                <circle class="fg" cx="60" cy="60" r="48"></circle>
+              </svg>
+              <div class="ringMid">
+                <div class="ringNum" id="s">--</div>
+                <div class="ringLbl">SEG</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="iceFooter">
+            <div class="iceRow">
+              <span class="k">DIRECCIÓN</span>
+              <span class="v" id="dirTop">Av. Siempre Viva 742, Buenos Aires</span>
+            </div>
+            <button class="btn primary full" id="btnComoLlegar" type="button">CÓMO LLEGAR</button>
+            <div class="tiny">Se abre Google Maps.</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <a class="fab" href="#confirmar">Confirmar</a>
+  </section>
+
+  <!-- Main -->
+  <main id="contenido" class="wrap main">
+    <!-- Info cards -->
+    <section class="section" id="info">
+      <div class="head">
+        <h2>La fiesta</h2>
+        <p>Todo lo importante para llegar y disfrutar 💙</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="cardTitle">Detalles</div>
+          <div class="rows">
+            <div class="row"><span class="k">FECHA</span><span class="v" id="fechaTxt">Sábado 24 de Agosto 2026</span></div>
+            <div class="row"><span class="k">HORA</span><span class="v" id="horaTxt">21:30 hs</span></div>
+            <div class="row"><span class="k">LUGAR</span><span class="v" id="lugarTxt">Salón “Janos”</span></div>
+            <div class="row"><span class="k">DIRECCIÓN</span><span class="v" id="dirTxt">Av. Siempre Viva 742, Buenos Aires</span></div>
+          </div>
+          <div class="divider"></div>
+          <div class="note" id="notaTxt">Tip: sumá detalles azul hielo o plateado ✨</div>
+        </article>
+
+        <article class="card">
+          <div class="cardTitle">Dress code</div>
+          <div class="dressBlock">
+            <div class="pill" id="dressTxt">Elegante</div>
+            <p class="muted">Azules, blancos, plateado, brillos sutiles. Ice glam.</p>
+          </div>
+          <div class="divider"></div>
+          <div class="cardTitle">Regalos</div>
+          <p class="muted">Tu presencia es el mejor regalo. Si querés, te dejo mi alias.</p>
+          <button class="btn glass full" id="btnAlias" type="button">VER / COPIAR ALIAS</button>
+          <div class="aliasBox" id="aliasBox" hidden>
+            <div class="row"><span class="k">ALIAS</span><span class="v alias" id="aliasTxt">evelin.15.mp</span></div>
+            <div class="tiny">Se copió al portapapeles 💙</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="cardTitle">Playlist</div>
+          <p class="muted">¿Qué tema no puede faltar?</p>
+          <label class="field">
+            <span>Tu canción</span>
+            <input id="songInput" type="text" placeholder="Ej: Emilia - No_se_ve.mp3">
+          </label>
+          <button class="btn primary full" id="btnSong" type="button">ENVIAR POR WHATSAPP</button>
+          <div class="tiny">No se guarda en ningún lado.</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="section" id="timeline">
+      <div class="head">
+        <h2>Historia</h2>
+        <p>Mini recorrido (queda re original) ❄️</p>
+      </div>
+
+      <div class="timeline">
+        <div class="tItem">
+          <div class="tDot"></div>
+          <div class="tCard">
+            <div class="tTitle">Hace 15 años</div>
+            <div class="tText">Llegó mi historia… y empezó mi mundo 💙</div>
+          </div>
+        </div>
+
+        <div class="tItem">
+          <div class="tDot"></div>
+          <div class="tCard">
+            <div class="tTitle">Mis personas</div>
+            <div class="tText">Familia, amistades y quienes me acompañan siempre ✨</div>
+          </div>
+        </div>
+
+        <div class="tItem">
+          <div class="tDot"></div>
+          <div class="tCard">
+            <div class="tTitle">La noche</div>
+            <div class="tText">Ice glam, música, risas y recuerdos para siempre ❄️</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section" id="galeria">
+      <div class="head">
+        <h2>Galería</h2>
+        <p>Click para ver en grande (lightbox) 📸</p>
+      </div>
+
+      <div class="masonry" id="gallery"></div>
+      <div class="tiny">Tip: nombres en minúscula: foto1.jpg, foto2.jpg…</div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="section" id="confirmar">
+      <div class="head">
+        <h2>Confirmación</h2>
+        <p>RSVP en 2 pasos (más moderno)</p>
+      </div>
+
+      <div class="rsvp">
+        <div class="stepper">
+          <button class="step is-on" data-step="1" type="button">1 • Datos</button>
+          <button class="step" data-step="2" type="button">2 • Mensaje</button>
+        </div>
+
+        <div class="rsvpCard">
+          <form id="rsvpForm" autocomplete="on">
+            <div class="stepPanel is-on" data-panel="1">
+              <div class="formGrid">
+                <label class="field">
+                  <span>Nombre y apellido</span>
+                  <input id="fNombre" type="text" placeholder="Ej: Lucía Pérez" required>
+                </label>
+
+                <label class="field">
+                  <span>Tipo de comida</span>
+                  <select id="fComida" required>
+                    <option value="" selected>Elegí una opción</option>
+                    <option>Sin restricciones</option>
+                    <option>Vegetariana</option>
+                    <option>Vegana</option>
+                    <option>Sin TACC</option>
+                    <option>Otra</option>
+                  </select>
+                </label>
+              </div>
+
+              <button class="btn primary full" id="nextStep" type="button">SIGUIENTE</button>
+            </div>
+
+            <div class="stepPanel" data-panel="2">
+              <label class="field">
+                <span>Mensaje para la cumpleañera</span>
+                <textarea id="fMensaje" rows="4" placeholder="Ej: Que la pases hermoso 💙"></textarea>
+              </label>
+
+              <div class="rsvpBtns">
+                <button class="btn glass" id="prevStep" type="button">VOLVER</button>
+                <button class="btn primary" type="submit">CONFIRMAR POR WHATSAPP</button>
+              </div>
+
+              <div class="tiny">Se envía por WhatsApp (no se guarda).</div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p class="footerTxt" id="footerTxt">Gracias por ser parte de mi noche Blue Ice ❄️💙</p>
+    </footer>
+  </main>
+
+  <!-- Map Modal -->
+  <div class="modal" id="mapModal" aria-hidden="true">
+    <div class="modalBackdrop" data-close="1"></div>
+    <div class="modalCard" role="dialog" aria-modal="true" aria-label="Mapa">
+      <div class="modalTop">
+        <div class="modalTitle">¿Cómo llegar?</div>
+        <button class="modalX" id="closeMap" type="button" aria-label="Cerrar">✕</button>
+      </div>
+      <div class="modalBody">
+        <div class="modalAddr" id="modalAddr">Av. Siempre Viva 742, Buenos Aires</div>
+        <iframe
+          id="mapFrame"
+          title="Mapa"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src=""
+        ></iframe>
+      </div>
+      <div class="modalBtns">
+        <button class="btn glass" data-close="1" type="button">Cerrar</button>
+        <button class="btn primary" id="openMaps2" type="button">Abrir Google Maps</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightBackdrop" data-close="1"></div>
+    <button class="lightX" data-close="1" aria-label="Cerrar">✕</button>
+    <img id="lightImg" alt="Foto">
+  </div>
+
+  <audio id="bgMusic" loop preload="auto">
+    <source src="./assets/music.mp3" type="audio/mpeg" />
+  </audio>
+</body>
+</html>
