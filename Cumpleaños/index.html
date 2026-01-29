@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cumple • Disco Night</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <div class="brand">
+        <span class="dot"></span>
+        <span class="brandText">INVITACIÓN</span>
+      </div>
+
+      <nav class="nav">
+        <a href="#countdown">Cuenta regresiva</a>
+        <a href="#fiesta">Fiesta</a>
+        <a href="#rsvp">Confirmación</a>
+        <a href="#dress">Dress code</a>
+        <a href="#ig">Instagram</a>
+        <a href="#playlist">Playlist</a>
+        <a href="#regalo">Regalo</a>
+      </nav>
+
+      <button class="menuBtn" id="menuBtn" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobileNav" id="mobileNav">
+      <a href="#countdown">Cuenta regresiva</a>
+      <a href="#fiesta">Fiesta</a>
+      <a href="#rsvp">Confirmación</a>
+      <a href="#dress">Dress code</a>
+      <a href="#ig">Instagram</a>
+      <a href="#playlist">Playlist</a>
+      <a href="#regalo">Regalo</a>
+    </div>
+
+    <div class="progress"><span id="progressBar"></span></div>
+  </header>
+
+  <!-- HERO GRANDE -->
+  <section class="hero" id="top">
+    <div class="heroBg" aria-hidden="true"></div>
+    <div class="heroShade" aria-hidden="true"></div>
+
+    <div class="wrap hero__inner">
+      <div class="heroCenter">
+        <p class="heroMini" id="heroMini">¡Estás invitado/a!</p>
+
+        <!-- Texto con animación letra por letra -->
+        <div class="heroLines">
+          <div class="heroAgeLine">
+            <span class="heroAge" id="ageText" data-text="21"></span>
+          </div>
+
+          <h1 class="heroTitle">
+            <span class="type" id="typeLine1" data-text="Juli"></span>
+          </h1>
+
+          <p class="heroSub">
+            <span class="type2" id="typeLine2" data-text="Let’s party • Noche de boliche y brillos ✨"></span>
+          </p>
+        </div>
+
+        <div class="heroMeta">
+          <span class="pill" id="dateHuman">Sábado 16 • 21:30</span>
+          <span class="pill" id="placeShort">Disco • Palermo</span>
+        </div>
+
+        <div class="heroBtns">
+          <a class="btn primary" href="#rsvp">Confirmar</a>
+          <a class="btn ghost" href="#fiesta">Ver info</a>
+          <button class="btn ghost" id="icsBtn" type="button">Agendar</button>
+        </div>
+
+        <p class="heroHint">Deslizá ↓ para ver todas las secciones</p>
+      </div>
+    </div>
+
+    <div class="scrollCue" aria-hidden="true"><span></span></div>
+  </section>
+
+  <main class="wrap">
+    <!-- COUNTDOWN -->
+    <section class="card reveal" id="countdown">
+      <div class="head">
+        <h2>Cuenta regresiva</h2>
+        <p>Faltan</p>
+      </div>
+
+      <div class="countdown" data-deadline="">
+        <div class="cdItem"><div class="cdNum" id="dd">00</div><div class="cdLab">días</div></div>
+        <div class="cdItem"><div class="cdNum" id="hh">00</div><div class="cdLab">hs</div></div>
+        <div class="cdItem"><div class="cdNum" id="mm">00</div><div class="cdLab">min</div></div>
+        <div class="cdItem"><div class="cdNum" id="ss">00</div><div class="cdLab">seg</div></div>
+      </div>
+
+      <p class="muted center">Prepará el outfit y las ganas de bailar 🪩</p>
+    </section>
+
+    <!-- FIESTA -->
+    <section class="card reveal" id="fiesta">
+      <div class="head">
+        <h2>Fiesta</h2>
+        <p>Datos + fotos</p>
+      </div>
+
+      <div class="infoGrid">
+        <div class="info">
+          <span class="k">Fecha</span>
+          <span class="v" id="eventDay">Sábado 16 de Mayo</span>
+        </div>
+        <div class="info">
+          <span class="k">Horario</span>
+          <span class="v" id="eventTime">21:30 a 03:30</span>
+        </div>
+        <div class="info full">
+          <span class="k">Lugar</span>
+          <span class="v" id="placeName">Disco Skyline</span>
+          <span class="m" id="addrText">Av. Example 1234, CABA</span>
+        </div>
+      </div>
+
+      <div class="btnRow">
+        <a class="btn primary" id="mapsBtn" href="#" target="_blank" rel="noopener">Cómo llegar</a>
+        <button class="btn ghost" id="copyAddrBtn" type="button">Copiar dirección</button>
+      </div>
+
+      <div class="gallery" id="miniGallery"></div>
+    </section>
+
+    <!-- CONFIRMACION -->
+    <section class="card reveal" id="rsvp">
+      <div class="head">
+        <h2>Confirmación</h2>
+        <p>bien original</p>
+      </div>
+
+      <div class="rsvpBox">
+        <div>
+          <p class="lead">¿Venís a festejar conmigo?</p>
+          <p class="muted">Tocá el botón, completá tu nombre y cantidad. Te abre WhatsApp con el mensaje listo.</p>
+
+          <div class="btnRow left">
+            <button class="btn primary pulse" id="openRsvp" type="button">Confirmar asistencia</button>
+            <button class="btn ghost" id="openNo" type="button">No puedo</button>
+          </div>
+
+          <div class="badges">
+            <span class="badge">✅ Rápido</span>
+            <span class="badge">✨ Mensaje listo</span>
+            <span class="badge">📍 Incluye dirección</span>
+          </div>
+        </div>
+
+        <div class="pass" aria-hidden="true">
+          <div class="passTop">
+            <span class="passTag">VIP PASS</span>
+            <span class="passDot"></span>
+          </div>
+          <div class="passMid">
+            <p class="passName" id="passName">Juli</p>
+            <p class="passMeta" id="passMeta">Sábado • 21:30</p>
+          </div>
+          <div class="passBot">
+            <span class="code" id="passCode">JL-21</span>
+            <button class="miniBtn" id="copyHashtagBtn" type="button"># <span id="hashtagText">#Juli21Night</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DRESS -->
+    <section class="card reveal" id="dress">
+      <div class="head">
+        <h2>Dress code</h2>
+        <p>night vibe</p>
+      </div>
+
+      <div class="dress">
+        <div class="dressTxt">
+          <p class="lead" id="dressText">Black & Gold / Brillos</p>
+          <p class="muted">Elegante y cómodo para bailar toda la noche.</p>
+        </div>
+        <div class="swatches" aria-hidden="true">
+          <span class="sw s1"></span><span class="sw s2"></span><span class="sw s3"></span><span class="sw s4"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSTAGRAM -->
+    <section class="card reveal" id="ig">
+      <div class="head">
+        <h2>Instagram</h2>
+        <p>subí tus fotos</p>
+      </div>
+
+      <div class="ig">
+        <div class="igShade" aria-hidden="true"></div>
+        <div class="igInner">
+          <p class="igUser">@<span id="igUser">juli</span></p>
+          <p class="igText">Etiquetame en tus fotos y videos de la noche ✨</p>
+          <a class="btn primary" id="igBtn" href="#" target="_blank" rel="noopener">Ver Instagram</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLAYLIST -->
+    <section class="card reveal" id="playlist">
+      <div class="head">
+        <h2>Playlist</h2>
+        <p>temazos</p>
+      </div>
+
+      <div class="split">
+        <div>
+          <p class="lead">Sumá canciones que no pueden faltar 🔊</p>
+          <p class="muted">Abrís el link y agregás tu tema.</p>
+        </div>
+        <a class="btn primary" id="playlistBtn" href="#" target="_blank" rel="noopener">Agregar canción</a>
+      </div>
+    </section>
+
+    <!-- REGALO -->
+    <section class="card reveal" id="regalo">
+      <div class="head">
+        <h2>Regalo</h2>
+        <p>alias</p>
+      </div>
+
+      <p class="muted center">El mejor regalo es que vengas 🖤 pero si querés sumar:</p>
+
+      <div class="gift">
+        <div class="giftRow">
+          <span class="k">Alias</span>
+          <span class="v" id="giftAlias">juli.night.21</span>
+          <button class="miniBtn" id="copyAliasBtn" type="button">Copiar</button>
+        </div>
+        <div class="giftRow">
+          <span class="k">CBU</span>
+          <span class="v" id="giftCbu">1234567890123456789012</span>
+          <button class="miniBtn" id="copyCbuBtn" type="button">Copiar</button>
+        </div>
+      </div>
+
+      <div class="note">
+        <p class="muted">Si preferís regalar en persona, el día del evento habrá un buzón 🎁</p>
+      </div>
+    </section>
+
+    <footer class="footer reveal">
+      <p class="footerBig">Nos vemos bajo las luces 🪩✨</p>
+      <p class="footerSmall">Hecho con 💛 • WebMic</p>
+    </footer>
+  </main>
+
+  <!-- MODAL RSVP -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="backdrop" data-close></div>
+
+    <div class="modalCard" role="dialog" aria-modal="true">
+      <button class="x" data-close aria-label="Cerrar">✕</button>
+      <h3 class="mt">Confirmación</h3>
+      <p class="ms">Completá y te abro WhatsApp con el mensaje listo ✨</p>
+
+      <div class="form">
+        <label class="field">
+          <span>Tu nombre</span>
+          <input id="inpName" type="text" placeholder="Ej: Sofi" autocomplete="name" />
+        </label>
+
+        <label class="field">
+          <span>¿Cuántos son?</span>
+          <div class="stepper">
+            <button type="button" class="stepBtn" id="minus">−</button>
+            <input id="inpQty" type="number" min="1" max="10" value="1" />
+            <button type="button" class="stepBtn" id="plus">+</button>
+          </div>
+        </label>
+
+        <div class="modalBtns">
+          <button class="btn primary" id="sendYes" type="button">✅ Confirmo</button>
+          <button class="btn ghost" id="sendNo" type="button">❌ No puedo</button>
+        </div>
+
+        <p class="tiny">Podés editar el mensaje antes de enviarlo.</p>
+      </div>
+
+      <canvas id="confetti" class="confetti" width="720" height="420" aria-hidden="true"></canvas>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
