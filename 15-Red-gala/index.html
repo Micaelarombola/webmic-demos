@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mis XV • Red Gala</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800;900&family=Italiana&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles.css?v=2" />
+  <script src="./app.js?v=2" defer></script>
+</head>
+
+<body>
+  <!-- INTRO (telón + luces) -->
+  <div class="intro" id="intro" aria-hidden="true">
+    <div class="curtain curtain--left"></div>
+    <div class="curtain curtain--right"></div>
+    <div class="introCenter">
+      <div class="introTag">RED GALA</div>
+      <div class="introTitle">
+        <span class="introScript">Mis</span>
+        <span class="introXV">XV</span>
+      </div>
+      <div class="introName" id="introName">Zoe</div>
+      <div class="introHint">tocá para entrar ✨</div>
+    </div>
+    <div class="introLights" aria-hidden="true"></div>
+  </div>
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <a class="logo" href="#inicio">
+        <span class="logoDot"></span>
+        <span class="logoTxt">Red Gala</span>
+      </a>
+
+      <nav class="nav">
+        <a href="#info">Info</a>
+        <a href="#timeline">Noche</a>
+        <a href="#galeria">Fotos</a>
+        <a href="#rsvp">RSVP</a>
+      </nav>
+
+      <button class="musicBtn" id="musicBtn" aria-label="Música">
+        <span id="musicIcon">▶</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO: RUNWAY -->
+  <section class="hero" id="inicio">
+    <div class="heroBg" aria-hidden="true"></div>
+    <div class="spot spot--a" aria-hidden="true"></div>
+    <div class="spot spot--b" aria-hidden="true"></div>
+    <div class="glitter" aria-hidden="true"></div>
+
+    <div class="wrap heroWrap">
+      <div class="heroMain reveal">
+        <div class="badgeRow">
+          <span class="badge">INVITACIÓN OFICIAL</span>
+          <span class="badge ghost" id="fechaTop">Sábado 24 de Agosto 2026</span>
+          <span class="badge ghost" id="horaTop">21:30 hs</span>
+        </div>
+
+        <h1 class="title">
+          <span class="script">Mis</span>
+          <span class="xv">XV</span>
+        </h1>
+
+        <div class="name" id="nombre">ZOE</div>
+        <p class="phrase" id="fraseTxt">Una noche de gala, brillo y emoción ✨</p>
+
+        <div class="ctaRow">
+          <a class="cta primary" href="#rsvp">Confirmar</a>
+          <button class="cta glass" id="openMap" type="button">Mapa</button>
+          <a class="cta outline" href="#galeria">Ver fotos</a>
+        </div>
+
+        <div class="chips">
+          <div class="chip">
+            <div class="k">LUGAR</div>
+            <div class="v" id="lugarTop">Salón “Janos”</div>
+          </div>
+          <div class="chip">
+            <div class="k">DIRECCIÓN</div>
+            <div class="v" id="dirTop">Av. Siempre Viva 742, Buenos Aires</div>
+          </div>
+        </div>
+
+        <a class="scroll" href="#contenido">Deslizá ↓</a>
+      </div>
+
+      <!-- TICKET / COUNTDOWN -->
+      <aside class="ticket reveal">
+        <div class="ticketTop">
+          <div class="ticketLabel">VIP PASS</div>
+          <div class="ticketSub">Cuenta regresiva</div>
+        </div>
+
+        <div class="cd">
+          <div class="cdBox"><div class="n" id="d">--</div><div class="l">DÍAS</div></div>
+          <div class="cdBox"><div class="n" id="h">--</div><div class="l">HS</div></div>
+          <div class="cdBox"><div class="n" id="m">--</div><div class="l">MIN</div></div>
+          <div class="cdBox"><div class="n" id="s">--</div><div class="l">SEG</div></div>
+        </div>
+
+        <div class="sep"></div>
+
+        <div class="ticketGrid">
+          <div class="tRow">
+            <div class="tk">Dress</div>
+            <div class="tv" id="dressTxt">Gala</div>
+          </div>
+          <div class="tRow">
+            <div class="tk">Color</div>
+            <div class="tv">Rojo / Negro / Dorado</div>
+          </div>
+          <div class="tRow">
+            <div class="tk">Mesa</div>
+            <div class="tv" id="mesaTxt">—</div>
+          </div>
+        </div>
+
+        <button class="cta primary full" id="btnComoLlegar" type="button">CÓMO LLEGAR</button>
+        <div class="tiny">Abre Google Maps</div>
+
+        <div class="fakeQR" aria-hidden="true"></div>
+      </aside>
+    </div>
+
+    <a class="fab" href="#rsvp">RSVP</a>
+  </section>
+
+  <main id="contenido" class="wrap main">
+    <!-- MENSAJE -->
+    <section class="section reveal" id="mensaje">
+      <div class="head">
+        <h2>Un mensaje para vos</h2>
+        <p>Gracias por ser parte de mi noche ❤️</p>
+      </div>
+
+      <div class="quote">
+        <div class="qMark">“</div>
+        <p class="qText" id="mensajeInvitados">
+          Quiero que esta noche sea un recuerdo para siempre. Gracias por acompañarme ✨
+        </p>
+        <div class="qSign">
+          <span class="qScript">Con cariño,</span>
+          <span class="qName" id="firmaNombre">Sofía</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFO -->
+    <section class="section reveal" id="info">
+      <div class="head">
+        <h2>La fiesta</h2>
+        <p>Todo lo importante para llegar y disfrutar</p>
+      </div>
+
+      <div class="infoGrid">
+        <article class="panel">
+          <div class="panelTitle">Detalles</div>
+          <div class="row"><span class="k">FECHA</span><span class="v" id="fechaTxt">Sábado 24 de Agosto 2026</span></div>
+          <div class="row"><span class="k">HORA</span><span class="v" id="horaTxt">21:30 hs</span></div>
+          <div class="row"><span class="k">LUGAR</span><span class="v" id="lugarTxt">Salón “Janos”</span></div>
+          <div class="row"><span class="k">DIRECCIÓN</span><span class="v" id="dirTxt">Av. Siempre Viva 742, Buenos Aires</span></div>
+          <div class="note" id="notaTxt">Tip: un detalle dorado queda increíble ✨</div>
+        </article>
+
+        <article class="panel">
+          <div class="panelTitle">Extras</div>
+
+          <div class="pill">Regalos</div>
+          <p class="muted">Tu presencia es el mejor regalo. Si querés, te dejo mi alias.</p>
+          <button class="cta glass full" id="btnAlias" type="button">VER / COPIAR ALIAS</button>
+
+          <div class="aliasBox" id="aliasBox" hidden>
+            <div class="row"><span class="k">ALIAS</span><span class="v alias" id="aliasTxt">zoe.15.mp</span></div>
+            <div class="tiny">Se copió al portapapeles ❤️</div>
+          </div>
+
+          <div class="sepSmall"></div>
+
+          <div class="pill">Playlist</div>
+          <label class="field">
+            <span>Tu canción</span>
+            <input id="songInput" type="text" placeholder="Ej: TINI - Cupido">
+          </label>
+          <button class="cta primary full" id="btnSong" type="button">ENVIAR POR WHATSAPP</button>
+          <div class="tiny">No se guarda en ningún lado</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- TIMELINE (nuevo) -->
+    <section class="section reveal" id="timeline">
+      <div class="head">
+        <h2>La noche</h2>
+        <p>El plan para vivirla como un show ✨</p>
+      </div>
+
+      <div class="timeline">
+        <div class="tItem">
+          <div class="tDot"></div>
+          <div class="tCard">
+            <div class="tTime">21:30</div>
+            <div class="tTitle">Recepción</div>
+            <div class="tDesc">Llegada, fotos y brindis.</div>
+          </div>
+        </div>
+
+        <div class="tItem">
+          <div class="tDot"></div>
+          <div class="tCard">
+            <div class="tTime">22:15</div>
+            <div class="tTitle">Cena</div>
+            <div class="tDesc">Comida + momentos especiales.</div>
+          </div>
+        </div>
+
+        <div class="tItem">
+          <div class="tDot"></div>
+          <div class="tCard">
+            <div class="tTime">23:30</div>
+            <div class="tTitle">Vals</div>
+            <div class="tDesc">El momento más esperado.</div>
+          </div>
+        </div>
+
+        <div class="tItem">
+          <div class="tDot"></div>
+          <div class="tCard">
+            <div class="tTime">00:00</div>
+            <div class="tTitle">Fiesta</div>
+            <div class="tDesc">Bailamos hasta el final 🎉</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA editorial (nuevo) -->
+    <section class="section reveal" id="galeria">
+      <div class="head">
+        <h2>Galería</h2>
+        <p>Modo editorial: click para ver en grande</p>
+      </div>
+
+      <div class="masonry" id="gallery"></div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="section reveal" id="rsvp">
+      <div class="head">
+        <h2>Confirmación</h2>
+        <p>Ayudanos confirmando para organizar todo mejor</p>
+      </div>
+
+      <div class="panel">
+        <form id="rsvpForm" autocomplete="on">
+          <div class="formGrid">
+            <label class="field">
+              <span>Nombre y apellido</span>
+              <input id="fNombre" type="text" placeholder="Ej: Lucía Pérez" required>
+            </label>
+
+            <label class="field">
+              <span>Tipo de comida</span>
+              <select id="fComida" required>
+                <option value="" selected>Elegí una opción</option>
+                <option>Sin restricciones</option>
+                <option>Vegetariana</option>
+                <option>Vegana</option>
+                <option>Sin TACC</option>
+                <option>Otra</option>
+              </select>
+            </label>
+
+            <label class="field full">
+              <span>Mensaje para la cumpleañera</span>
+              <textarea id="fMensaje" rows="4" placeholder="Ej: Que la pases hermoso ❤️"></textarea>
+            </label>
+
+           
+            
+
+          <button class="cta primary full" type="submit">CONFIRMAR POR WHATSAPP</button>
+          <div class="tiny">Se envía por WhatsApp</div>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer reveal">
+      <p class="footerTxt" id="footerTxt">Gracias por compartir esta noche conmigo ✨❤️</p>
+    </footer>
+  </main>
+
+  <!-- MAP MODAL -->
+  <div class="modal" id="mapModal" aria-hidden="true">
+    <div class="modalBackdrop" data-close="1"></div>
+    <div class="modalCard" role="dialog" aria-modal="true">
+      <div class="modalTop">
+        <div class="modalTitle">Cómo llegar</div>
+        <button class="modalX" id="closeMap" type="button">✕</button>
+      </div>
+      <div class="modalBody">
+        <div class="modalAddr" id="modalAddr">Av. Siempre Viva 742, Buenos Aires</div>
+        <iframe id="mapFrame" title="Mapa" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src=""></iframe>
+      </div>
+      <div class="modalBtns">
+        <button class="cta glass" data-close="1" type="button">Cerrar</button>
+        <button class="cta primary" id="openMaps2" type="button">Abrir Maps</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightBackdrop" data-close="1"></div>
+    <button class="lightX" data-close="1" aria-label="Cerrar">✕</button>
+    <img id="lightImg" alt="Foto">
+  </div>
+
+  <audio id="bgMusic" loop preload="auto">
+    <source src="./assets/music.mp3" type="audio/mpeg" />
+  </audio>
+</body>
+</html>
