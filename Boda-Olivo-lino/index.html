@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boda • Olivo & Lino (Editorial)</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Ambient layers -->
+  <div class="ambient" aria-hidden="true">
+    <div class="paperNoise"></div>
+    <div class="inkBlobs b1"></div>
+    <div class="inkBlobs b2"></div>
+    <div class="inkBlobs b3"></div>
+  </div>
+
+  <!-- Top bar -->
+  <header class="top">
+    <div class="wrap top__inner">
+      <a class="logo" href="#home">
+        <span class="logo__seal">OL</span>
+        <span class="logo__text">Olivo & Lino</span>
+      </a>
+      <nav class="menu">
+        <a href="#story">Historia</a>
+        <a href="#when">Fecha</a>
+        <a href="#where">Lugar</a>
+        <a href="#rsvp">RSVP</a>
+        <a href="#extra">Extras</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- COVER / HERO -->
+  <section class="cover" id="home">
+    <div class="cover__frame">
+      <div class="cover__photo" style="--photo:url('assets/foto3.jpg');"></div>
+
+      <div class="cover__overlay"></div>
+      <div class="cover__grain"></div>
+
+      <div class="cover__content">
+        <div class="issue reveal">
+          <span class="issue__chip">INVITACIÓN</span>
+          <span class="issue__line">Edición especial</span>
+        </div>
+
+        <h1 class="title reveal">
+          <span class="kicker" id="kicker">Nos casamos</span>
+          <span class="names">
+            <span id="name1">Flor</span>
+            <span class="amp">&</span>
+            <span id="name2">Alejandro</span>
+          </span>
+        </h1>
+
+        <p class="lead reveal" id="lead">
+          Una celebración simple, cálida y llena de amor. Nos encantaría compartirla con vos.
+        </p>
+
+        <div class="metaRow reveal">
+          <div class="meta">
+            <span class="meta__k">Fecha</span>
+            <span class="meta__v" id="datePretty">14/11/2026</span>
+          </div>
+          <div class="meta">
+            <span class="meta__k">Hora</span>
+            <span class="meta__v" id="timePretty">19:30 hs</span>
+          </div>
+          <div class="meta">
+            <span class="meta__k">Ciudad</span>
+            <span class="meta__v" id="cityPretty">CABA</span>
+          </div>
+        </div>
+
+        <div class="cta reveal">
+          <a class="btn btn--olive" href="#rsvp">Confirmar</a>
+          <a class="btn btn--ghost" href="#where">Ver ubicación</a>
+        </div>
+
+        <div class="scroll reveal">
+          <span class="scroll__line"></span>
+          <span>Deslizá</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="wrap main">
+
+    <!-- STORY (editorial block) -->
+    <section class="block reveal" id="story">
+      <div class="block__head">
+        <p class="eyebrow">Nuestra historia</p>
+        <h2 class="h2">
+          <span class="underlineDraw">Elegimos para siempre</span>
+        </h2>
+      </div>
+
+      <div class="block__body editorial">
+        <div class="paperCard">
+          <p class="quoteText" id="quoteText">
+            “Entre tantas casualidades, nos encontramos… y desde ahí, todo fue hogar.”
+          </p>
+          <p class="quoteSign" id="signNames">Camila & Nicolás</p>
+        </div>
+
+        <div class="columns">
+          <div class="miniCard">
+            <h3>Detalles</h3>
+            <p class="muted">
+              Un día para brindar, reír y abrazarnos fuerte. Vení con ganas de disfrutar.
+            </p>
+          </div>
+
+          <div class="miniCard">
+            <h3>Dress code</h3>
+            <p class="muted" id="dressText">Elegante • Olivo & Lino</p>
+          </div>
+
+          <div class="miniCard">
+            <h3>Recordatorio</h3>
+            <p class="muted">Te recomendamos llegar 15 min antes ✿</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHEN (countdown as editorial ticker) -->
+    <section class="block reveal" id="when">
+      <div class="block__head">
+        <p class="eyebrow">Cuándo</p>
+        <h2 class="h2">Cuenta regresiva</h2>
+      </div>
+
+      <div class="ticker">
+        <div class="tick">
+          <span class="tick__n" id="cdDays">00</span>
+          <span class="tick__k">Días</span>
+        </div>
+        <div class="tick">
+          <span class="tick__n" id="cdHours">00</span>
+          <span class="tick__k">Horas</span>
+        </div>
+        <div class="tick">
+          <span class="tick__n" id="cdMins">00</span>
+          <span class="tick__k">Min</span>
+        </div>
+        <div class="tick">
+          <span class="tick__n" id="cdSecs">00</span>
+          <span class="tick__k">Seg</span>
+        </div>
+
+        <div class="sideNote">
+          <span class="sideNote__k">Fecha</span>
+          <span class="sideNote__v" id="datePretty2">14/11/2026</span>
+        </div>
+        <div class="sideNote">
+          <span class="sideNote__k">Hora</span>
+          <span class="sideNote__v" id="timePretty2">19:30 hs</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHERE -->
+    <section class="block reveal" id="where">
+      <div class="block__head">
+        <p class="eyebrow">Dónde</p>
+        <h2 class="h2">Ceremonia & Fiesta</h2>
+      </div>
+
+      <div class="spread">
+        <article class="spreadCard parallax" data-parallax="0.10">
+          <div class="spreadCard__photo" style="--img:url('assets/foto7.jpg');"></div>
+          <div class="spreadCard__body">
+            <div class="tag">Ceremonia</div>
+            <h3 id="ceremonyName">Iglesia San Juan</h3>
+
+            <div class="row">
+              <span class="k">Horario</span>
+              <span class="v" id="ceremonyTime">18:30 hs</span>
+            </div>
+            <div class="row">
+              <span class="k">Dirección</span>
+              <span class="v" id="ceremonyAddress">Av. Ejemplo 123, CABA</span>
+            </div>
+
+            <div class="actions">
+              <a class="btn btn--olive" id="btnCeremonyMap" target="_blank" rel="noopener">Ver mapa</a>
+              <button class="btn btn--ghost" id="btnCalendar" type="button">Agendar</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="spreadCard parallax" data-parallax="0.14">
+          <div class="spreadCard__photo" style="--img:url('assets/foto4.jpg');"></div>
+          <div class="spreadCard__body">
+            <div class="tag">Fiesta</div>
+            <h3 id="partyName">Salón Magnolia</h3>
+
+            <div class="row">
+              <span class="k">Horario</span>
+              <span class="v" id="partyTime">20:00 hs</span>
+            </div>
+            <div class="row">
+              <span class="k">Dirección</span>
+              <span class="v" id="partyAddress">Av. Siempre Viva 742, CABA</span>
+            </div>
+
+            <div class="actions">
+              <a class="btn btn--olive" id="btnPartyMap" target="_blank" rel="noopener">Cómo llegar</a>
+              <a class="btn btn--ghost" href="#rsvp">RSVP</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="block reveal" id="rsvp">
+      <div class="block__head">
+        <p class="eyebrow">Confirmación</p>
+        <h2 class="h2">RSVP</h2>
+      </div>
+
+      <div class="rsvpPanel">
+        <div class="rsvpPanel__note">
+          <h3>Confirmá tu asistencia</h3>
+          <p class="muted">Antes del <strong id="rsvpDeadline">01/11/2026</strong>.</p>
+          <p class="muted tiny">Se envía por WhatsApp automáticamente.</p>
+        </div>
+
+        <div class="rsvpPanel__form">
+          <label class="field">
+            <span>Nombre y apellido</span>
+            <input id="guestName" type="text" placeholder="Ej: Juan Pérez" autocomplete="name">
+          </label>
+
+          <label class="field">
+            <span>¿Asistís?</span>
+            <select id="guestAttend">
+              <option value="si">Sí</option>
+              <option value="no">No</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Cantidad</span>
+            <input id="guestQty" type="number" min="1" value="1">
+          </label>
+
+          <label class="field field--full">
+            <span>Mensaje (opcional)</span>
+            <input id="guestMsg" type="text" placeholder="Ej: ¡Qué emoción! 🤍">
+          </label>
+
+          <button class="btn btn--olive btn--full" id="btnWhatsapp" type="button">Confirmar por WhatsApp</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXTRA (gifts + songs, editorial) -->
+    <section class="block reveal" id="extra">
+      <div class="block__head">
+        <p class="eyebrow">Extras</p>
+        <h2 class="h2">Regalos & Canciones</h2>
+      </div>
+
+      <div class="extras">
+        <!-- Gifts -->
+        <div class="paperCard">
+          <h3>Regalos</h3>
+          <p class="muted">Tu presencia es nuestro mejor regalo 🤍</p>
+
+          <div class="giftLine">
+            <span class="k">Alias</span>
+            <span class="v mono" id="giftAlias">BODA.CAMI.NICO</span>
+            <button class="miniBtn" id="btnCopyAlias" type="button">Copiar</button>
+          </div>
+
+          <div class="giftLine">
+            <span class="k">CBU</span>
+            <span class="v mono" id="giftCBU">0000000000000000000000</span>
+            <button class="miniBtn" id="btnCopyCBU" type="button">Copiar</button>
+          </div>
+
+          <div class="giftLine">
+            <span class="k">Titular</span>
+            <span class="v" id="giftHolder">Camila Apellido</span>
+            <span></span>
+          </div>
+        </div>
+
+        <!-- Songs -->
+        <div class="paperCard">
+          <h3>Canciones</h3>
+          <p class="muted">Sumá temas para bailar y cantar 🎶</p>
+
+          <label class="field field--full">
+            <span>Tu sugerencia</span>
+            <input id="songInput" type="text" placeholder="Ej: Perfect - Ed Sheeran">
+          </label>
+
+          <div class="songActions">
+            <button class="btn btn--olive" id="songsBtn" type="button">Agregar</button>
+            <button class="btn btn--ghost" id="btnSuggestSong" type="button">Sugerir por WhatsApp</button>
+            <a class="btn btn--ghost" id="btnPlaylist" target="_blank" rel="noopener">Abrir playlist</a>
+          </div>
+
+          <div class="songBox">
+            <div class="songBox__top">
+              <span class="tiny muted">Lista</span>
+              <button class="miniBtn" id="btnClearSongs" type="button">Borrar todo</button>
+            </div>
+            <ul class="songList" id="songList"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="end reveal">
+      <p class="end__k">Con amor</p>
+      <h2 class="end__t" id="finalText">Nos vemos muy pronto 🤍</h2>
+      <p class="end__n" id="finalNames">Camila & Nicolás</p>
+      <p class="tiny muted">Boda • Olivo & Lino</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
