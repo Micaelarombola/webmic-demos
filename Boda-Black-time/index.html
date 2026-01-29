@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boda • Black Tie</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Background FX canvas -->
+  <canvas id="fx" aria-hidden="true"></canvas>
+
+  <!-- Music -->
+  <audio id="bgMusic" preload="auto" loop>
+    <source src="assets/music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Floating Controls -->
+  <div class="fab">
+    <button id="musicBtn" class="chip" type="button" aria-label="Música">
+      <span class="chip__dot"></span>
+      <span class="chip__txt" id="musicTxt">Música</span>
+      <span class="chip__ico" id="musicIco">▶</span>
+    </button>
+
+    <a class="chip chip--ghost" href="#rsvp">
+      <span class="chip__txt">RSVP</span>
+      <span class="chip__ico">↘</span>
+    </a>
+  </div>
+
+  <!-- HERO VIDEO -->
+  <header class="hero" id="top">
+    <video class="hero__video" autoplay muted playsinline loop poster="assets/hero-poster.jpg">
+      <source src="assets/hero.mp4" type="video/mp4" />
+    </video>
+
+    <div class="hero__overlay"></div>
+    <div class="hero__vignette"></div>
+
+    <div class="hero__content">
+      <div class="kicker reveal">INVITACIÓN • BLACK TIE</div>
+
+      <h1 class="title reveal">
+        <span class="shine" id="names">Camila & Tomás</span>
+      </h1>
+
+      <p class="date reveal" id="eventDateText">Sábado 14 de Noviembre • 20:30 hs</p>
+
+      <div class="cta reveal">
+        <a class="btn btn--gold" href="#rsvp">Confirmar asistencia</a>
+        <a class="btn btn--glass" href="#info">Ver info</a>
+      </div>
+
+      <div class="scroll reveal">
+        <span>Deslizá</span>
+        <span class="scroll__chev">⌄</span>
+      </div>
+    </div>
+
+    <!-- animated light beams -->
+    <div class="beam beam--1"></div>
+    <div class="beam beam--2"></div>
+    <div class="beam beam--3"></div>
+  </header>
+
+  <main>
+    <!-- FRASE -->
+    <section class="section" id="frase">
+      <div class="wrap">
+        <div class="panel reveal">
+          <h2 class="h2">Una noche de gala</h2>
+          <div class="line"></div>
+
+          <blockquote class="quote">
+            <p id="quoteText">“Te elegiría en mil vidas más.”</p>
+            <footer>— <span id="quoteAuthor">Anónimo</span></footer>
+          </blockquote>
+
+          <div class="facts">
+            <div class="fact">
+              <span class="fact__k">Dress code</span>
+              <span class="fact__v" id="dressCode">Black Tie</span>
+            </div>
+            <div class="fact">
+              <span class="fact__k">Salón</span>
+              <span class="fact__v" id="venueName">Palacio Aurora</span>
+            </div>
+            <div class="fact">
+              <span class="fact__k">Ciudad</span>
+              <span class="fact__v" id="cityName">Buenos Aires</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section class="section section--tight" id="countdown">
+      <div class="wrap">
+        <div class="panel panel--thin reveal">
+          <h2 class="h2">Cuenta regresiva</h2>
+          <div class="line"></div>
+
+          <div class="count">
+            <div class="box"><span id="dd">00</span><small>DÍAS</small></div>
+            <div class="box"><span id="hh">00</span><small>HS</small></div>
+            <div class="box"><span id="mm">00</span><small>MIN</small></div>
+            <div class="box"><span id="ss">00</span><small>SEG</small></div>
+          </div>
+
+          <p class="sub" id="countdownNote">Guardá la fecha ✨</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFO -->
+    <section class="section" id="info">
+      <div class="wrap">
+        <div class="grid">
+          <article class="card reveal">
+            <h3>Ceremonia</h3>
+            <p id="ceremonyText">20:30 hs • Capilla Santa Clara</p>
+            <div class="tag">Llegá 15 min antes</div>
+          </article>
+
+          <article class="card reveal">
+            <h3>Fiesta</h3>
+            <p id="partyText">22:00 hs • Palacio Aurora</p>
+            <div class="tag">Brindis + cena + baile</div>
+          </article>
+
+          <article class="card reveal">
+            <h3>Dirección</h3>
+            <p id="addressText">Av. Siempre Viva 1234, CABA</p>
+            <a class="link" id="mapsLink" href="#" target="_blank" rel="noopener">Cómo llegar →</a>
+          </article>
+        </div>
+
+        <div class="ribbon reveal">
+          <div class="ribbon__icon">✦</div>
+          <div>
+            <h4>Detalle especial</h4>
+            <p id="specialNote">Tu presencia es nuestro mejor regalo. Si deseás, habrá mesa de sobres.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="section" id="rsvp">
+      <div class="wrap">
+        <div class="panel reveal">
+          <h2 class="h2">Confirmación</h2>
+          <div class="line"></div>
+
+          <p class="sub">Confirmá por WhatsApp</p>
+
+          <div class="actions">
+            <a class="btn btn--gold" id="waBtn" href="#" target="_blank" rel="noopener">Confirmar</a>
+            <button class="btn btn--glass" id="copyBtn" type="button">Copiar mensaje</button>
+          </div>
+
+          <p class="tiny">En celulares, la música puede requerir tocar el botón.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>Con amor ✦ <span id="footerNames">Camila & Tomás</span></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
