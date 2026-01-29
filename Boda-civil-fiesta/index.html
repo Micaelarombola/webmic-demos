@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boda • Civil + Fiesta</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@300;400;500;600;700&family=Allura&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- Progress -->
+  <div class="progress"><span id="progressBar"></span></div>
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <div class="brand">
+        <span class="brandMark">✦</span>
+        <span class="brandName">Invitación</span>
+      </div>
+
+      <button class="menuBtn" id="menuBtn" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav">
+        <a href="#civil">Civil</a>
+        <a href="#fiesta">Fiesta</a>
+        <a href="#countdown">Cuenta regresiva</a>
+        <a href="#fotos">Fotos</a>
+        <a href="#rsvp">Confirmar</a>
+      </nav>
+    </div>
+
+    <div class="mobileNav" id="mobileNav">
+      <a href="#civil">Civil</a>
+      <a href="#fiesta">Fiesta</a>
+      <a href="#countdown">Cuenta regresiva</a>
+      <a href="#fotos">Fotos</a>
+      <a href="#rsvp">Confirmar</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main class="wrap">
+    <section class="hero" id="heroParallax">
+      <div class="heroGrid">
+        <div class="heroCopy reveal">
+          <p class="pill" id="badgeDate">17 • 10 • 2026</p>
+          <h1 class="title" id="coupleTitle">Valentina & Julián</h1>
+          <p class="subtitle">
+            Nos casamos <span class="heart">🤍</span><br>
+            <strong>Civil + Fiesta</strong>
+          </p>
+
+          <p class="meta" id="dateHuman">viernes • 17 de octubre • 20:30</p>
+
+          <div class="heroActions">
+            <a class="btn primary" href="#rsvp">Confirmar asistencia</a>
+            <a class="btn ghost" href="#fiesta">Ver info</a>
+          </div>
+
+          <p class="hint">Deslizá para ver todo ✨</p>
+        </div>
+
+        <div class="heroArt reveal">
+          <div class="photoCard">
+            <!-- Cambiá la imagen -->
+            <img src="assets/foto2.jpg" alt="Foto de los novios">
+            <div class="photoGlow"></div>
+          </div>
+
+          <div class="floatingTag">
+            <span class="tagIcon">✦</span>
+            <span>Elegancia & Amor</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTE -->
+    <section class="quote reveal">
+      <p class="quoteText">
+        “El amor no se mira, se siente…<br>
+        y hoy queremos compartirlo con vos.”
+      </p>
+      <p class="quoteFrom">Con cariño, <span id="coupleSmall">Valentina & Julián</span></p>
+    </section>
+
+    <!-- EVENTS -->
+    <section class="events">
+      <!-- CIVIL -->
+      <article class="card eventCard reveal" id="civil">
+        <div class="eventHead">
+          <div class="eventIcon">💍</div>
+          <div>
+            <h2 class="cardTitle">Civil</h2>
+            <p class="cardSub" id="civilHuman">Viernes 17 de Octubre • 16:00 hs</p>
+          </div>
+        </div>
+
+        <div class="eventBody">
+          <p class="line">
+            <span class="k">Lugar</span>
+            <span class="v" id="civilPlace">Registro Civil de Recoleta</span>
+          </p>
+          <p class="line">
+            <span class="k">Dirección</span>
+            <span class="v" id="civilAddrText">Av. Las Heras 2045, CABA</span>
+          </p>
+
+          <div class="btnRow">
+            <a class="btn secondary" id="civilMapsBtn" href="#" target="_blank" rel="noopener">Cómo llegar</a>
+            <button class="btn ghost" id="civilCopyAddrBtn" type="button">Copiar dirección</button>
+            <button class="btn ghost" id="civilIcsBtn" type="button">Agendar civil</button>
+          </div>
+        </div>
+
+        <div class="softBorder"></div>
+      </article>
+
+      <!-- FIESTA -->
+      <article class="card eventCard eventCard--main reveal" id="fiesta">
+        <div class="eventHead">
+          <div class="eventIcon">🥂</div>
+          <div>
+            <h2 class="cardTitle">Fiesta</h2>
+            <p class="cardSub" id="fiestaHuman">Viernes 17 de Octubre • 20:30 hs</p>
+          </div>
+        </div>
+
+        <div class="eventBody">
+          <p class="line">
+            <span class="k">Lugar</span>
+            <span class="v" id="fiestaPlace">Palais Rouge</span>
+          </p>
+          <p class="line">
+            <span class="k">Dirección</span>
+            <span class="v" id="addrText">Jerónimo Salguero 1441, CABA</span>
+          </p>
+          <p class="line">
+            <span class="k">Detalle</span>
+            <span class="v">Cena • Baile • Celebración</span>
+          </p>
+
+          <div class="btnRow">
+            <a class="btn primary" id="mapsBtn" href="#" target="_blank" rel="noopener">Cómo llegar</a>
+            <button class="btn ghost" id="copyAddrBtn" type="button">Copiar dirección</button>
+            <button class="btn ghost" id="fiestaIcsBtn" type="button">Agendar fiesta</button>
+          </div>
+
+          <div class="extras">
+            <a class="chip" id="playlistBtn" href="#" target="_blank" rel="noopener">🎶 Playlist</a>
+            <button class="chip" id="copyHashtagBtn" type="button"># <span id="hashtagText">#ValeYJuli</span></button>
+          </div>
+        </div>
+
+        <div class="goldGlow"></div>
+      </article>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section class="card countdownCard reveal" id="countdown">
+      <div class="countdownHead">
+        <h2 class="cardTitle">Cuenta regresiva</h2>
+        <p class="cardSub">para la Fiesta ✨</p>
+      </div>
+
+      <div class="countdown" data-deadline="">
+        <div class="cdItem">
+          <div class="cdNum" id="dd">00</div>
+          <div class="cdLab">días</div>
+        </div>
+        <div class="cdItem">
+          <div class="cdNum" id="hh">00</div>
+          <div class="cdLab">hs</div>
+        </div>
+        <div class="cdItem">
+          <div class="cdNum" id="mm">00</div>
+          <div class="cdLab">min</div>
+        </div>
+        <div class="cdItem">
+          <div class="cdNum" id="ss">00</div>
+          <div class="cdLab">seg</div>
+        </div>
+      </div>
+
+      <p class="tiny">Tip: agendá el evento para que no se te pase 😉</p>
+    </section>
+
+    <!-- DRESS CODE -->
+    <section class="card reveal">
+      <h2 class="cardTitle">Dress code</h2>
+      <p class="cardSub">Elegante / Formal</p>
+      <div class="twoCols">
+        <div class="mini">
+          <h3>Recomendación</h3>
+          <p>Colores sobrios, detalles delicados y mucho amor.</p>
+        </div>
+        <div class="mini">
+          <h3>Importante</h3>
+          <p>🤍 Blanco reservado para la novia.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOTOS -->
+    <section class="photos" id="fotos">
+      <div class="photosHead reveal">
+        <h2 class="sectionTitle">Fotos</h2>
+        <p class="sectionSub">Un poquito de nosotros 🤍</p>
+      </div>
+
+      <div class="gallery reveal" id="gallery">
+        <!-- Cambiá por tus fotos reales -->
+        <figure class="gitem"><img src="assets/foto1.jpg" alt="Foto 1"></figure>
+        <figure class="gitem"><img src="assets/foto4.jpg" alt="Foto 2"></figure>
+        <figure class="gitem"><img src="assets/foto3.jpg" alt="Foto 3"></figure>
+        <figure class="gitem"><img src="assets/foto5.jpg" alt="Foto 4"></figure>
+        <figure class="gitem"><img src="assets/foto6.jpg" alt="Foto 5"></figure>
+        <figure class="gitem"><img src="assets/foto7.jpg" alt="Foto 6"></figure>
+      </div>
+
+    </section>
+
+    <!-- RSVP -->
+    <section class="card rsvpCard reveal" id="rsvp">
+      <h2 class="cardTitle">Confirmación</h2>
+      <p class="cardSub">Elegí una opción para confirmar por WhatsApp</p>
+
+      <div class="rsvpGrid">
+        <button class="btn primary" id="rsvpBothBtn" type="button">✅ Confirmo Civil + Fiesta</button>
+        <button class="btn secondary" id="rsvpCivilBtn" type="button">✅ Confirmo Civil</button>
+        <button class="btn secondary" id="rsvpFiestaBtn" type="button">✅ Confirmo Fiesta</button>
+      </div>
+
+      <p class="tiny">Si tenés restricciones alimentarias, podés aclararlo en el mensaje.</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer reveal">
+      <p class="footerBig">Los esperamos para celebrar juntos ✨</p>
+      <p class="footerSmall">Hecho con amor • WebMic</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
