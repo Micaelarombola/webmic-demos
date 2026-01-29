@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boda • Minimal Chic</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <span class="mono" id="monogram">C ♥ N</span>
+      <nav class="nav">
+        <a href="#countdown">Cuenta</a>
+        <a href="#quote">Frase</a>
+        <a href="#places">Lugar</a>
+        <a href="#rsvp">RSVP</a>
+        <a href="#gifts">Regalos</a>
+        <a href="#songs">Canciones</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home" style="--hero:url('assets/foto7.jpg');">
+    <div class="hero__shade"></div>
+    <div class="wrap hero__content reveal">
+      <div class="hero__badge"><span class="dot"></span><span class="badgeText">INVITACIÓN</span></div>
+      <h1 class="hero__title">
+        <span class="hero__kicker">Nos casamos</span>
+        <span class="hero__names">
+          <span id="name1">Camila</span>
+          <span class="amp">&</span>
+          <span id="name2">Nicolás</span>
+        </span>
+      </h1>
+      <p class="hero__sub">Con mucha alegría, te invitamos a celebrar nuestro amor.</p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="#rsvp">Confirmar asistencia</a>
+        <a class="btn btn--ghost" href="#places">Ver ubicación</a>
+      </div>
+      <a class="scrollHint" href="#countdown">
+        <span class="scrollHint__line"></span><span>Deslizá</span>
+      </a>
+    </div>
+  </section>
+
+  <main class="wrap main">
+    <!-- COUNTDOWN -->
+    <section class="section reveal" id="countdown">
+      <div class="card card--glow">
+        <h2>Cuenta regresiva</h2>
+        <div class="count">
+          <div class="pill"><span class="num" id="cdDays">00</span><span class="lbl">Días</span></div>
+          <div class="pill"><span class="num" id="cdHours">00</span><span class="lbl">Horas</span></div>
+          <div class="pill"><span class="num" id="cdMins">00</span><span class="lbl">Min</span></div>
+          <div class="pill"><span class="num" id="cdSecs">00</span><span class="lbl">Seg</span></div>
+        </div>
+        <div class="miniMeta">
+          <div class="miniMeta__item"><span class="k">Fecha</span><span class="v" id="datePretty">14/11/2026</span></div>
+          <div class="miniMeta__item"><span class="k">Hora</span><span class="v" id="timePretty">19:30 hs</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FRASE -->
+   <section class="section reveal quoteSection" id="quote">
+  <p class="quote__text" id="quoteText">
+Elegimos amarnos cada día, y queremos celebrarlo junto a vos.  </p>
+
+  <p class="quote__sign">Camila & Nicolás</p>
+</section>
+
+
+
+    <!-- LUGARES -->
+    <section class="section reveal" id="places">
+      <h2>Ceremonia & Fiesta</h2>
+      <div class="grid2">
+        <article class="place card">
+          <div class="place__img" style="--img:url('assets/foto8.jpg');"></div>
+          <div class="place__body">
+            <h3>Ceremonia</h3>
+            <p><strong>Horario:</strong> <span id="ceremonyTime">18:00 hs</span></p>
+            <p><strong>Dirección:</strong> <span id="ceremonyAddress">Iglesia San Benito, CABA</span></p>
+            <a class="btn btn--primary" id="btnCeremonyMap" target="_blank" rel="noopener">Ver mapa</a>
+          </div>
+        </article>
+
+        <article class="place card">
+          <div class="place__img" style="--img:url('assets/foto6.jpg');"></div>
+          <div class="place__body">
+            <h3>Fiesta</h3>
+            <p><strong>Horario:</strong> <span id="partyTime">19:30 hs</span></p>
+            <p><strong>Dirección:</strong> <span id="partyAddress">Salón Magnolia, CABA</span></p>
+            <a class="btn btn--primary" id="btnPartyMap" target="_blank" rel="noopener">Cómo llegar</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="section reveal" id="rsvp">
+      <div class="cloudCard" style="--cloud:url('assets/foto7.jpg');">
+        <div class="cloudCard__shade"></div>
+        <div class="cloudCard__content">
+          <h2>Confirmar asistencia</h2>
+
+          <div class="rsvpGrid">
+            <label class="field">
+              <span>Nombre</span>
+              <input id="guestName" placeholder="Tu nombre" autocomplete="name">
+            </label>
+
+            <label class="field">
+              <span>¿Asistís?</span>
+              <select id="guestAttend">
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+              </select>
+            </label>
+
+            <label class="field field--full">
+              <span>Mensaje (opcional)</span>
+              <input id="guestMsg" placeholder="Ej: ¡Qué emoción! 🤍">
+            </label>
+
+            <button class="btn btn--primary btn--full" id="btnWhatsapp" type="button">
+              Confirmar por WhatsApp
+            </button>
+
+            <p class="tiny" style="margin:0;color:rgba(255,255,255,.72)">
+              Se abrirá WhatsApp con el mensaje listo para enviar.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DRESS CODE -->
+    <section class="section reveal" id="dress">
+      <div class="card">
+        <h2>Dress code</h2>
+        <p class="muted" id="dressDesc">Elegante / Minimal Chic</p>
+
+        <div class="chips">
+          <span class="chip">🤍 Tonos neutros</span>
+          <span class="chip">✨ Elegante</span>
+          <span class="chip">🖤 Clásico</span>
+          <span class="chip">🚫 Evitar: blanco</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- REGALOS (con copiar alias/cbu) -->
+    <section class="section reveal" id="gifts">
+      <div class="card">
+        <h2>Regalos</h2>
+        <p class="muted" id="giftText">
+          Tu presencia es nuestro mejor regalo 🤍 Si querés sumar un detalle, podés ayudarnos con nuestra luna de miel.
+        </p>
+
+        <div class="giftBox">
+          <div class="giftRow">
+            <span class="k">Alias</span>
+            <span class="v mono" id="giftAlias">BODA.CAMI.NICO</span>
+          </div>
+
+          <div class="giftRow">
+            <span class="k">CBU</span>
+            <span class="v mono" id="giftCBU">0000000000000000000000</span>
+          </div>
+
+          <div class="giftRow">
+            <span class="k">Titular</span>
+            <span class="v" id="giftHolder">Camila & Nicolás</span>
+          </div>
+
+          <div class="actions">
+            <button class="btn btn--primary" id="btnCopyAlias" type="button">Copiar alias</button>
+            <button class="btn btn--ghost" id="btnCopyCBU" type="button">Copiar CBU</button>
+          </div>
+
+          <p class="tiny muted">Si preferís, también habrá una urna en el salón.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CANCIONES (completo) -->
+    <section class="section reveal" id="songs">
+      <div class="card">
+        <header class="sectionHead">
+          <h2>Canciones</h2>
+          <p class="muted">Sumá temas para bailar y cantar toda la noche 🎶</p>
+        </header>
+
+        <div class="songGrid">
+          <label class="field field--full">
+            <span>Tu sugerencia</span>
+            <input id="songInput" type="text" placeholder="Ej: Perfect - Ed Sheeran">
+          </label>
+
+          <button class="btn btn--primary" id="songsBtn" type="button">Agregar canción</button>
+          <a class="btn btn--ghost" id="btnPlaylist" target="_blank" rel="noopener">Abrir playlist</a>
+          <button class="btn btn--ghost" id="btnSuggestSong" type="button">Sugerir por WhatsApp</button>
+        </div>
+
+        <div class="songBox">
+          <p class="tiny muted" style="margin:0 0 10px">Lista de sugerencias:</p>
+          <ul class="songList" id="songList"></ul>
+        </div>
+
+        <p class="tiny muted" style="margin:12px 0 0">
+          Tip: 1 lenta + 1 para bailar + 1 infaltable 😄
+        </p>
+      </div>
+    </section>
+
+    <!-- FINAL -->
+    <section class="section reveal" id="final">
+      <div class="finalCard" style="--img:url('assets/foto7.jpg');">
+        <div class="finalCard__shade"></div>
+        <div class="finalCard__content">
+          <h2>Gracias por acompañarnos 🤍</h2>
+          <p id="finalNames">Camila & Nicolás</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">Boda • Minimal Chic</footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
